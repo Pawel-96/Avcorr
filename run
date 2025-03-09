@@ -1,0 +1,10 @@
+#!/bin/bash
+#script running entire code
+
+if ! test -f ./Avcorr.exe; then
+  echo "Executable doesn't exist - compile the code first using command [make]"
+  exit 1
+fi
+
+
+mpiexec -np $1 ./Avcor.exe

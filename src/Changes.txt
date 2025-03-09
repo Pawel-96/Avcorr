@@ -1,0 +1,42 @@
+Changes implemented:
+
+11.08.2021: pixborders stored in full array, not being calculated every time
+06.09.2021: improvement of the condition for rejecting pixels
+06.09.2021: checking if random circle is not exceeding [ra,dec] ranges for not fullsky (due to RA=ramin+R <=/=> circle fully inside)
+15.04.2022: adding minimal pixelization: estimation of pixels crossing the circle was invalid for small scales
+28.04.2022: finding only pixels relevant to each circle (up to 60x speedup)
+29.04.2022: parameters read from file, not changed in code anymore; optimal pixelization from file (I've found that speedup is even max. 85x)
+04.05.2022: implemented bootstrap subsampling errors [no realizations, another version]
+06.05.2022: bootstrap optimization: centering counts [double array] before calculating all moments
+09.05.2022: removed zcos from parameters, everything will be in Model array
+10.05.2022: SJ calculated also in the code, not by external .py script
+10.06.2022: N value in Results_onemodel_oneradius() implemented correctly (was=0, working slower)
+15.06.2022: changed if(Dmax<=R) to if(Dmax<=R and pix[nnpix_taken][0][0]!=-1000000) [empty pixels shouldnt be added]
+15.06.2022: bug in dist_tocenter solved (appeared only in BOX code version)
+11.08.2022: param option: Random_provided [0/1] and Random_file -> if not, then drawing random circles
+12.08.2022: Cmax added (const)
+22.08.2022: if Models = * in paramfile, then reading all the files from Data/ directory
+30.08.2022: if output file exist -> not bootstrapping again in Calculate_moments()
+13.09.2022: redefining number of circles by Areaf
+22.11.2022: if Random_file=* in paramfile, then Random[i]=Randoms/Random_+Model[i]+.txt
+01.12.2022: if Randoms_file!=* and Random_provided=1, reading randoms in main() [speedup]
+01.12.2022: dividing randoms into nreals independent cuts of size C -> counts for every cut -> average +/- stddev
+01.12.2022: removing unnecessary output: *_moments_*.txt (non-merged merrouts)
+01.12.2022: introducing "Recalc": if =1 and counts exist, recalculating moments again
+13.12.2022: adding Poisson errors into output, Connect() and Correct_av..() change input arrays now
+18.04.2023: added Clean option
+30.05.2023: number of circles [in CiC() function] is now limited by size of randoms (if these exist) to avoid memory corruption 
+21.06.2023: total number (multiplied by nreals) of circles limited by Cmax to avoid confusion
+05.09.2023: adding possibility for axb>axa -> changes in CIC()
+11.09.2023: merging separate versions, changing *found array from long int to int (saving memory)
+26.10.2023: repaired Y_galx=Y_center,Z_galx=Z_center in CIC_BOX_ellipses case (frca was dividing by zero) 
+04.01.2024: added counts_output option, now possible to save counts in compact mode (histogram)
+05.01.2024: now log file is in Results
+08.01.2024: combining results from different realisations into one based on real_template; added:combine_reals,real_template options
+08.01.2024: adding Maxreal() function - checking number of realisations automatically (if combine_reals==1), not imposed by param.txt
+09.02.2024: changing pixelized data type long double -> double, less memory consumption
+12.02.2024: counts now stored in RAM as PDFs, not long 1D arrays (now using much less memory, up to 5x saving)
+19.03.2024: showing overall progress of calculation based on counting of *.fnd* files
+29.07.2024: getting rid of all system functions, now only internal c++ ones
+24.10.2024: writing counts histograms without zeros -> saving disk space
+25.10.2024: adding Check_count_existence to prevent the same code in different count functions
