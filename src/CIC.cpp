@@ -22,7 +22,7 @@ int CRR(string ffound,string ffoundhst,vector<double> &Xcn, string model, double
 	}
 	if(Random_provided==1 and Fexist(ffound)==0 and Fexist(ffoundhst)==0)
 	{
-		if(Random_file=="*"){CR=Fnlines("Randoms/Random_"+model+".txt");}//min(CR,(long int)(Lines("Randoms/Random_"+model+".txt")));}
+		if(Random_file=="*"){CR=Fnlines("Randoms/Random_"+model+EXT);}//min(CR,(long int)(Lines("Randoms/Random_"+model+".txt")));}
 		else{CR=Xcn.size();}//min(CR,(long int)(Xcn.size()));}
 	}
 	
@@ -224,7 +224,7 @@ void CIC_angular(vector<vector<vector<double> > > &pix, string output, string mo
 	if(Random_provided==1 and Random_file=="*")
 	{
 			Xcn.clear();Ycn.clear();
-			Fread<double>("Randoms/Random_"+model+".txt",{&Xcn,&Ycn},{0,1});
+			Fread<double>("Randoms/Random_"+model+EXT,{&Xcn,&Ycn},{0,1});
 	}
 
     for(int j=0;j<CR;++j) //for every circle
@@ -294,6 +294,38 @@ void CIC_angular(vector<vector<vector<double> > > &pix, string output, string mo
 
 
 
+//periodic pixel (assumption: pix_taken not exceeding [-npix_1D,2npix_1D] range)
+int Periodic_pixel(int pix_taken, int npix_1D)
+{
+	if(pix_taken>=0 and pix_taken<npix_1D){return pix_taken;}
+	
+	if(pix_taken<0){return pix_taken+npix_1D;}
+	else if(pix_taken>=npix_1D){return pix_taken-npix_1D;}
+	
+	return -1;
+}
+
+
+
+
+//distance in 3D periodic box
+double Dist_periodic(double x1, double y1, double z1, double x2, double y2, double z2, double Lbox)
+{
+	double Lhalf=.5*Lbox;
+	double dx=fabs(x1-x2),dy=fabs(y1-y2),dz=fabs(z1-z2);
+	if(dx>Lhalf){dx=Lbox-dx;}
+	if(dy>Lhalf){dy=Lbox-dy;}
+	if(dz>Lhalf){dz=Lbox-dz;}
+	
+	return sqrt(dx*dx + dy*dy + dz*dz);
+}
+
+
+
+
+
+
+
 
 
 void CIC_BOX(vector<vector<vector<double> > > &pix, string output, string model, int npix_edge, int nnR,vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn) //collecting numbers of objects  ->calculating moments for nnR-th radius
@@ -302,7 +334,7 @@ void CIC_BOX(vector<vector<vector<double> > > &pix, string output, string model,
     double dpix=1.0*boxsize/npix_edge;//pix edge size
     double *dist_tocenter=new double[8]; // distance of border points to circle center
     
-    R=Rmin*pow(1.0*qR,nnR); //size of circles on sphere [deg]; radius of sphere=1
+    R=Rmin*pow(1.0*qR,nnR); //size of sphere radius
 
 	string ffound=Replace_string(output,".txt","_found.fnd"); //file with found[] array
 	string ffoundhst=Replace_string(ffound,".fnd",".fndhst"); //count in compact format
@@ -324,7 +356,7 @@ void CIC_BOX(vector<vector<vector<double> > > &pix, string output, string model,
 	if(Random_provided==1 and Random_file=="*")
 	{
 			Xcn.clear();Ycn.clear();Zcn.clear();
-			Fread<double>("Randoms/Random_"+model+".txt",{&Xcn,&Ycn,&Zcn},{0,1,2});
+			Fread<double>("Randoms/Random_"+model+EXT,{&Xcn,&Ycn,&Zcn},{0,1,2});
 	}
 
     for(int j=0;j<CR;++j) //for every circle
@@ -338,18 +370,18 @@ void CIC_BOX(vector<vector<vector<double> > > &pix, string output, string model,
 			Z_center=Zcn[j];			
 		}
 		else {
-			X_center=Random(R,boxsize-R);
-			Y_center=Random(R,boxsize-R);
-			Z_center=Random(R,boxsize-R);			
+			X_center=Random(0.,boxsize);
+			Y_center=Random(0.,boxsize);
+			Z_center=Random(0.,boxsize);			
 		}
 
-		
-		pixx[0]=max(0.,floor(X_center/dpix)-ceil(R/dpix));
-		pixx[1]=min(1.*npix_edge-1.,floor(X_center/dpix)+ceil(R/dpix));
-		pixy[0]=max(0.,floor(Y_center/dpix)-ceil(R/dpix));
-		pixy[1]=min(1.*npix_edge-1.,floor(Y_center/dpix)+ceil(R/dpix));
-		pixz[0]=max(0.,floor(Z_center/dpix)-ceil(R/dpix));
-		pixz[1]=min(1.*npix_edge-1.,floor(Z_center/dpix)+ceil(R/dpix));
+		//extreme relevant pixels (pixx/y/z[0/1]); might be out of the box; then periodicity
+		pixx[0]=floor(X_center/dpix)-ceil(R/dpix);
+		pixx[1]=floor(X_center/dpix)+ceil(R/dpix);
+		pixy[0]=floor(Y_center/dpix)-ceil(R/dpix);
+		pixy[1]=floor(Y_center/dpix)+ceil(R/dpix);
+		pixz[0]=floor(Z_center/dpix)-ceil(R/dpix);
+		pixz[1]=floor(Z_center/dpix)+ceil(R/dpix);
 		
 		pixx_taken=pixx[0];
 		pixy_taken=pixy[0];
@@ -357,7 +389,9 @@ void CIC_BOX(vector<vector<vector<double> > > &pix, string output, string model,
 
         while(true) //loop over relevant pixels
 		{
-			nnpix_taken=pixz_taken*pow(npix_edge,2) +pixy_taken*npix_edge +pixx_taken;
+			nnpix_taken=Periodic_pixel(pixz_taken,npix_edge)*npix_edge*npix_edge+
+							Periodic_pixel(pixy_taken,npix_edge)*npix_edge+
+							Periodic_pixel(pixx_taken,npix_edge); //converting back to 1D listing; assuming periodicity
 			galpix=pix[nnpix_taken].size();
 			Dmax=Set_3Dvertex_distances(dist_tocenter,X_center,Y_center,Z_center,pixx_taken,pixy_taken,pixz_taken,dpix);
 			
@@ -366,7 +400,8 @@ void CIC_BOX(vector<vector<vector<double> > > &pix, string output, string model,
             {
                 for(int m=0;m<galpix;++m) //objects inside this pixel (pixel crossing this circle partially)
                 {
-                    if(Dist(X_center,Y_center,Z_center,pix[nnpix_taken][m][0],pix[nnpix_taken][m][1],pix[nnpix_taken][m][2])<=R){++found_thiscircle;}
+                    if(Dist_periodic(X_center,Y_center,Z_center,
+					   pix[nnpix_taken][m][0],pix[nnpix_taken][m][1],pix[nnpix_taken][m][2],boxsize)<=R){++found_thiscircle;}
                 }
             }
 
@@ -411,13 +446,15 @@ void CIC_BOX_ellipses(vector<vector<vector<double> > > &pix, string output, stri
     double X_center,Y_center,Z_center;//for sphere
     double dpix=1.0*boxsize/npix_edge;//pix edge size
     double *dist_tocenter=new double[8]; // distance of border points to circle center
-    double axa,axb,minax;
-	double CFOCI,frac,Dfoc; //CFOCI(half foci distance), frac (for rescaling), Dfoc -distance to focal ring x2 (axb>axa case)
+	double Lhalf=.5*boxsize;
+    double axa,axb,minax; //axes and smaller axis
+	double dx,dy,dz,inellips; //useful for ellipsoid equation: (dx/axa)^2+(dy/axb)^2+(dz/axb)^2<1
+	//double CFOCI,frac,Dfoc; //CFOCI(half foci distance), frac (for rescaling), Dfoc -distance to focal ring x2 (axb>axa case)
     
 	Find_ellipses_axes(nnallax,axa,axb);
 	minax=min(axa,axb);
-	if(axa>=axb){CFOCI=pow(pow(axa,2)-pow(axb,2),0.5);}
-	else{CFOCI=pow(pow(axb,2)-pow(axa,2),0.5);}
+	//if(axa>=axb){CFOCI=pow(pow(axa,2)-pow(axb,2),0.5);}
+	//else{CFOCI=pow(pow(axb,2)-pow(axa,2),0.5);}
 	
     string ffound=Replace_string(output,".txt","_found.fnd"); //file with found[] array
 	string ffoundhst=Replace_string(ffound,".fnd",".fndhst"); //count in compact format
@@ -426,7 +463,7 @@ void CIC_BOX_ellipses(vector<vector<vector<double> > > &pix, string output, stri
 
     vector<int> nc, count; //storing counts histogram
 	int countmin=-1,countmax=-1; //minimal count (for adding to histogram)
-    int galpix,found_thiscircle; //objects found inside this pixel, circle
+    int galpix,found_thiscircle; //objects found inside this pixel, ellipsoid
 	
 	double Dmax;
 	int pixx[2],pixy[2],pixz[2]; //pixel numbers ranges for each circle
@@ -439,7 +476,7 @@ void CIC_BOX_ellipses(vector<vector<vector<double> > > &pix, string output, stri
 	if(Random_provided==1 and Random_file=="*")
 	{
 			Xcn.clear();Ycn.clear();Zcn.clear();
-			Fread<double>("Randoms/Random_"+model+".txt",{&Xcn,&Ycn,&Zcn},{0,1,2});
+			Fread<double>("Randoms/Random_"+model+EXT,{&Xcn,&Ycn,&Zcn},{0,1,2});
 	}
 
     for(int j=0;j<CR;++j) //for every ellipse
@@ -453,18 +490,18 @@ void CIC_BOX_ellipses(vector<vector<vector<double> > > &pix, string output, stri
 			Z_center=Zcn[j];			
 		}
 		else {
-			X_center=Random(axa,boxsize-axa);
-			Y_center=Random(axb,boxsize-axb);
-			Z_center=Random(axb,boxsize-axb);			
+			X_center=Random(0.,boxsize);
+			Y_center=Random(0.,boxsize);
+			Z_center=Random(0.,boxsize);			
 		}
 
 		
-		pixx[0]=max(0.,floor(X_center/dpix)-ceil(axa/dpix));
-		pixx[1]=min(1.*npix_edge-1.,floor(X_center/dpix)+ceil(axa/dpix));
-		pixy[0]=max(0.,floor(Y_center/dpix)-ceil(axb/dpix));
-		pixy[1]=min(1.*npix_edge-1.,floor(Y_center/dpix)+ceil(axb/dpix));
-		pixz[0]=max(0.,floor(Z_center/dpix)-ceil(axb/dpix));
-		pixz[1]=min(1.*npix_edge-1.,floor(Z_center/dpix)+ceil(axb/dpix));
+		pixx[0]=floor(X_center/dpix)-ceil(axa/dpix);
+		pixx[1]=floor(X_center/dpix)+ceil(axa/dpix);
+		pixy[0]=floor(Y_center/dpix)-ceil(axb/dpix);
+		pixy[1]=floor(Y_center/dpix)+ceil(axb/dpix);
+		pixz[0]=floor(Z_center/dpix)-ceil(axb/dpix);
+		pixz[1]=floor(Z_center/dpix)+ceil(axb/dpix);
 		
 		pixx_taken=pixx[0];
 		pixy_taken=pixy[0];
@@ -472,39 +509,27 @@ void CIC_BOX_ellipses(vector<vector<vector<double> > > &pix, string output, stri
 
         while(true) //loop over relevant pixels
 		{
-			nnpix_taken=pixz_taken*pow(npix_edge,2) +pixy_taken*npix_edge +pixx_taken;
+			nnpix_taken=Periodic_pixel(pixz_taken,npix_edge)*npix_edge*npix_edge+
+							Periodic_pixel(pixy_taken,npix_edge)*npix_edge+
+							Periodic_pixel(pixx_taken,npix_edge); //converting back to 1D listing; assuming periodicity
 			galpix=pix[nnpix_taken].size();
 			Dmax=Set_3Dvertex_distances(dist_tocenter,X_center,Y_center,Z_center,pixx_taken,pixy_taken,pixz_taken,dpix);
 
-            if(Dmax<=minax and pix[nnpix_taken][0][0]!=-1000000){found_thiscircle+=galpix;} //entire pixel inside the circle
+            if(Dmax<=minax and pix[nnpix_taken][0][0]!=-1000000){found_thiscircle+=galpix;} //entire pixel inside the ellipsoid
             else
             {
                 for(int m=0;m<galpix;++m) //objects inside this pixel (pixel crossing this circle partially)
                 {
-					//from ellipse definition: sum of distances to focii is =2*semi major axis on ellipse
-					if(axa>=axb) //focal points along x axis
-					{
-						if(Dist(pix[nnpix_taken][m][0],pix[nnpix_taken][m][1],pix[nnpix_taken][m][2],X_center-CFOCI,Y_center,Z_center)+
-						  Dist(pix[nnpix_taken][m][0],pix[nnpix_taken][m][1],pix[nnpix_taken][m][2],X_center+CFOCI,Y_center,Z_center)<=2.*axa)
-						{++found_thiscircle;}
-					}
-					else //focal ring - search for closest points
-					{
-						if(pix[nnpix_taken][m][1]!=Y_center or pix[nnpix_taken][m][2]-Z_center)
-						{
-							frac=CFOCI*pow(pow(pix[nnpix_taken][m][1]-Y_center,2)+pow(pix[nnpix_taken][m][2]-Z_center,2),-0.5);
-							Dfoc=Dist(pix[nnpix_taken][m][0],pix[nnpix_taken][m][1],pix[nnpix_taken][m][2],X_center,Y_center - (pix[nnpix_taken][m][1]-Y_center)*frac, Z_center- (pix[nnpix_taken][m][2]-Z_center)*frac)+
-						   Dist(pix[nnpix_taken][m][0],pix[nnpix_taken][m][1],pix[nnpix_taken][m][2],X_center,Y_center + (pix[nnpix_taken][m][1]-Y_center)*frac, Z_center+ (pix[nnpix_taken][m][2]-Z_center)*frac);
-						}
-						else
-						{
-							Dfoc=2.*Dist(pix[nnpix_taken][m][0],pix[nnpix_taken][m][1],pix[nnpix_taken][m][2],X_center,Y_center - CFOCI, Z_center);
-						}
-						
-						if(Dfoc<=2.*axb)
-						{++found_thiscircle;}
-					}
-                    
+					dx=fabs(pix[nnpix_taken][m][0]-X_center);
+					dy=fabs(pix[nnpix_taken][m][1]-Y_center);
+					dz=fabs(pix[nnpix_taken][m][2]-Z_center);
+					
+					if(dx>Lhalf){dx=boxsize-dx;}
+					if(dy>Lhalf){dy=boxsize-dy;}
+					if(dz>Lhalf){dz=boxsize-dz;}
+					
+					inellips=dx*dx/(axa*axa) + (dy*dy + dz*dz)/(axb*axb); //from ellipse equation
+					if(inellips<1.){++found_thiscircle;} //from ellipsoid definition    
 				}
             }
 
@@ -575,7 +600,7 @@ void CIC_LC_ellipses(vector<vector<vector<double> > > &pix, string output, strin
 	if(Random_provided==1 and Random_file=="*")
 	{
 			Xcn.clear();Ycn.clear();Zcn.clear();
-			Fread<double>("Randoms/Random_"+model+".txt",{&Xcn,&Ycn,&Zcn},{0,1,2});
+			Fread<double>("Randoms/Random_"+model+EXT,{&Xcn,&Ycn,&Zcn},{0,1,2});
 	}
 	
 

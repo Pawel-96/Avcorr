@@ -7,4 +7,4 @@ if ! test -f ./Avcorr.exe; then
 fi
 
 
-mpiexec -np $1 ./Avcor.exe
+mpiexec -np $1 ./Avcorr.exe

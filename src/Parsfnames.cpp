@@ -3,7 +3,7 @@
 
 string Fin(string model) //input
 {
-    return "Data/"+model+".txt";
+    return "Data/"+model+EXT;
 }
 
 
@@ -12,7 +12,7 @@ string Fin(string model) //input
 string Mout_onerad(string model, int nnsize) //moment output for one radius
 {
     string fin=Fin(model);
-    string mout=Replace_string(fin,".txt","_moments_nnR_"+conv(nnsize)+".txt");
+    string mout=Replace_string(fin,EXT,"_moments_nnR_"+conv(nnsize)+".txt");
     return Replace_string(mout,"Data/","Results/");
 }
 
@@ -22,7 +22,7 @@ string Mout_onerad(string model, int nnsize) //moment output for one radius
 string Merrout(string model) //output for one model and all moments
 {
     string f1=Replace_string(Fin(model),"Data/","Results/");
-    return Replace_string(f1,".txt","_merrout.txt");
+    return Replace_string(f1,EXT,"_merrout.txt");
 }
 
 
@@ -57,7 +57,7 @@ void Writelog(string text, string option) //log
         lfile<<"nreals: "<<nreals<<endl;
 		lfile<<"Random_provided: "<<Random_provided<<endl;
 		if(Random_provided==1){lfile<<"Random_file: "<<Random_file<<endl;}
-        lfile<<"Models ["<<nmodels<<"]:"<<endl;
+        lfile<<"Datafiles ["<<nmodels<<"]:"<<endl;
         for(int i=0;i<nmodels;++i)
         {
             lfile<<"            "<<Model[i]<<endl;

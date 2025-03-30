@@ -1,13 +1,14 @@
 ************************JMoments parameter file************************
 
 VERSION BOX_ellipses #---------------------------------what to calculate
+cols_pos 0 1 2 #---------------------------------------columns with positions
 
 #common parameters:
 nreals 50 #--------------------------------------------number of independent randoms sets 
 kappa 0.1 #--------------------------------------------multiplicity factor for number of circles
 Cmin 1 #-----------------------------------------------minimum number of circles drawn
 Cmax 1e7 #---------------------------------------------maximum number of circles drawn
-Model * #----------------------------------------------modelnames
+Datafiles * #------------------------------------------files with data
 Random_provided 0 #------------------------------------random file provided? 0-drawing random, 1-reading
 Random_file - #----------------------------------------random file name (works only if Random_provided=1) 
 Recalc 0 #---------------------------------------------if =1 and counts exist, recalculates moments
@@ -32,7 +33,7 @@ nR 25 #------------------------------------------------number of scales consider
 
 
 #VERSION: BOX and BOX_ellipses
-Boxsize 1469.1535 #------------------------------------box size in the same units as random spheres/ellipses
+Boxsize 1024. #------------------------------------box size in the same units as random spheres/ellipses
 
 
 #VERSION: BOX_ellipses and 3D_ellipses
@@ -40,8 +41,8 @@ axamin 5. #--------------------------------------------smallest semi-major axis
 axamax 150. #------------------------------------------biggest semi-major axis
 axbmin 5. #--------------------------------------------smallest semi-minor axis
 axbmax 150. #------------------------------------------biggest semi-minor axis
-naxa 15 #----------------------------------------------number of sem-major axes
-naxb 15 #----------------------------------------------number of semi-minor axes
+naxa 10 #----------------------------------------------number of sem-major axes
+naxb 10 #----------------------------------------------number of semi-minor axes
 
 
 #VERSION: 3D_ellipses:
@@ -51,7 +52,7 @@ DCMAX 1204. #------------------------------------------maximum distance analyzed
 
 
 ********************Comments********************
-values must be separated by [SPACE], no other things (e.g. [TAB]) allowed.
+values must be separated by [space] or [tab].
 If log file shows wrong data, check separators here.
 Potential random file contains positions of the circles/spheres/ellipsoids centers,
 depending on VERSION

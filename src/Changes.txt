@@ -40,3 +40,9 @@ Changes implemented:
 29.07.2024: getting rid of all system functions, now only internal c++ ones
 24.10.2024: writing counts histograms without zeros -> saving disk space
 25.10.2024: adding Check_count_existence to prevent the same code in different count functions
+13.03.2025: updated param.txt reading, ignoring # lines in Data/
+13.03.2025: generalizing format: positional columns specified in param.txt
+13.03.2025: added periodic CiC for BOX and BOX_ellipses, simplified ellipsoid conditions
+13.03.2025: .txt extension in data files generalized to any extension EXT
+30.03.2025: changed Models -> Datafiles in param.txt, log.txt and terminal output
+30.03.2025: corrected conditions in Pixelize()
