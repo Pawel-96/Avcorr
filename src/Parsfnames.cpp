@@ -132,3 +132,309 @@ double Progress(int iimax)
 	else {return val;}
 	return 0;
 }
+
+
+
+
+
+
+
+void Error(int &err, string msg) //raising error with message
+{
+	err=1;
+	cerr<<msg<<endl;
+	Writelog(msg);
+	return;
+}
+
+
+
+
+
+
+//pointing errors in paramfile
+int Error_param()
+{
+	int err=0;
+	string msg="";
+	
+	
+	if(VERSION!="angular" and VERSION!="BOX" and VERSION!="BOX_ellipses" and VERSION!="3D_ellipses")
+	{
+		Error(err,"[Error]: check "+paramfile+", VERSION should be angular/BOX/BOX_ellipses/3D_ellipses.");
+		return err;
+	}
+	
+	
+	if(USE_HDF5!=0 and USE_HDF5!=1)
+	{
+		Error(err,"[Error]: check "+paramfile+", USE_HDF5 must be either 0 or 1.");
+	}
+	
+	if(nreals<3)
+	{
+		Error(err,"[Error]: check "+paramfile+", nreals should be >=3 for reliable results");
+	}
+	
+	if(kappa>.5 or kappa<=0)
+	{
+		Error(err,"[Error]: check "+paramfile+", kappa should be in range (0,0.5] for reliable results");
+	}
+	
+	
+	if(Cmin<=0)
+	{
+		Error(err,"[Error]: check "+paramfile+", Cmin should be positive");
+	}
+	
+	if(Cmin>=Cmax)
+	{
+		Error(err,"[Error]: check "+paramfile+", Cmin should be < Cmax");
+	}
+	
+	
+	if(Cmax>=CMAX)
+	{
+		Error(err,"[Error]: check "+paramfile+", Cmax should be < "+conv(CMAX));
+	}
+	
+	
+	if(Random_provided==1)
+	{
+		vector<string> frandoms;
+		Get_fnames(frandoms,"Randoms");
+		int nfrandoms=frandoms.size();
+		
+		if((Random_file=="*" and nfrandoms<nmodels) or nfrandoms==0)
+		{
+			Error(err,"[Error]: check "+paramfile+" or Randoms/ directory: some randoms may be missing");
+		}
+		
+		if(Random_file!="*" and Fexist(Random_file)==0)
+		{
+			Error(err,"[Error]: check "+paramfile+" or Randoms/ directory: Randoms/"+Random_file+" does not exist");
+		}
+		
+		if(Random_file=="*")
+		{
+			string fr;
+			int ncols;
+			for(int i=0;i<nmodels;++i)
+			{
+				fr="Randoms/Random_"+Model[i]+EXT;
+				if(Fexist(fr)==0)
+				{
+					Error(err,"[Error]: check "+paramfile+", file: "+fr+" does not exist.");
+				}
+				else
+				{
+					ncols=Fncols(fr);
+					if((VERSION=="angular" and ncols!=2) or (VERSION!="angular" and ncols!=3))
+					{
+						Error(err,"[Error]: file: "+fr+" has wrong number of columns, ");
+					}
+				}
+			}
+		}
+	}
+	
+	if(Random_provided!=0 and Random_provided!=1)
+	{
+		Error(err,"[Error]: check "+paramfile+", Random_provided should be either 0 or 1.");
+	}
+	
+	
+	if(Recalc!=0 and Recalc!=1)
+	{
+		Error(err,"[Error]: check "+paramfile+", Recalc should be either 0 or 1");
+	}
+	
+	
+	if(Clean!=0 and Clean!=1)
+	{
+		Error(err,"[Error]: check "+paramfile+", Clean should be either 0 or 1");
+	}
+	
+	
+	if(ErrP!=0 and ErrP!=1)
+	{
+		Error(err,"[Error]: check "+paramfile+", ErrPoisson should be either 0 or 1");
+	}
+	
+	
+	
+	if(combine_reals!=0 and combine_reals!=1)
+	{
+		Error(err,"[Error]: check "+paramfile+", Combine_reals should be either 0 or 1");
+	}
+	
+	
+	
+	
+	
+	if(USE_HDF5==0) //only for ASCII: columns beyond data file(s)
+	{
+		int ncols=Fncols(Fin(Model[0]));
+		
+		if(stoi(cols_pos[0])<0 or stoi(cols_pos[0])>=ncols
+		or stoi(cols_pos[1])<0 or stoi(cols_pos[2])>=ncols
+		or stoi(cols_pos[1])<0 or stoi(cols_pos[2])>=ncols)
+		{
+			err=1;
+			if(ncols!=-1) //if ncols==-1, first file doesnt exist, another error shows up
+			{
+				Error(err,"[Error]: check "+paramfile+", cols_pos exceeding the file - should be in range [0,"+conv(ncols-1)+"].");
+			}
+		}	
+	}
+	
+	
+	if(nmodels==0) //Data/ directory empty
+	{
+		Error(err,"[Error]: check "+paramfile+", no Datafiles specified or Data/ empty.");
+		return err;
+	}
+	
+	
+	string modelsymbol=Get_parameter(paramfile,"Datafiles")[0];
+	
+	if(modelsymbol!="*") //file names written directly in paramfile and some doesnt exist
+	{
+		for(int i=0;i<nmodels;++i)
+		{
+			if(Fexist(Fin(Model[i]))==0)
+			{
+				Error(err,"[Error]: check "+paramfile+", file: Data/"+Model[i]+EXT+" does not exist.");
+			}
+		}
+	}
+	
+	
+	
+	
+	if(combine_reals==1)
+	{
+		if(real_template.size()==0)
+		{
+			Error(err,"[Error]: check "+paramfile+", Combine_reals=1 is used, but Real_template is empty");
+		}
+		else
+		{
+			for(int i=0;i<nmodels;++i)
+			{
+				if(Model[i].find(real_template) == string::npos)
+				{
+					Error(err,"[Error]: check "+paramfile+", Real_template not found in datafile names");
+				}
+			}
+		}
+	
+	}
+	
+	
+	
+	
+	
+	if(VERSION=="BOX" or VERSION=="BOX_ellipses")
+	{
+		if(boxsize<=0)
+		{
+			Error(err,"[Error]: check "+paramfile+", Boxsize should be >0.");
+		}
+	}
+	
+	
+	if(VERSION=="angular" or VERSION=="BOX")
+	{
+		if(Rmin<=0 or Rmax<=0 or nR<=0)
+		{
+			Error(err,"[Error]: check "+paramfile+", Rmin, Rmax and nR should be >0.");
+		}
+		
+		
+		if(Rmin>=Rmax)
+		{
+			Error(err,"[Error]: check "+paramfile+", Rmax should be >= Rmin.");
+		}
+		
+		if(Rmax>=boxsize)
+		{
+			Error(err,"[Error]: check "+paramfile+", Rmax should be < boxsize");
+		}
+		
+		if(nR>NRMAX)
+		{
+			Error(err,"[Error]: check "+paramfile+", too big nR; should be <="+conv(NRMAX)+".");
+		}
+	}
+	
+	
+	if(VERSION=="BOX_ellipses" or VERSION=="3D_ellipses")
+	{
+		if(axamin<=0 or axamax<=0 or axbmin<=0 or axbmax<=0 or naxa<=0 or naxb<=0)
+		{
+			Error(err,"[Error]: check "+paramfile+", axamin/max, axbmin/max, naxa/b should be >0.");
+		}
+		
+		if(axamin>=axamax or axbmin>=axbmax)
+		{
+			Error(err,"[Error]: check "+paramfile+", axamax should be >= axamin, same with axb.");
+		}
+		
+		if(axamax>=boxsize or axbmax>=boxsize)
+		{
+			Error(err,"[Error]: check "+paramfile+", axamax and axbmax should be < boxsize");
+		}
+		
+		if(naxa*naxb>NRMAX)
+		{
+			Error(err,"[Error]: check "+paramfile+", too big naxa*naxb; should be <="+conv(NRMAX)+".");
+		}
+	}
+	
+	
+	if(VERSION=="3D_ellipses")
+	{
+		if(DCMIN<=0 or DCMAX<=0)
+		{
+			Error(err,"[Error]: check "+paramfile+", DCMIN and DCMAX should be >0.");
+		}
+		
+		if(DCMIN>=DCMAX)
+		{
+			Error(err,"[Error]: check "+paramfile+", DCMAX should be >= DCMIN.");
+		}
+	}
+	
+	
+	if(VERSION=="angular")
+	{
+		if(Areaf<0 and Areaf!=-1)
+		{
+			Error(err,"[Error]: check "+paramfile+", Areaf should be either >0 or -1.");
+		}
+		
+		if(Areaf>FULLSKYDEG2)
+		{
+			Error(err,"[Error]: check "+paramfile+", Areaf can not be larger than entire sky: "+conv(FULLSKYDEG2)+" deg2.");
+		}
+		
+		if(ramin<-360. or ramin>360. or ramax<-360. or ramax>360.)
+		{
+			Error(err,"[Error]: check "+paramfile+", ramin,ramax should not exceed [-360,360] deg");
+		}
+		
+		if(decmin<-90. or decmin>90. or decmax<-90. or decmax>90.)
+		{
+			Error(err,"[Error]: check "+paramfile+", decmin,decmax should not exceed [-90,90] deg");
+		}
+	}
+	
+	
+	
+
+	
+	
+	
+	return err;
+}
