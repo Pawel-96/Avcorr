@@ -1,7 +1,10 @@
 ************************JMoments parameter file************************
 
 VERSION BOX_ellipses #---------------------------------what to calculate
-cols_pos 0 1 2 #---------------------------------------columns with positions
+
+USE_HDF5 0 #-------------------------------------------input data: [1] - HDF5, [0] - ASCII
+POS_DSET PartType1/Coordinates #-----------------------dataset with coordinates (only if USE_HDF5=1)
+cols_pos 0 1 2 #---------------------------------------columns with positions (only if USE_HDF5=0)
 
 #common parameters:
 nreals 50 #--------------------------------------------number of independent randoms sets 

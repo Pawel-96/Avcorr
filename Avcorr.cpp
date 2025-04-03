@@ -4,6 +4,7 @@
 #include "src/Combine.h"
 #include "src/Moments.h"
 #include "src/Parsfnames.h"
+#include "lib/Files_HDF5.h"
 
 
 
@@ -48,8 +49,9 @@ int Npix(vector<double> &Nav_circ, vector<double> &Nav_pix, int N, double R, dou
 
 
 
-void Results_onemodel_oneradius(string model, int nnsize, vector<double> &Nav_circ, vector<double> &Nav_pix, vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn) //calculating moments, reducing, correcting
+int Results_onemodel_oneradius(string model, int nnsize, vector<double> &Nav_circ, vector<double> &Nav_pix, vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn) //calculating moments, reducing, correcting
 {
+	int msg=0;
     vector<double> x,y,z; //for angular: x,y=ra,dec
     vector<vector<vector<double> > > pix; //for pixelization
     string fin,moments_output,ffound,ffoundhst;
@@ -65,8 +67,34 @@ void Results_onemodel_oneradius(string model, int nnsize, vector<double> &Nav_ci
     cout<<"Catalog: "<<fin<<endl;
     if(Fexist(ffound)==0 and Fexist(ffoundhst)==0) //pixelizing only if counts not done yet
     {
-		if(VERSION=="angular"){Fread<double>(fin,{&x,&y},{stoi(cols_pos[0]),stoi(cols_pos[1])});}
-        else {Fread<double>(fin,{&x,&y,&z},{stoi(cols_pos[0]),stoi(cols_pos[1]),stoi(cols_pos[2])});}
+		if(USE_HDF5==0) //ASCII format
+		{
+			if(VERSION=="angular"){Fread<double>(fin,{&x,&y},{stoi(cols_pos[0]),stoi(cols_pos[1])});}
+			else {Fread<double>(fin,{&x,&y,&z},{stoi(cols_pos[0]),stoi(cols_pos[1]),stoi(cols_pos[2])});}
+		}
+		if(USE_HDF5==1) //HDF5
+		{
+			auto dcoords=Read_HDF5_dataset(fin,POS_DSET,2,msg);
+			
+			if(msg!=0)
+			{
+				Writelog("Check "+paramfile+", dataset "+POS_DSET+" does not exist in "+fin+", stopping:/");
+				return 1;
+			}
+			vector<vector<double>> coords=get<vector<vector<double>> > (dcoords);
+			
+			//data neds to be transposed
+			if((VERSION=="angular" and coords[0].size()==2) or (VERSION!="angular" and coords[0].size()==3))
+			{
+				Transpose<double>(coords);
+			}
+			
+			x=coords[0];
+			y=coords[1];
+			if(VERSION!="angular"){z=coords[2];}
+			
+		}
+		
         N=x.size();
 		cout<<"Pixelizing "<<endl;
 
@@ -86,7 +114,7 @@ void Results_onemodel_oneradius(string model, int nnsize, vector<double> &Nav_ci
 	if(VERSION=="BOX_ellipses"){CIC_BOX_ellipses(pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn);}
 	if(VERSION=="LC_ellipses"){CIC_LC_ellipses(pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn);}
     
-	return;
+	return msg;
 }
 
 
@@ -97,6 +125,17 @@ void Results_onemodel_oneradius(string model, int nnsize, vector<double> &Nav_ci
 
 int main(int argc, char *argv[])
 {
+	int err=Error_param(); //error in parameters
+	int dset_err=0;
+	if(err==1)
+	{
+		string msg="Errors occurred, stopping:/";
+		cerr<<msg<<endl;
+		Writelog(msg);
+		return 0;
+	}
+	
+	
     int rank, comm_size,iimax=0;
     int model_no,nnR=0,nnallax=0;
 	double progress;
@@ -135,9 +174,17 @@ int main(int argc, char *argv[])
 
         if(i%comm_size!=rank){continue;} //only current process
 		cout<<"**********Model********** "<<model_no+1<<"/"<<Model.size()<<endl;
-		if(VERSION=="angular" or VERSION=="BOX"){Results_onemodel_oneradius(Model[model_no],nnR,Nav_circ,Nav_pix,Xcn,Ycn,Zcn);}
-		if(VERSION=="BOX_ellipses" or VERSION=="LC_ellipses"){Results_onemodel_oneradius(Model[model_no],nnallax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn);}
+		if(VERSION=="angular" or VERSION=="BOX"){dset_err=Results_onemodel_oneradius(Model[model_no],nnR,Nav_circ,Nav_pix,Xcn,Ycn,Zcn);}
+		if(VERSION=="BOX_ellipses" or VERSION=="LC_ellipses"){dset_err=Results_onemodel_oneradius(Model[model_no],nnallax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn);}
         
+		if(dset_err==1)
+		{
+			string msg="Data reading error(s) occurred, stopping:/";
+			cerr<<msg<<endl;
+			Writelog(msg);
+			return 0;
+		}
+		
 		progress=Progress(iimax);
 		cout<<"<----Overall progress: "<<progress<<"----->"<<endl;
 		Writelog("*** Overall progress: "+conv(progress)+" ***");

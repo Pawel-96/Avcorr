@@ -7,9 +7,15 @@
 
 const string paramfile="param.txt";
 const string logfile="Results/log.txt";
+const int NRMAX=100000; //maximum nR or naxa*naxb
+const int CMAX=1000000000; //total limit of Cmax
+const double FULLSKYDEG2=41252.96125; //full sky area [deg^2]
+
 const string VERSION=Get_parameter(paramfile,"VERSION")[0];	    //code version: angular/BOX/BOX_ellipses/LC_ellipses
 
-const vector<string> cols_pos=Get_parameter(paramfile,"cols_pos");  //columns with positions
+const int USE_HDF5=conv(Get_parameter(paramfile,"USE_HDF5")[0]); 	//HDF5 [1] or ASCII [0] input data
+const string POS_DSET=Get_parameter(paramfile,"POS_DSET")[0];		//dataset with positions (if USE_HDF5=1)
+const vector<string> cols_pos=Get_parameter(paramfile,"cols_pos");  //columns with positions (if USE_HDF5=0)
 
 
 //********************common parameters:********************
@@ -82,5 +88,9 @@ string Merrout(string model); //output for one model and all moments
 void Writelog(string text, string option="write"); //log
 
 double Progress(int iimax); //counting overall progress
+
+void Error(int &err, string msg); //raising error with message
+
+int Error_param(); //pointing errors in paramfile
 
 #endif
