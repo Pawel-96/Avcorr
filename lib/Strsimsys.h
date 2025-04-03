@@ -15,6 +15,8 @@ double conv(string q); //string->double
 
 string conv(double q); //double->string
 
+string trim(string &str);
+
 vector<string> Divide_string(string text, string delimiter); //dividing string based on delimiter
 
 string Replace_string(string text, string txt_from, string txt_into); //replacing part of the string
@@ -23,7 +25,7 @@ string Replace_string(string text, string txt_from, string txt_into); //replacin
 vector<string> Get_parameter(string fname, string par_name);
 
 //if model = '*' -> reading all files in datadir
-vector<string> Conditional_modelreading(string datadir,string paramfile);
+vector<string> Conditional_modelreading(string datadir,string paramfile, string &ext, string par_name="Model");
 
 template<typename T>
 T Periodic_coordinate(T x, T xmax)

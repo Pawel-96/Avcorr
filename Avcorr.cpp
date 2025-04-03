@@ -65,8 +65,8 @@ void Results_onemodel_oneradius(string model, int nnsize, vector<double> &Nav_ci
     cout<<"Catalog: "<<fin<<endl;
     if(Fexist(ffound)==0 and Fexist(ffoundhst)==0) //pixelizing only if counts not done yet
     {
-		if(VERSION=="angular"){Fread<double>(fin,{&x,&y},{0,1});}
-        else {Fread<double>(fin,{&x,&y,&z},{0,1,2});}
+		if(VERSION=="angular"){Fread<double>(fin,{&x,&y},{stoi(cols_pos[0]),stoi(cols_pos[1])});}
+        else {Fread<double>(fin,{&x,&y,&z},{stoi(cols_pos[0]),stoi(cols_pos[1]),stoi(cols_pos[2])});}
         N=x.size();
 		cout<<"Pixelizing "<<endl;
 

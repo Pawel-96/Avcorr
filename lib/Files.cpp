@@ -5,9 +5,6 @@
 
 
 
-
-
-
 //number of columns in file - with fname as parameter, outside class
 int Fncols(string fname, char comment)
 {
@@ -23,16 +20,18 @@ int Fncols(string fname, char comment)
 	
 	while(getline(f,line))
 	{
-		if(!line.empty() and line[0]!=comment)
+		line=trim(line);
+		if(line.empty()){continue;}
+		if(line[0]==comment){continue;}
+		
+		istringstream iss(line);
+		while (iss >> value) //splitting the line
 		{
-			istringstream iss(line);
-            while (iss >> value) //sdplitting the line
-			{
-                nc+=1;
-            }
-			break;
+			nc+=1;
 		}
+		break;
 	}
+	
 	f.close();
 	return nc;
 }

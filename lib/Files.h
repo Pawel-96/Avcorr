@@ -3,10 +3,12 @@
 
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 #include <filesystem>
 #include <initializer_list>  //using array in fucntion args without pre-declaration
 
 #include "Stat.h"
+#include "Strsimsys.h"
 
 
 using namespace std;
@@ -78,12 +80,12 @@ class File
 	
 	
 	//reading from file
-	void read(vector<vector<ElementType> > &vec, initializer_list<int> cols); //read columns into 2D vector
-	void read(vector<vector<ElementType> > &vec); //read everything into 2D vector
-	void read(initializer_list< reference_wrapper<vector<ElementType>>> vecs, initializer_list<int> cols); //read columns into list of vectors
-	void read(ElementType **arr, initializer_list<int> cols); //read columns into 2D array
-	void read(ElementType **arr); //read everything into 2D array
-	void read(initializer_list< ElementType*> arrays, initializer_list<int> cols, int nrows); //read columns into list of arrays
+	void read(vector<vector<ElementType> > &vec, initializer_list<int> cols, char comment='#'); //read columns into 2D vector
+	void read(vector<vector<ElementType> > &vec, char comment='#'); //read everything into 2D vector
+	void read(initializer_list< reference_wrapper<vector<ElementType>>> vecs, initializer_list<int> cols, char comment='#'); //read columns into list of vectors
+	void read(ElementType **arr, initializer_list<int> cols, char comment='#'); //read columns into 2D array
+	void read(ElementType **arr, char comment='#'); //read everything into 2D array
+	void read(initializer_list< ElementType*> arrays, initializer_list<int> cols, int nrows, char comment='#'); //read columns into list of arrays
 	
 	bool exist(); //checking if file exists
 	string extension(); //extension of fname
@@ -322,6 +324,7 @@ int File<T>::ncols(char comment)
 {
 	string line,value;
 	int nc=0;
+	size_t first,last;
 	
 	ifstream f(fname);
 	if (!f.is_open())
@@ -332,15 +335,21 @@ int File<T>::ncols(char comment)
 	
 	while(getline(f,line))
 	{
-		if(!line.empty() and line[0]!=comment)
+		first=line.find_first_not_of(" \t\n\r");
+		if (first == string::npos) {line="";} //line made of whitespace
+		last=line.find_last_not_of(" \t\n\r");
+		line=line.substr(first, last - first + 1);
+		
+		//line=trim(line);
+		if(line.empty()){continue;}
+		if(line[0]==comment){continue;}
+		
+		istringstream iss(line);
+		while (iss >> value) //sdplitting the line
 		{
-			istringstream iss(line);
-            while (iss >> value) //sdplitting the line
-			{
-                nc+=1;
-            }
-			break;
+			nc+=1;
 		}
+		break;
 	}
 	f.close();
 	return nc;
@@ -385,7 +394,7 @@ int File<T>::nlines(char comment)
 
 //reading columns from file to 2D vector
 template <typename T>
-void File<T>::read(vector<vector<typename File<T>::ElementType> > &vec, initializer_list<int> cols)
+void File<T>::read(vector<vector<typename File<T>::ElementType> > &vec, initializer_list<int> cols, char comment)
 {
 	ifstream f(fname);
 	if (!f.is_open())
@@ -402,9 +411,15 @@ void File<T>::read(vector<vector<typename File<T>::ElementType> > &vec, initiali
 	ElementType value;
 	string line;
     int selected_index;
+	int afterheader=0; //current line is after header, only data forwarding
 
     while (getline(f,line))
 	{
+		if(afterheader==0) //this line can be potentially a header
+		{
+			if(line.empty() or line[0]==comment){continue;} //header line
+			else{afterheader=1;} //not a header, only data will be next
+		}
         istringstream iss(line);
         selected_index=0;
 
@@ -427,7 +442,7 @@ void File<T>::read(vector<vector<typename File<T>::ElementType> > &vec, initiali
 
 //reading columns from file to 2D vector - with fname as parameter, outside class
 template <typename T>
-void Fread(string fname, vector<vector<T> > &vec, initializer_list<int> cols)
+void Fread(string fname, vector<vector<T> > &vec, initializer_list<int> cols, char comment='#')
 {
 	ifstream f(fname.c_str());
 	if (!f.is_open())
@@ -444,9 +459,15 @@ void Fread(string fname, vector<vector<T> > &vec, initializer_list<int> cols)
 	T value;
 	string line;
     int selected_index;
+	int afterheader=0; //current line is after header, only data forwarding
 
     while (getline(f,line))
 	{
+		if(afterheader==0) //this line can be potentially a header
+		{
+			if(line.empty() or line[0]==comment){continue;} //header line
+			else{afterheader=1;} //not a header, only data will be next
+		}
         istringstream iss(line);
         selected_index=0;
 
@@ -471,7 +492,7 @@ void Fread(string fname, vector<vector<T> > &vec, initializer_list<int> cols)
 
 //reading entire file to 2D vector
 template <typename T>
-void File<T>::read(vector<vector<typename File<T>::ElementType> > &vec)
+void File<T>::read(vector<vector<typename File<T>::ElementType> > &vec, char comment)
 {
 	ifstream f(fname);
 	if (!f.is_open())
@@ -485,8 +506,15 @@ void File<T>::read(vector<vector<typename File<T>::ElementType> > &vec)
 	
 	ElementType value;
 	string line;
+	int afterheader=0; //current line is after header, only data forwarding
+	
     while (getline(f,line))
 	{
+		if(afterheader==0) //this line can be potentially a header
+		{
+			if(line.empty() or line[0]==comment){continue;} //header line
+			else{afterheader=1;} //not a header, only data will be next
+		}
         istringstream iss(line);
 
         for (int current_col=0;iss>>value;++current_col)
@@ -506,7 +534,7 @@ void File<T>::read(vector<vector<typename File<T>::ElementType> > &vec)
 
 //reading entire file to 2D vector - with fname as parameter, outside class
 template <typename T>
-void Fread(string fname, vector<vector<T> > &vec)
+void Fread(string fname, vector<vector<T> > &vec, char comment='#')
 {
 	ifstream f(fname.c_str());
 	if (!f.is_open())
@@ -520,8 +548,15 @@ void Fread(string fname, vector<vector<T> > &vec)
 	
 	T value;
 	string line;
+	int afterheader=0; //current line is after header, only data forwarding
+	
     while (getline(f,line))
 	{
+		if(afterheader==0) //this line can be potentially a header
+		{
+			if(line.empty() or line[0]==comment){continue;} //header line
+			else{afterheader=1;} //not a header, only data will be next
+		}
         istringstream iss(line);
 
         for (int current_col=0;iss>>value;++current_col)
@@ -540,7 +575,7 @@ void Fread(string fname, vector<vector<T> > &vec)
 //reading columns from file to list of vectors
 template <typename T>
 void File<T>::read( initializer_list< reference_wrapper<vector<ElementType>>> vecs, 
-initializer_list<int> cols)
+initializer_list<int> cols, char comment)
 {
     ifstream f(fname);
     if (!f.is_open())
@@ -564,9 +599,15 @@ initializer_list<int> cols)
     ElementType value;
     string line;
 	int current_col,selected_index;
+	int afterheader=0; //current line is after header, only data forwarding
 
     while (getline(f, line))
 	{
+		if(afterheader==0) //this line can be potentially a header
+		{
+			if(line.empty() or line[0]==comment){continue;} //header line
+			else{afterheader=1;} //not a header, only data will be next
+		}
         istringstream iss(line);
         current_col = 0;
         selected_index = 0;
@@ -592,7 +633,7 @@ initializer_list<int> cols)
 
 //reading columns from file to list of vectors - with fname as parameter, outside class
 template <typename T>
-void Fread(string fname, initializer_list< vector<T>* > vecs,  initializer_list<int> cols)
+void Fread(string fname, initializer_list< vector<T>* > vecs,  initializer_list<int> cols, char comment='#')
 {
     ifstream f(fname.c_str());
     if (!f.is_open())
@@ -616,9 +657,15 @@ void Fread(string fname, initializer_list< vector<T>* > vecs,  initializer_list<
     T value;
     string line;
 	int current_col,selected_index;
+	int afterheader=0; //current line is after header, only data forwarding
 
     while (getline(f, line))
 	{
+		if(afterheader==0) //this line can be potentially a header
+		{
+			if(line.empty() or line[0]==comment){continue;} //header line
+			else{afterheader=1;} //not a header, only data will be next
+		}
         istringstream iss(line);
         current_col = 0;
         selected_index = 0;
@@ -645,7 +692,7 @@ void Fread(string fname, initializer_list< vector<T>* > vecs,  initializer_list<
 
 //reading columns from file to 2D array
 template <typename T>
-void File<T>::read(typename File<T>::ElementType **arr, initializer_list<int> cols)
+void File<T>::read(typename File<T>::ElementType **arr, initializer_list<int> cols, char comment)
 {
 	ifstream f(fname);
 	if (!f.is_open())
@@ -660,9 +707,15 @@ void File<T>::read(typename File<T>::ElementType **arr, initializer_list<int> co
 	ElementType value;
 	string line;
     int selected_index,nrow=0;
+	int afterheader=0; //current line is after header, only data forwarding
 
     while (getline(f,line))
 	{
+		if(afterheader==0) //this line can be potentially a header
+		{
+			if(line.empty() or line[0]==comment){continue;} //header line
+			else{afterheader=1;} //not a header, only data will be next
+		}
         istringstream iss(line);
         selected_index=0;
 
@@ -688,7 +741,7 @@ void File<T>::read(typename File<T>::ElementType **arr, initializer_list<int> co
 
 //reading columns from file to 2D array - with fname as parameter, outside class
 template <typename T>
-void Fread(string fname, T **arr, initializer_list<int> cols)
+void Fread(string fname, T **arr, initializer_list<int> cols, char comment='#')
 {
 	ifstream f(fname.c_str());
 	if (!f.is_open())
@@ -703,9 +756,15 @@ void Fread(string fname, T **arr, initializer_list<int> cols)
 	T value;
 	string line;
     int selected_index,nrow=0;
+	int afterheader=0; //current line is after header, only data forwarding
 
     while (getline(f,line))
 	{
+		if(afterheader==0) //this line can be potentially a header
+		{
+			if(line.empty() or line[0]==comment){continue;} //header line
+			else{afterheader=1;} //not a header, only data will be next
+		}
         istringstream iss(line);
         selected_index=0;
 
@@ -733,7 +792,7 @@ void Fread(string fname, T **arr, initializer_list<int> cols)
 
 //reading entire file to 2D array
 template <typename T>
-void File<T>::read(typename File<T>::ElementType **arr)
+void File<T>::read(typename File<T>::ElementType **arr, char comment)
 {
 	ifstream f(fname);
 	if (!f.is_open())
@@ -745,9 +804,15 @@ void File<T>::read(typename File<T>::ElementType **arr)
 	ElementType value;
 	string line;
     int nrow=0;
+	int afterheader=0; //current line is after header, only data forwarding
 
     while (getline(f,line))
 	{
+		if(afterheader==0) //this line can be potentially a header
+		{
+			if(line.empty() or line[0]==comment){continue;} //header line
+			else{afterheader=1;} //not a header, only data will be next
+		}
         istringstream iss(line);
 
         for (int current_col=0;iss>>value;++current_col)
@@ -768,7 +833,7 @@ void File<T>::read(typename File<T>::ElementType **arr)
 
 //reading entire file to 2D array - with fname as parameter, outside class
 template <typename T>
-void Fread(string fname, T **arr)
+void Fread(string fname, T **arr, char comment='#')
 {
 	ifstream f(fname.c_str());
 	if (!f.is_open())
@@ -780,9 +845,15 @@ void Fread(string fname, T **arr)
 	T value;
 	string line;
     int nrow=0;
+	int afterheader=0; //current line is after header, only data forwarding
 
     while (getline(f,line))
 	{
+		if(afterheader==0) //this line can be potentially a header
+		{
+			if(line.empty() or line[0]==comment){continue;} //header line
+			else{afterheader=1;} //not a header, only data will be next
+		}
         istringstream iss(line);
 
         for (int current_col=0;iss>>value;++current_col)
@@ -805,7 +876,7 @@ void Fread(string fname, T **arr)
 
 //reading columns from file to list of arrays
 template <typename T>
-void File<T>::read(initializer_list<ElementType*> arrays, initializer_list<int> cols, int array_size)
+void File<T>::read(initializer_list<ElementType*> arrays, initializer_list<int> cols, int array_size, char comment)
 {
     ifstream f(fname);
     if (!f.is_open())
@@ -829,9 +900,15 @@ void File<T>::read(initializer_list<ElementType*> arrays, initializer_list<int> 
     ElementType value;
     string line;
     int row=0,current_col,selected_index;
+	int afterheader=0; //current line is after header, only data forwarding
 
     while (getline(f, line) && row < array_size)
 	{
+		if(afterheader==0) //this line can be potentially a header
+		{
+			if(line.empty() or line[0]==comment){continue;} //header line
+			else{afterheader=1;} //not a header, only data will be next
+		}
         istringstream iss(line);
         current_col = 0;
         selected_index = 0;
@@ -859,7 +936,7 @@ void File<T>::read(initializer_list<ElementType*> arrays, initializer_list<int> 
 
 //reading columns from file to list of arrays - with fname as parameter, outside class
 template <typename T>
-void Fread(string fname, initializer_list<T*> arrays, initializer_list<int> cols, int array_size)
+void Fread(string fname, initializer_list<T*> arrays, initializer_list<int> cols, int array_size, char comment='#')
 {
     ifstream f(fname.c_str());
     if (!f.is_open())
@@ -883,9 +960,15 @@ void Fread(string fname, initializer_list<T*> arrays, initializer_list<int> cols
     T value;
     string line;
     int row=0,current_col,selected_index;
+	int afterheader=0; //current line is after header, only data forwarding
 
     while (getline(f, line) && row < array_size)
 	{
+		if(afterheader==0) //this line can be potentially a header
+		{
+			if(line.empty() or line[0]==comment){continue;} //header line
+			else{afterheader=1;} //not a header, only data will be next
+		}
         istringstream iss(line);
         current_col = 0;
         selected_index = 0;

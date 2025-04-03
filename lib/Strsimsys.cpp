@@ -43,6 +43,20 @@ string conv(double q) //double->string
 
 
 
+
+//removing whitespaces at begin/end of string
+string trim(string &str)
+{
+    size_t first=str.find_first_not_of(" \t\n\r");
+    if (first == string::npos) {return "";} //line made of whitespace
+    size_t last = str.find_last_not_of(" \t\n\r");
+    return str.substr(first, last - first + 1);
+}
+
+
+
+
+
 vector<string> Divide_string(string text, string delimiter) //dividing string based on delimiter
 {
     vector<string> divided;
@@ -113,6 +127,7 @@ vector<string> Get_parameter(string fname, string par_name)
     while(!f.eof())
     {
         getline(f,line);
+		line=Replace_string(line,"	"," "); //changing accidential tabs into spaces
         thispar.clear();
 		if(line.size()<2){continue;}
         thispar=Divide_string(line," "); //dividing the entry
@@ -131,6 +146,10 @@ vector<string> Get_parameter(string fname, string par_name)
         }
     }
     f.close();
+	
+	//removing spaces added accidentally in paramfile
+	par.erase(remove(par.begin(),par.end(),""),par.end());
+	
     return par;
 }
 
@@ -140,23 +159,37 @@ vector<string> Get_parameter(string fname, string par_name)
 
 
 //if model = '*' -> reading all files in datadir
-vector<string> Conditional_modelreading(string datadir,string paramfile)
+vector<string> Conditional_modelreading(string datadir,string paramfile,string &ext,string par_name)
 {
-	vector<string> Models=Get_parameter(paramfile,"Model");
+	vector<string> f;
+	Get_fnames(f,"Data/");
+	if(f.size()==0){return f;}
+	
+	vector<string> Models=Get_parameter(paramfile,par_name);
+	if(Models.size()==0){return Models;} //entry is empty
+	
 	if(Models[0]!="*") //model just named in paramfile
 	{
+		ext=Fextension(Models[0]);
+		if(ext==""){return Models;}
+
+		int nmodels=Models.size();
+		for(int i=0;i<nmodels;++i)
+		{
+			Models[i]=Replace_string(Models[i],ext,""); //removing extensions
+		}
 		return Models;
 	}
 	
 	vector<string> fnames;
 	Get_fnames(fnames,datadir);
 	int nmodels=fnames.size();
-	string extension,newname;
+	string newname;
+	ext=Fextension(fnames[0]);
 	
 	for(int i=0;i<nmodels;++i) //removing extensions
 	{
-		extension=Fextension(fnames[i]);
-		newname=Replace_string(fnames[i],extension,"");
+		newname=Replace_string(fnames[i],ext,"");
 		fnames[i]=newname;
 	}
 	

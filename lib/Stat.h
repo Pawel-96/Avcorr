@@ -427,9 +427,9 @@ void Pixelize(initializer_list<T> ranges_list, initializer_list<int> npix_axis, 
 		
 		for(int i=0;i<nobj;++i)
 		{
-			if(coord[0][i]<ranges[0] || coord[0][i]>ranges[1] ||
-			   coord[1][i]<ranges[2] || coord[1][i]>ranges[3] ||
-			   coord[2][i]<ranges[4] || coord[2][i]>ranges[5]) continue; //object out of ranges
+			if(coord[0][i]<ranges[0] || coord[0][i]>=ranges[1] ||
+			   coord[1][i]<ranges[2] || coord[1][i]>=ranges[3] ||
+			   coord[2][i]<ranges[4] || coord[2][i]>=ranges[5]) continue; //object out of ranges
 			
 			nax[0]=(coord[0][i]-ranges[0])/dpix[0]; //number of pixel in x axis
 			nax[1]=(coord[1][i]-ranges[2])/dpix[1]; //number of pixel in y axis
@@ -455,8 +455,8 @@ void Pixelize(initializer_list<T> ranges_list, initializer_list<int> npix_axis, 
 		
 		for(int i=0;i<nobj;++i)
 		{
-			if(coord[0][i]<ranges[0] || coord[0][i]>ranges[1] ||
-			   coord[1][i]<ranges[2] || coord[1][i]>ranges[3]) continue; //object out of ranges
+			if(coord[0][i]<ranges[0] || coord[0][i]>=ranges[1] ||
+			   coord[1][i]<ranges[2] || coord[1][i]>=ranges[3]) continue; //object out of ranges
 			
 			nax[0]=(coord[0][i]-ranges[0])/dpix[0]; //number of pixel in x axis
 			nax[1]=(coord[1][i]-ranges[2])/dpix[1]; //number of pixel in y axis
@@ -481,8 +481,8 @@ void Pixelize(initializer_list<T> ranges_list, initializer_list<int> npix_axis, 
 		
 		for(int i=0;i<nobj;++i)
 		{
-			if(coord[0][i]<ranges[0] || coord[0][i]>ranges[1] ||
-			   coord[1][i]<ranges[2] || coord[1][i]>ranges[3]) continue; //object out of ranges
+			if(coord[0][i]<ranges[0] || coord[0][i]>=ranges[1] ||
+			   coord[1][i]<ranges[2] || coord[1][i]>=ranges[3]) continue; //object out of ranges
 			
 			nax[0]=(coord[0][i]-ranges[0])/dpix[0]; //number of pixel in ra
 			nax[1]=(sin(coord[1][i]*deg2rad)-sin(ranges[2]*deg2rad))/dpix[1]; //number of pixel in dec

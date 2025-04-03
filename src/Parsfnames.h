@@ -9,6 +9,9 @@ const string paramfile="param.txt";
 const string logfile="Results/log.txt";
 const string VERSION=Get_parameter(paramfile,"VERSION")[0];	    //code version: angular/BOX/BOX_ellipses/LC_ellipses
 
+const vector<string> cols_pos=Get_parameter(paramfile,"cols_pos");  //columns with positions
+
+
 //********************common parameters:********************
 const int moment_min=2;                                 			//must be 2
 const int moment_max=9;                                			    //must be 9
@@ -24,7 +27,8 @@ const int ErrP=conv(Get_parameter(paramfile,"ErrPoisson")[0]);        //compute 
 const int combine_reals=conv(Get_parameter(paramfile,"Combine_reals")[0]); //[0/1] are Data/* files models with different reals?
 const string real_template=Get_parameter(paramfile,"Real_template")[0]; //how are realisations marked in names, e.g. _BOX*_
 
-const vector<string> Model=Conditional_modelreading("Data",paramfile);
+inline string EXT="";
+const vector<string> Model=Conditional_modelreading("Data",paramfile,EXT,"Datafiles");
 const int nmodels=Model.size();
 
 const int Random_provided=conv(Get_parameter(paramfile,"Random_provided")[0]);  //random file provided? [0/1]
