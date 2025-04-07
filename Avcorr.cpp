@@ -83,7 +83,7 @@ int Results_onemodel_oneradius(string model, int nnsize, vector<double> &Nav_cir
 			}
 			vector<vector<double>> coords=get<vector<vector<double>> > (dcoords);
 			
-			//data neds to be transposed
+			//data needs to be transposed
 			if((VERSION=="angular" and coords[0].size()==2) or (VERSION!="angular" and coords[0].size()==3))
 			{
 				Transpose<double>(coords);
@@ -158,12 +158,7 @@ int main(int argc, char *argv[])
 	else {fnav="Optimal_pix_BOX.txt";}
 
 	Fread<double>(fnav,{&Nav_circ,&Nav_pix},{0,1}); //reading the data
-	
-	if(Random_provided==1 and Random_file!="*")
-	{
-		if(VERSION=="angular") {Fread<double>("Randoms/"+Random_file,{&Xcn,&Ycn},{0,1});}
-		else {Fread<double>("Randoms/"+Random_file,{&Xcn,&Ycn,&Zcn},{0,1,2});}
-	}
+	Read_randoms(Xcn,Ycn,Zcn,""); //reading randoms based on option(s)
 
     for(int i=0;i<iimax;++i) //computation for all moments and radii
     {

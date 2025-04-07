@@ -1,9 +1,14 @@
 #ifndef CIC_H
 #define CIC_H
 
+#include "../lib/Files_HDF5.h"
 #include "../lib/RWMathStat.h"
+
 #include "Moments.h"
 #include "Parsfnames.h"
+
+//reading randoms depending on conditions
+void Read_randoms(vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, string modelname, int specific=0);
 
 int CRR(string ffound,string ffoundhst,vector<double> &Xcn, string model, double val1, double val2, double val3, double val4); //number of circles/ellipses drawn
 

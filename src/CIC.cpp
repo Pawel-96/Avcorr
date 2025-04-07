@@ -2,6 +2,89 @@
 
 
 
+
+//reading randoms depending on conditions
+void Read_randoms(vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, string modelname, int specific)
+{
+	if(specific==0) //one for all
+	{
+		if(Random_provided==1 and Random_file!="*")
+		{
+			string fin="Randoms/"+Random_file;
+			if(USE_HDF5==0)
+			{
+				if(VERSION=="angular") {Fread<double>(fin,{&Xcn,&Ycn},{0,1});}
+				else {Fread<double>(fin,{&Xcn,&Ycn,&Zcn},{0,1,2});}
+			}
+			if(USE_HDF5==1)
+			{
+				int msg=0;
+				auto dcoords=Read_HDF5_dataset(fin,POS_DSET,2,msg);
+			
+				/*if(msg!=0)
+				{
+					Writelog("Check "+paramfile+", dataset "+POS_DSET+" does not exist in "+fin+", stopping:/");
+					return 1;
+				}*/
+				vector<vector<double>> coords=get<vector<vector<double>> > (dcoords);
+				
+				//data needs to be transposed
+				if((VERSION=="angular" and coords[0].size()==2) or (VERSION!="angular" and coords[0].size()==3))
+				{
+					Transpose<double>(coords);
+				}
+				
+				Xcn=coords[0];
+				Ycn=coords[1];
+				if(VERSION!="angular"){Zcn=coords[2];}
+			}
+		}
+	}
+	
+	
+	if(specific==1) //different for each datafile
+	{
+		if(Random_provided==1 and Random_file=="*")
+		{
+			string fin="Randoms/Random_"+modelname+EXT;
+			if(USE_HDF5==0)
+			{
+				Xcn.clear();Ycn.clear();
+				Fread<double>(fin,{&Xcn,&Ycn},{0,1});
+			}
+			if(USE_HDF5==1)
+			{
+				int msg=0;
+				auto dcoords=Read_HDF5_dataset(fin,POS_DSET,2,msg);
+			
+				/*if(msg!=0)
+				{
+					Writelog("Check "+paramfile+", dataset "+POS_DSET+" does not exist in "+fin+", stopping:/");
+					return 1;
+				}*/
+				vector<vector<double>> coords=get<vector<vector<double>> > (dcoords);
+				
+				//data needs to be transposed
+				if((VERSION=="angular" and coords[0].size()==2) or (VERSION!="angular" and coords[0].size()==3))
+				{
+					Transpose<double>(coords);
+				}
+				
+				Xcn=coords[0];
+				Ycn=coords[1];
+				if(VERSION!="angular"){Zcn=coords[2];}
+			}
+		}
+	}
+	
+	return;
+}
+
+
+
+
+
+
 int CRR(string ffound,string ffoundhst,vector<double> &Xcn, string model, double val1, double val2, double val3, double val4) //number of circles/ellipses drawn
 {	//val1/2/3/4: for angular and BOX: R/0/0/0,  for BOX_ellipses: axa/axb/0/0, for LC_ellipses: axa/axb/DCMIN/DCMAX
 	int C=0,CR;
@@ -220,12 +303,7 @@ void CIC_angular(vector<vector<vector<double> > > &pix, string output, string mo
     if(exst==1){return;}
 
 	Set_pixborders(pix_border,nnpix,dra,dsindec,npix_edge);
-
-	if(Random_provided==1 and Random_file=="*")
-	{
-			Xcn.clear();Ycn.clear();
-			Fread<double>("Randoms/Random_"+model+EXT,{&Xcn,&Ycn},{0,1});
-	}
+	Read_randoms(Xcn,Ycn,Zcn,model,1); //reading randoms under condition
 
     for(int j=0;j<CR;++j) //for every circle
     {
@@ -353,11 +431,7 @@ void CIC_BOX(vector<vector<vector<double> > > &pix, string output, string model,
     int exst=Check_count_existence(ffound,ffoundhst,output,nc,count,R);
     if(exst==1){return;}
 	
-	if(Random_provided==1 and Random_file=="*")
-	{
-			Xcn.clear();Ycn.clear();Zcn.clear();
-			Fread<double>("Randoms/Random_"+model+EXT,{&Xcn,&Ycn,&Zcn},{0,1,2});
-	}
+	Read_randoms(Xcn,Ycn,Zcn,model,1); //reading randoms under condition
 
     for(int j=0;j<CR;++j) //for every circle
     {
@@ -473,11 +547,7 @@ void CIC_BOX_ellipses(vector<vector<vector<double> > > &pix, string output, stri
     int exst=Check_count_existence(ffound,ffoundhst,output,nc,count,nnallax);
     if(exst==1){return;}
 	
-	if(Random_provided==1 and Random_file=="*")
-	{
-			Xcn.clear();Ycn.clear();Zcn.clear();
-			Fread<double>("Randoms/Random_"+model+EXT,{&Xcn,&Ycn,&Zcn},{0,1,2});
-	}
+	Read_randoms(Xcn,Ycn,Zcn,model,1); //reading randoms under condition
 
     for(int j=0;j<CR;++j) //for every ellipse
     {
@@ -597,12 +667,7 @@ void CIC_LC_ellipses(vector<vector<vector<double> > > &pix, string output, strin
     int exst=Check_count_existence(ffound,ffoundhst,output,nc,count,nnallax);
     if(exst==1){return;}
 	
-	if(Random_provided==1 and Random_file=="*")
-	{
-			Xcn.clear();Ycn.clear();Zcn.clear();
-			Fread<double>("Randoms/Random_"+model+EXT,{&Xcn,&Ycn,&Zcn},{0,1,2});
-	}
-	
+	Read_randoms(Xcn,Ycn,Zcn,model,1); //reading randoms under condition
 
     for(int j=0;j<CR;++j) //for every ellipse
     {

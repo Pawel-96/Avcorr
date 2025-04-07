@@ -47,4 +47,5 @@ Changes implemented:
 30.03.2025: changed Models -> Datafiles in param.txt, log.txt and terminal output
 30.03.2025: corrected conditions in Pixelize()
 01.04.2025: added HDF5 files reading, Dset error handling
-03.04.2024: added errors handling
+03.04.2025: added errors handling
+04.04.2025: updated errors handling: if parameters are not specified/have strings instead of numerical values

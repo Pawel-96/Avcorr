@@ -159,9 +159,31 @@ int Error_param()
 	string msg="";
 	
 	
-	if(VERSION!="angular" and VERSION!="BOX" and VERSION!="BOX_ellipses" and VERSION!="3D_ellipses")
+	if(err_common!=0) //one or more of common parameters are not specified
 	{
-		Error(err,"[Error]: check "+paramfile+", VERSION should be angular/BOX/BOX_ellipses/3D_ellipses.");
+		Error(err,"[Error]: check "+paramfile+", "+conv(err_common)+" common parameter(s) not specified. How dare you!");
+		return err;
+	}
+	
+	
+	if(err_ver!=0) //one or more of common parameters are not specified
+	{
+		Error(err,"[Error]: check "+paramfile+", "+conv(err_ver)+" VERSION-dependent parameter(s) not specified.\
+		Some may not be needed for current VERSION, but better keep them in "+paramfile);
+		return err;
+	}
+	
+	if(err_conv!=0) //numeric parameters are empty or strings
+	{
+		Error(err,"[Error]: check "+paramfile+", "+conv(err_conv)+" numeric parameter(s) not specified/are strings");
+		return err;
+	}
+	
+	
+	
+	if(VERSION!="angular" and VERSION!="BOX" and VERSION!="BOX_ellipses" and VERSION!="LC_ellipses")
+	{
+		Error(err,"[Error]: check "+paramfile+", VERSION should be angular/BOX/BOX_ellipses/LC_ellipses.");
 		return err;
 	}
 	
@@ -296,7 +318,7 @@ int Error_param()
 	}
 	
 	
-	string modelsymbol=Get_parameter(paramfile,"Datafiles")[0];
+	string modelsymbol=Get_parameter(paramfile,"Datafiles",err)[0];
 	
 	if(modelsymbol!="*") //file names written directly in paramfile and some doesnt exist
 	{
@@ -369,7 +391,7 @@ int Error_param()
 	}
 	
 	
-	if(VERSION=="BOX_ellipses" or VERSION=="3D_ellipses")
+	if(VERSION=="BOX_ellipses" or VERSION=="LC_ellipses")
 	{
 		if(axamin<=0 or axamax<=0 or axbmin<=0 or axbmax<=0 or naxa<=0 or naxb<=0)
 		{
@@ -393,7 +415,7 @@ int Error_param()
 	}
 	
 	
-	if(VERSION=="3D_ellipses")
+	if(VERSION=="LC_ellipses")
 	{
 		if(DCMIN<=0 or DCMAX<=0)
 		{

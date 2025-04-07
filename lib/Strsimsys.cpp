@@ -31,6 +31,41 @@ double conv(string q) //string->double
 
 
 
+
+
+//string->double, but checking if q can be converted
+double conv_check(string q, int &err) 
+{
+	double val;
+	try
+	{
+		size_t nchars;
+		val=stod(q,&nchars);
+		if(nchars==q.size())
+		{
+			return val;
+		}
+		else {err+=1; return -1000000;}
+	}
+	
+	catch(invalid_argument &e)
+	{
+		err+=1;
+        return -1000000;
+    }
+	catch(out_of_range &e)
+	{
+		err+=1;
+        return -1000000;
+    }
+	
+	err+=1;
+	return -1000000;
+}
+
+
+
+
 string conv(double q) //double->string
 {
 	ostringstream strs;
@@ -118,7 +153,7 @@ string Replace_string(string text, string txt_from, string txt_into) //replacing
 
 
 //getting parameter value(s) from file, based on 1st column called par_name
-vector<string> Get_parameter(string fname, string par_name) 
+vector<string> Get_parameter(string fname, string par_name, int &err) 
 {
     string line,thisparname,thispar_entry;
     int nthispar;
@@ -150,6 +185,12 @@ vector<string> Get_parameter(string fname, string par_name)
 	//removing spaces added accidentally in paramfile
 	par.erase(remove(par.begin(),par.end(),""),par.end());
 	
+	if(par.size()==0) //parameter value empty or not found at all
+	{
+		cerr<<"[Error]: "<<par_name<<" empty or not specified!"<<endl;
+		par.push_back("");err+=1;
+	} 
+	
     return par;
 }
 
@@ -165,8 +206,14 @@ vector<string> Conditional_modelreading(string datadir,string paramfile,string &
 	Get_fnames(f,"Data/");
 	if(f.size()==0){return f;}
 	
-	vector<string> Models=Get_parameter(paramfile,par_name);
-	if(Models.size()==0){return Models;} //entry is empty
+	int err=0;
+	vector<string> Models=Get_parameter(paramfile,par_name,err);
+	if(err>0) //entry is empty
+	{
+		vector<string> empty;
+		return empty;
+	
+	} 
 	
 	if(Models[0]!="*") //model just named in paramfile
 	{
