@@ -49,3 +49,4 @@ Changes implemented:
 01.04.2025: added HDF5 files reading, Dset error handling
 03.04.2025: added errors handling
 04.04.2025: updated errors handling: if parameters are not specified/have strings instead of numerical values
+09.04.2025: updated errors handling: if wrong number of columns in USE_HDF5=0, corrected not-specified param info

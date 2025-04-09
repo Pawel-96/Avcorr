@@ -1,6 +1,83 @@
 #include "Parsfnames.h"
 
 
+int err_common=0; //error in common params
+int err_ver=0; //error in params from one of versions
+int err_conv=0; //error in conversion from string
+
+
+const string VERSION=Get_parameter(paramfile,"VERSION",err_common)[0];	    //code version: angular/BOX/BOX_ellipses/LC_ellipses
+
+const int USE_HDF5=conv_check(Get_parameter(paramfile,"USE_HDF5",err_common)[0],err_conv); 	//HDF5 [1] or ASCII [0] input data
+const string POS_DSET=Get_parameter(paramfile,"POS_DSET",err_common)[0];		//dataset with positions (if USE_HDF5=1)
+const vector<string> cols_pos=Get_parameter(paramfile,"cols_pos",err_common);  //columns with positions (if USE_HDF5=0)
+
+//********************common parameters:********************
+const int moment_min=2;                                 			//must be 2
+const int moment_max=9;                                			    //must be 9
+const double kappa=conv_check(Get_parameter(paramfile,"kappa",err_common)[0],err_conv);	    //multiplicity factor for number of circles
+const int Cmin=conv_check(Get_parameter(paramfile,"Cmin",err_common)[0],err_conv);       //minimum number of circles drawn
+const int Cmax=conv_check(Get_parameter(paramfile,"Cmax",err_common)[0],err_conv);       //maximum number of circles drawn
+const int nreals=conv_check(Get_parameter(paramfile,"nreals",err_common)[0],err_conv);	    //number of independent randoms sets (randoms must be at least C*nreals)
+const int NPIX_min=50; 									            //minimum pixelization [NEW]
+const int Mvar_Poisson=1000;										//probing for Poisson error
+const int Recalc=conv_check(Get_parameter(paramfile,"Recalc",err_common)[0],err_conv);        //if =1, calculating moments again
+const int Clean=conv_check(Get_parameter(paramfile,"Clean",err_common)[0],err_conv);        //if =1, cleaning in the end
+const int ErrP=conv_check(Get_parameter(paramfile,"ErrPoisson",err_common)[0],err_conv);        //compute Poisson errors? [0/1]
+const int combine_reals=conv_check(Get_parameter(paramfile,"Combine_reals",err_common)[0],err_conv); //[0/1] are Data/* files models with different reals?
+const string real_template=Get_parameter(paramfile,"Real_template",err_common)[0]; //how are realisations marked in names, e.g. _BOX*_
+
+string EXT="";
+const vector<string> Model=Conditional_modelreading("Data",paramfile,EXT,"Datafiles");
+const int nmodels=Model.size();
+
+const int Random_provided=conv_check(Get_parameter(paramfile,"Random_provided",err_common)[0],err_conv);  //random file provided? [0/1]
+const string Random_file=Get_parameter(paramfile,"Random_file",err_common)[0]; //random file name
+
+//********************parameters - angular:********************
+const double ramin=conv_check(Get_parameter(paramfile,"ramin",err_ver)[0],err_conv); 		//[deg]catalog rightascension lower range
+const double ramax=conv_check(Get_parameter(paramfile,"ramax",err_ver)[0],err_conv); 		//[deg]catalog rightascension lower range
+const double decmin=conv_check(Get_parameter(paramfile,"decmin",err_ver)[0],err_conv);		//[deg]catalog declination lower range
+const double decmax=conv_check(Get_parameter(paramfile,"decmax",err_ver)[0],err_conv); 	//[deg] catalog declination upper range
+
+const double Areaf_read=conv_check(Get_parameter(paramfile,"Areaf",err_ver)[0],err_conv);
+const double Areaf=Areaf_read==-1 ? Area_spherical(ramin,ramax,decmin,decmax)*str2deg2 : Areaf_read; //catalog sky area [deg2]
+
+//********************parameters - angular and BOX:********************
+const double Rmin=conv_check(Get_parameter(paramfile,"Rmin",err_ver)[0],err_conv); 		//[deg] smallest angular scale considered
+const double Rmax=conv_check(Get_parameter(paramfile,"Rmax",err_ver)[0],err_conv); 		//[deg] biggest angular scale considered
+const int nR=conv_check(Get_parameter(paramfile,"nR",err_ver)[0],err_conv); 				//number of angular scales considered
+const double qR=pow(10.,1.*log10(Rmax/Rmin)/nR);        			//R multiplicity factor
+
+//********************parameters - BOX and BOX_ellipses:********************
+const double boxsize=conv_check(Get_parameter(paramfile,"Boxsize",err_ver)[0],err_conv); 	//box size in the same units as random spheres
+
+
+//********************parameters - BOX_ellipses and LC_ellipses:********************
+const double axamin=conv_check(Get_parameter(paramfile,"axamin",err_ver)[0],err_conv); 	//smallest semi-major axis
+const double axamax=conv_check(Get_parameter(paramfile,"axamax",err_ver)[0],err_conv); 	//biggest semi-major axis
+const double axbmin=conv_check(Get_parameter(paramfile,"axbmin",err_ver)[0],err_conv); 	//smallest semi-minor axis
+const double axbmax=conv_check(Get_parameter(paramfile,"axbmax",err_ver)[0],err_conv); 	//biggest semi-minor axis
+const int naxa=conv_check(Get_parameter(paramfile,"naxa",err_ver)[0],err_conv); 			//number of semi-major axes
+const int naxb=conv_check(Get_parameter(paramfile,"naxb",err_ver)[0],err_conv); 			//number of semi-minor axes
+const double qaxa=pow(10.,1.*log10(axamax/axamin)/naxa);        	//semi-major axis multiplicity factor
+const double qaxb=pow(10.,1.*log10(axbmax/axbmin)/naxb);        //semi-minor axis multiplicity factor
+const int n_allax=naxa*naxb;										//number of grid points
+
+//********************parameters - LC_ellipses:********************
+const double DCMIN=conv_check(Get_parameter(paramfile,"DCMIN",err_ver)[0],err_conv);		//minimum distance analyzed
+const double DCMAX=conv_check(Get_parameter(paramfile,"DCMAX",err_ver)[0],err_conv);		//maximum distance analyzed
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
+const int ncols_outfile=ErrP==0?17:25; //number of columns (check Args2grid)
+
+
+
+
+
+
+
+
 string Fin(string model) //input
 {
     return "Data/"+model+EXT;
@@ -77,7 +154,7 @@ void Writelog(string text, string option) //log
 		
 		if(VERSION=="angular" or VERSION=="BOX")
 		{
-			lfile<<"Scales: "<<nR<<" in range: ["<<Rmin<<":"<<Rmax<<"] deg"<<endl;
+			lfile<<"Scales: "<<nR<<" in range: ["<<Rmin<<":"<<Rmax<<"]"<<endl;
 		}
 		
 		if(VERSION=="BOX" or VERSION=="BOX_ellipses")
@@ -87,7 +164,7 @@ void Writelog(string text, string option) //log
 		
 		if(VERSION=="BOX_ellipses" or VERSION=="LC_ellipses")
 		{
-			lfile<<"LOS parallel axis scales: "<<naxa<<" in range: ["<<axamin<<":"<<axamax<<"] Mpc"<<endl;
+			lfile<<"LOS parallel axis scales: "<<naxa<<" in range: ["<<axamin<<":"<<axamax<<"]"<<endl;
 			lfile<<"LOS perpendicular axis scales: "<<naxb<<" in range: ["<<axbmin<<":"<<axbmax<<"]"<<endl;
 		}
 
@@ -162,7 +239,6 @@ int Error_param()
 	if(err_common!=0) //one or more of common parameters are not specified
 	{
 		Error(err,"[Error]: check "+paramfile+", "+conv(err_common)+" common parameter(s) not specified. How dare you!");
-		return err;
 	}
 	
 	
@@ -170,13 +246,11 @@ int Error_param()
 	{
 		Error(err,"[Error]: check "+paramfile+", "+conv(err_ver)+" VERSION-dependent parameter(s) not specified.\
 		Some may not be needed for current VERSION, but better keep them in "+paramfile);
-		return err;
 	}
 	
 	if(err_conv!=0) //numeric parameters are empty or strings
 	{
 		Error(err,"[Error]: check "+paramfile+", "+conv(err_conv)+" numeric parameter(s) not specified/are strings");
-		return err;
 	}
 	
 	
@@ -184,7 +258,6 @@ int Error_param()
 	if(VERSION!="angular" and VERSION!="BOX" and VERSION!="BOX_ellipses" and VERSION!="LC_ellipses")
 	{
 		Error(err,"[Error]: check "+paramfile+", VERSION should be angular/BOX/BOX_ellipses/LC_ellipses.");
-		return err;
 	}
 	
 	
@@ -296,25 +369,53 @@ int Error_param()
 	
 	if(USE_HDF5==0) //only for ASCII: columns beyond data file(s)
 	{
-		int ncols=Fncols(Fin(Model[0]));
-		
-		if(stoi(cols_pos[0])<0 or stoi(cols_pos[0])>=ncols
-		or stoi(cols_pos[1])<0 or stoi(cols_pos[2])>=ncols
-		or stoi(cols_pos[1])<0 or stoi(cols_pos[2])>=ncols)
+		if(VERSION=="angular" and cols_pos.size()!=2) //inappriopriate number of cols specified
 		{
 			err=1;
-			if(ncols!=-1) //if ncols==-1, first file doesnt exist, another error shows up
+			Error(err,"[Error]: check "+paramfile+", cols_pos should have 2 columns in VERSION=angular.");
+		}
+		
+		if(VERSION!="angular" and cols_pos.size()!=3) //inappriopriate number of cols specified
+		{
+			err=1;
+			Error(err,"[Error]: check "+paramfile+", cols_pos should have 3 columns in this VERSION.");
+		}
+		
+		int ncols=Fncols(Fin(Model[0]));
+		
+		if(cols_pos.size()==3)
+		{
+			if(stoi(cols_pos[0])<0 or stoi(cols_pos[0])>=ncols
+			or stoi(cols_pos[1])<0 or stoi(cols_pos[1])>=ncols
+			or stoi(cols_pos[2])<0 or stoi(cols_pos[2])>=ncols)
 			{
-				Error(err,"[Error]: check "+paramfile+", cols_pos exceeding the file - should be in range [0,"+conv(ncols-1)+"].");
+				err=1;
+				if(ncols!=-1) //if ncols==-1, first file doesnt exist, another error shows up
+				{
+					Error(err,"[Error]: check "+paramfile+", cols_pos exceeding the file - should be in range [0,"+conv(ncols-1)+"].");
+				}
 			}
-		}	
+		}
+		
+		if(cols_pos.size()==2)
+		{
+			if(stoi(cols_pos[0])<0 or stoi(cols_pos[0])>=ncols
+			or stoi(cols_pos[1])<0 or stoi(cols_pos[1])>=ncols)
+			{
+				err=1;
+				if(ncols!=-1) //if ncols==-1, first file doesnt exist, another error shows up
+				{
+					Error(err,"[Error]: check "+paramfile+", cols_pos exceeding the file - should be in range [0,"+conv(ncols-1)+"].");
+				}
+			}
+		}
+			
 	}
 	
 	
 	if(nmodels==0) //Data/ directory empty
 	{
 		Error(err,"[Error]: check "+paramfile+", no Datafiles specified or Data/ empty.");
-		return err;
 	}
 	
 	
@@ -451,11 +552,6 @@ int Error_param()
 			Error(err,"[Error]: check "+paramfile+", decmin,decmax should not exceed [-90,90] deg");
 		}
 	}
-	
-	
-	
-
-	
 	
 	
 	return err;
