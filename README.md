@@ -10,7 +10,8 @@ It allows for the calculation in four different modes (VERSIONs):
 - **LC_ellipses**: counts in ellipsoids within 3D [X,Y,Z] lightcone  
 
 
-for more details check section about [code versions](#different-code-versions,-inputs-and-outputs).
+for more details check section about [code versions](#different-code-versions,-inputs-and-outputs).  
+**For more transparent-looking instructions, check Readme.pdf file**
 
 # Requirements, compilation and running
 
