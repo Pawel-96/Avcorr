@@ -103,9 +103,22 @@ int CRR(string ffound,string ffoundhst,vector<double> &Xcn, string model, double
 		int n=Sum(nhist); 
 		CR=n;//min(CR,n);
 	}
-	if(Random_provided==1 and Fexist(ffound)==0 and Fexist(ffoundhst)==0)
+	if(Random_provided==1 and Fexist(ffound)==0 and Fexist(ffoundhst)==0) //then number of objects in random file
 	{
-		if(Random_file=="*"){CR=Fnlines("Randoms/Random_"+model+EXT);}//min(CR,(long int)(Lines("Randoms/Random_"+model+".txt")));}
+		if(Random_file=="*")
+		{
+			if(USE_HDF5==0)
+			{
+				CR=Fnlines("Randoms/Random_"+model+EXT);//min(CR,(long int)(Lines("Randoms/Random_"+model+".txt")));}
+			}
+			else
+			{
+				int msg=0;
+				auto dcoords=Read_HDF5_dataset("Randoms/Random_"+model+EXT,POS_DSET,2,msg);
+				vector<vector<double>> coords=get<vector<vector<double>> > (dcoords);
+				CR=max(coords.size(),coords[0].size()); //may be transposed
+			}
+		}
 		else{CR=Xcn.size();}//min(CR,(long int)(Xcn.size()));}
 	}
 	

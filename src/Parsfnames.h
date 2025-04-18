@@ -8,7 +8,7 @@
 const string paramfile="param.txt";
 const string logfile="Results/log.txt";
 const int NRMAX=100000; //maximum nR or naxa*naxb
-const int CMAX=1000000000; //total limit of Cmax
+const int CMAX=2000000000; //total limit of Cmax
 const double FULLSKYDEG2=41252.96125; //full sky area [deg^2]
 
 extern int err_common; //error in common params
