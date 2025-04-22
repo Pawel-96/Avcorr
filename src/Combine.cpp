@@ -259,15 +259,15 @@ void Combine_reals(string modelname)
 		
 		for(int j=0;j<norders;++j)
 		{
-			Clean_data<float>(WJ_all[i][j],"erase<=0");
-			Clean_data<float>(SJ_all[i][j],"erase<=0");
-			WJ=Sum(WJ_all[i][j])/(1.*WJ_all[i][j].size());
-			WJ_err=Sigma<float>(WJ_all[i][j]);
+			Clean_data<float>(WJ_all[j][i],"erase<=0");
+			Clean_data<float>(SJ_all[j][i],"erase<=0");
+			WJ=Sum(WJ_all[j][i])/(1.*WJ_all[j][i].size());
+			WJ_err=Sigma<float>(WJ_all[j][i]);
 			
-			if(i>0)
+			if(j>0)
 			{
-				SJ=Sum(SJ_all[i][j])/(1.*SJ_all[i][j].size());
-				SJ_err=Sigma<float>(SJ_all[i][j]);
+				SJ=Sum(SJ_all[j][i])/(1.*SJ_all[j][i].size());
+				SJ_err=Sigma<float>(SJ_all[j][i]);
 			}
 			
 			WJfile<<WJ<<" "<<WJ_err<<" ";

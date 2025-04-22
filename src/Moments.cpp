@@ -203,10 +203,16 @@ void Calculate_moments(string output, vector<int> &nc, vector<int> &count, doubl
 	ofstream foutSJ(output_SJ.c_str()); //storing values for Sj
     foutWJ<<R<<" ";
 	foutSJ<<R<<" 1 0 ";
+	
     for(int k=moment_min;k<=moment_max;++k)
     {
+		if(WJ[k]!=WJ[k]){WJ[k]=-1;} //avoiding later problems with nan
         foutWJ<<setprecision(15)<<WJ[k]<<" "<<WJ_err[k]<<" ";
-		if(k>2){foutSJ<<setprecision(15)<<SJ[k]<<" "<<SJ_err[k]<<" ";}
+		if(k>2)
+		{
+			if(SJ[k]!=SJ[k]){SJ[k]=-1;}
+			foutSJ<<setprecision(15)<<SJ[k]<<" "<<SJ_err[k]<<" ";
+		}
     }
 	
 	if(ErrP==1) //computing Poisson errors?

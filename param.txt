@@ -10,14 +10,18 @@ cols_pos 0 1 2 #---------------------------------------columns with positions (o
 nreals 50 #--------------------------------------------number of independent randoms sets 
 kappa 0.1 #--------------------------------------------multiplicity factor for number of circles
 Cmin 1 #-----------------------------------------------minimum number of circles drawn
+<<<<<<< HEAD
 Cmax 1000000000 #---------------------------------------------maximum number of circles drawn
+=======
+Cmax 1e9 #---------------------------------------------maximum number of circles drawn
+>>>>>>> e78f6c7 (solved write error)
 Datafiles * #------------------------------------------files with data
 Random_provided 0 #------------------------------------random file provided? 0-drawing random, 1-reading
 Random_file - #----------------------------------------random file name (works only if Random_provided=1) 
 Recalc 0 #---------------------------------------------if =1 and counts exist, recalculates moments
 Clean 1 #----------------------------------------------if=1, cleaning at the end
 ErrPoisson 0 #-----------------------------------------compute Poisson errors [0/1]
-Combine_reals 0 #--------------------------------------[0/1] are Data/* files models with different reals?
+Combine_reals 1 #--------------------------------------[0/1] are Data/* files models with different reals?
 Real_template _BOX* #----------------------------------how are realisations marked in names, e.g. _BOX*_
 
 

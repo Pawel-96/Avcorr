@@ -445,7 +445,7 @@ int Error_param()
 		{
 			for(int i=0;i<nmodels;++i)
 			{
-				if(Model[i].find(real_template) == string::npos)
+				if(Model[i].find(Replace_string(real_template,"*","")) == string::npos)
 				{
 					Error(err,"[Error]: check "+paramfile+", Real_template not found in datafile names");
 				}
