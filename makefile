@@ -1,8 +1,8 @@
 #compiler and options
 CC = mpiCC
 OPTIONS = --std=c++17 -lhdf5_cpp -O2 -Wall
-H5flag=`pkg-config --cflags hdf5-serial`
-H5link=`pkg-config --libs hdf5-serial`
+H5flag=`pkg-config --cflags hdf5`
+H5link=`pkg-config --libs hdf5`
 
 #output executable
 TARGET = Avcorr.exe
