@@ -134,9 +134,13 @@ int main(int argc, char *argv[])
 	int dset_err=0;
 	if(err==1)
 	{
-		string msg="Errors occurred, stopping:/";
-		cerr<<msg<<endl;
-		Writelog(msg);
+		if(rank==0)
+		{
+			string msg="Errors occurred, stopping:/";
+			cerr<<msg<<endl;
+			Writelog(msg);
+		}
+		
 		return 0;
 	}
 	
