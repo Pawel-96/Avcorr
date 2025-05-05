@@ -52,3 +52,4 @@ Changes implemented:
 09.04.2025: updated errors handling: if wrong number of columns in USE_HDF5=0, corrected not-specified param info
 18.04.2025: updated: HDF5 case for estimating counts number if Random_file=* - CRR() function
 22.04.2025: solved error in 2D writing, nan->-1 in Moments.cpp, improved parameter error for real_template
+05.05.2025: parameter file errors now are showing only for rank=0 (avoid duplications)

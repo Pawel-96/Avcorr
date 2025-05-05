@@ -125,7 +125,12 @@ int Results_onemodel_oneradius(string model, int nnsize, vector<double> &Nav_cir
 
 int main(int argc, char *argv[])
 {
-	int err=Error_param(); //error in parameters
+	int rank, comm_size,iimax=0;
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &comm_size);
+	
+	int err=Error_param(rank); //error in parameters
 	int dset_err=0;
 	if(err==1)
 	{
@@ -135,8 +140,6 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 	
-	
-    int rank, comm_size,iimax=0;
     int model_no,nnR=0,nnallax=0;
 	double progress;
 	string fnav; //file for optimization in pixelizing
@@ -144,9 +147,6 @@ int main(int argc, char *argv[])
 	if(VERSION=="BOX_ellipses" or VERSION=="LC_ellipses"){iimax=n_allax*nmodels;}
     vector<double> Nav_circ,Nav_pix,Xcn,Ycn,Zcn; //X/Y/Zcn - for angular: xcn,ycn=racn,deccn, for BOX/3D: x,y,z centers
 	
-    MPI_Init(&argc, &argv);
-    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-    MPI_Comm_size(MPI_COMM_WORLD, &comm_size);
 	
 	if(rank==0)
 	{
