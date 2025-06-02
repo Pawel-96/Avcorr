@@ -94,8 +94,8 @@ void Writelog(string text, string option="write"); //log
 
 double Progress(int iimax); //counting overall progress
 
-void Error(int &err, string msg); //raising error with message
+void Error(int rank, int &err, string msg); //raising error with message
 
-int Error_param(); //pointing errors in paramfile
+int Error_param(int rank); //pointing errors in paramfile
 
 #endif
