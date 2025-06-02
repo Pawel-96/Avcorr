@@ -392,12 +392,13 @@ only at the beginning of files and are not separated by non - \#- starting lines
 ones  
 - periodicity in VERSION=angular  
 - add examples and plotting scripts  
+- generalize optimal pixelization into analytical expressions  
 
 
 ## Citation \& references
 The code uses equations from [[1]](#1) to compute connected and shot-noise
 corrected moments of counts in cells.  
-While using this code, please refer to
+While using this code, please refer to or link back this repository 
 [https://github.com/Pawel-96/Avcorr]($https://github.com/Pawel-96/Avcorr$).
 
 
