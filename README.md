@@ -398,7 +398,7 @@ ones
 ## Citation \& references
 The code uses equations from [[1]](#1) to compute connected and shot-noise
 corrected moments of counts in cells.  
-While using this code, please refer to or link back this repository 
+While using this code, please cite [[2]](#2) and refer to or link back this repository 
 [https://github.com/Pawel-96/Avcorr]($https://github.com/Pawel-96/Avcorr$).
 
 
@@ -406,4 +406,9 @@ While using this code, please refer to or link back this repository
 <a id="1">[1]</a> 
 E. Gaztanaga. High-Order Galaxy Correlation Functions in the APM Galaxy Survey. Monthly
 Notices of the Royal Astronomical Society, 268:913, June 1994. doi: 10.1093/mnras/268.4.913.
+
+<a id="2">[2]</a> 
+P. Drozda, W. A. Hellwing, and M. Bilicki. Anisotropic counts-in-cells in redshift space: A new
+route to cosmological constraints from galaxy surveys, 2025. URL https://arxiv.org/abs/
+2506.01762.
 
