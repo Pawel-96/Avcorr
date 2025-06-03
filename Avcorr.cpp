@@ -1,25 +1,21 @@
-//***********************************************************************************//
-//                                                                                   //
-// Copyright 2025 Paweł Drozda                                                       //
-//                                                                                   //
-// This file is part of Avcorr.                                                      //
-//                                                                                   //
-// Avcorr is free software: you can redistribute it and/or modify it                 //
-// under the terms of the GNU General Public License as published by                 //
-// the Free Software Foundation, either version 3 of the License, or                 //
-// (at your option) any later version.                                               //
-//                                                                                   //
-// Avcorr is distributed in the hope that it will be useful, but                     //
-// WITHOUT ANY WARRANTY; without even the implied warranty of                        //
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.                              //
-// See the GNU General Public License for more details.                              //
-//                                                                                   //
-// You should have received a copy of the GNU General Public License                 //
-// along with Avcorr.  If not, see <http://www.gnu.org/licenses/>.                   //
-//                                                                                   //
-//                                                                                   //
-//                                                                                   //
-//***********************************************************************************//
+//****************************************************************************************//
+//                                                                                        //
+// Copyright 2025 Paweł Drozda                                                            //
+//                                                                                        //
+// This file is part of Avcorr.                                                           //
+//                                                                                        //
+//To the extent possible under law, the author has dedicated this software	          //
+// to the public domain under the Creative Commons CC0 1.0 Universal License.             //
+//                                                                                        //
+// Avcorr is distributed in the hope that it will be useful, but                          //
+// WITHOUT ANY WARRANTY; without even the implied warranty of                             //
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.                                   //
+//                                                                                        //
+// You should have received a copy of the CC0-1.0 License                                 //
+// along with Avcorr.  If not, see <ttps://creativecommons.org/publicdomain/zero/1.0/>.   //
+//                                                                                        //
+//                                                                                        //
+//****************************************************************************************//
 
 #include "lib/RWMathStat.h"
 #include "mpi.h" //parallel computing
