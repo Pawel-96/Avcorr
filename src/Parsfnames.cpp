@@ -29,7 +29,7 @@ const string real_template=Get_parameter(paramfile,"Real_template",err_common)[0
 
 string EXT="";
 string PATH="";
-const vector<string> Model=Conditional_modelreading("Data",paramfile,EXT,"Datafiles",PATH);
+const vector<string> Model=Conditional_modelreading("Data/",paramfile,EXT,"Datafiles",PATH);
 const int nmodels=Model.size();
 
 const int Random_provided=conv_check(Get_parameter(paramfile,"Random_provided",err_common)[0],err_conv);  //random file provided? [0/1]
