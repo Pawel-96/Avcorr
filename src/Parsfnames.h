@@ -38,6 +38,7 @@ extern const int combine_reals; //[0/1] are Data/* files models with different r
 extern const string real_template; //how are realisations marked in names, e.g. _BOX*_
 
 extern  string EXT;
+extern string PATH;
 extern const vector<string> Model;
 extern const int nmodels;
 
