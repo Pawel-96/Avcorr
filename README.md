@@ -30,8 +30,8 @@ firstly ensuring if it has permissions (chmod +700 ./run)
 
 
 - **Computations can be restarted in any moment if user decided to stop it. The restarted code will just ignore the existing counts.**
-- **Input data files should be located within Data/ directory.**
-- **Output scales are always spaced logarithmically**
+- **Input data files need to have the same extension and be located in the same directory as specified in parameter file.**
+- **Output scales are always spaced logarithmically.**
 
 
 
@@ -39,7 +39,7 @@ firstly ensuring if it has permissions (chmod +700 ./run)
 
 
 # Important files and directories
-- Data/ - should contain the catalog(s) for which code calculates the statistics
+- Data/ - default location of data for which code calculates the statistics (see description of Datafiles entry in parameter file)
 - Results/ - stores results after the run
 - Randoms/ - contains optional random catalogs (valid if Random_provided=1, see parameter file section)
 
@@ -257,8 +257,12 @@ Check the section about error calculations.
   
 - **Cmax** - maximum number of circles/spheres/ellipses for CiC
   
-- **Datafiles** - datafile names from separated by space/tab (with extension).  
-  If Datafiles=\*, the code just reads entire Data/ catalog (more convenient option)
+- **Datafiles** - datafile names from separated by space/tab (with extension). Examples:  
+  If Datafiles=\*, the code selects all files in Data/ directory  
+  If Datafiles=path/\*, the code selects all files from path/ directory  
+  If Datafiles=file1.h5 file2.h5, the code selects file1.h5 and file2.h5 from Data/ directory  
+  \[attention\]: all files needs to have the same extension and be located in the same directory
+  \[attention\]: if \* was used firstly, only files corresponding with that entry will be considered, e.g. for Datafiles=path/\* file2.dat, code will read only files in path/
 
 - **Random\_provided** - random file(s) provided? 0 - drawing random,
 1 - reading random file (s) [check Random\_file description].  
@@ -383,6 +387,7 @@ in lines starting with [Error]
 match data type
 - if ASCII data is used (USE_HDF5=0), check if file headers (lines starting with \# are
 only at the beginning of files and are not separated by non - \#- starting lines)
+- check if data files have the same extension and are located in the same directory
     
 
 

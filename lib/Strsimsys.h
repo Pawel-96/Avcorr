@@ -27,8 +27,12 @@ string Replace_string(string text, string txt_from, string txt_into); //replacin
 //getting parameter value(s) from file, based on 1st column called par_name
 vector<string> Get_parameter(string fname, string par_name, int &err);
 
-//if model = '*' -> reading all files in datadir
-vector<string> Conditional_modelreading(string datadir,string paramfile, string &ext, string par_name="Model");
+//if datafiles = * -> reading all files in defaultdir
+//if datafiles = path/* -> reading all files in path
+//other cases: list of files (no path->defaultdir)
+//if specified, path has to be the same for every file, also assuming the same extensions
+vector<string> Conditional_modelreading(string defaultdir,string paramfile,string &ext,string par_name, string &path);
+
 
 template<typename T>
 T Periodic_coordinate(T x, T xmax)

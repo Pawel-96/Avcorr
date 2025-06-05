@@ -193,6 +193,26 @@ string Remove_dir(string fname) //removing directory from path: a/b/c.txt ->c.tx
 
 
 
+
+
+string Dir(string fname) //removing filename from path: a/b/c.txt ->a/b/
+{
+    int position=-1,nn=fname.size()-1;
+    for(int i=nn;i>-1;--i)
+    {
+        if(fname[i]=='/'){position=i;break;} //position of last "/"
+    }
+    string res;
+    for(int i=0;i<=position;++i)
+    {
+        res+=fname[i];
+    }
+    return res;
+}
+
+
+
+
 /*to do:
 no space after last column
 add option for appending

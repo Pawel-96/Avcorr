@@ -199,49 +199,60 @@ vector<string> Get_parameter(string fname, string par_name, int &err)
 
 
 
-//if model = '*' -> reading all files in datadir
-vector<string> Conditional_modelreading(string datadir,string paramfile,string &ext,string par_name)
+//if datafiles = * -> reading all files in defaultdir
+//if datafiles = path/* -> reading all files in path
+//other cases: list of files (no path->defaultdir)
+//if specified, path has to be the same for every file, also assuming the same extensions
+vector<string> Conditional_modelreading(string defaultdir,string paramfile,string &ext,string par_name, string &path)
 {
-	vector<string> f;
-	Get_fnames(f,"Data/");
-	if(f.size()==0){return f;}
 	
 	int err=0;
-	vector<string> Models=Get_parameter(paramfile,par_name,err);
+	vector<string> Inputs=Get_parameter(paramfile,par_name,err); //reading entries from paramfile
 	if(err>0) //entry is empty
 	{
 		vector<string> empty;
 		return empty;
+	}
 	
-	} 
+	string file0=Remove_dir(Inputs[0]); //first entry
+	vector<string> Models;
+	int nmodels;
+	string DIR=Dir(Inputs[0]),newname;
 	
-	if(Models[0]!="*") //model just named in paramfile
+	if(DIR==""){path=defaultdir;} //no path specified -> defaultdir
+	else{path=DIR;} //some path specified in first filename-> specific path
+	
+	
+	if(file0=="*") //reading all files either in defaultdir of path
 	{
+		Get_fnames(Models,path);
+		nmodels=Models.size();
 		ext=Fextension(Models[0]);
-		if(ext==""){return Models;}
-
-		int nmodels=Models.size();
-		for(int i=0;i<nmodels;++i)
+		
+		for(int i=0;i<nmodels;++i) //removing extensions
 		{
-			Models[i]=Replace_string(Models[i],ext,""); //removing extensions
+			newname=Replace_string(Models[i],ext,"");
+			Models[i]=newname;
 		}
+	
+		sort(Models.begin(),Models.end()); //sorting alphabetically; not necessary, but helpful
 		return Models;
 	}
 	
-	vector<string> fnames;
-	Get_fnames(fnames,datadir);
-	int nmodels=fnames.size();
-	string newname;
-	ext=Fextension(fnames[0]);
 	
-	for(int i=0;i<nmodels;++i) //removing extensions
+	//another case: linting files aither in without path(-> defaultdir) or with path
+	nmodels=Inputs.size();
+	Models.insert(Models.end(),nmodels,string());
+	ext=Fextension(file0); //assuming all files to have the same extension
+	
+	for(int i=0;i<nmodels;++i)
 	{
-		newname=Replace_string(fnames[i],ext,"");
-		fnames[i]=newname;
+		Models[i]=Replace_string(Remove_dir(Inputs[i]),ext,"");
 	}
 	
-	sort(fnames.begin(),fnames.end()); //sorting alphabetically; not necessary, but helpful
-	return fnames;
+	sort(Models.begin(),Models.end()); //sorting alphabetically; not necessary, but helpful
+	
+	return Models;
 }
 
 

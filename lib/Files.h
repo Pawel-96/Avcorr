@@ -1080,4 +1080,6 @@ void Get_fnames(vector<string> &tab, string loc);
 
 string Remove_dir(string fname); //removing directory from path: a/b/c.txt ->c.txt
 
+string Dir(string fname); //removing filename from path: a/b/c.txt ->a/b/
+
 #endif

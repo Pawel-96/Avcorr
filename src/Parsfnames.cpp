@@ -28,7 +28,8 @@ const int combine_reals=conv_check(Get_parameter(paramfile,"Combine_reals",err_c
 const string real_template=Get_parameter(paramfile,"Real_template",err_common)[0]; //how are realisations marked in names, e.g. _BOX*_
 
 string EXT="";
-const vector<string> Model=Conditional_modelreading("Data",paramfile,EXT,"Datafiles");
+string PATH="";
+const vector<string> Model=Conditional_modelreading("Data",paramfile,EXT,"Datafiles",PATH);
 const int nmodels=Model.size();
 
 const int Random_provided=conv_check(Get_parameter(paramfile,"Random_provided",err_common)[0],err_conv);  //random file provided? [0/1]
@@ -80,7 +81,7 @@ const int ncols_outfile=ErrP==0?17:25; //number of columns (check Args2grid)
 
 string Fin(string model) //input
 {
-    return "Data/"+model+EXT;
+    return PATH+model+EXT;
 }
 
 
@@ -88,9 +89,7 @@ string Fin(string model) //input
 
 string Mout_onerad(string model, int nnsize) //moment output for one radius
 {
-    string fin=Fin(model);
-    string mout=Replace_string(fin,EXT,"_moments_nnR_"+conv(nnsize)+".txt");
-    return Replace_string(mout,"Data/","Results/");
+	return "Results/"+model+"_moments_nnR_"+conv(nnsize)+".txt";
 }
 
 
@@ -98,8 +97,7 @@ string Mout_onerad(string model, int nnsize) //moment output for one radius
 
 string Merrout(string model) //output for one model and all moments
 {
-    string f1=Replace_string(Fin(model),"Data/","Results/");
-    return Replace_string(f1,EXT,"_merrout.txt");
+	return "Results/"+model+"_merrout.txt";
 }
 
 
@@ -134,7 +132,7 @@ void Writelog(string text, string option) //log
         lfile<<"nreals: "<<nreals<<endl;
 		lfile<<"Random_provided: "<<Random_provided<<endl;
 		if(Random_provided==1){lfile<<"Random_file: "<<Random_file<<endl;}
-        lfile<<"Datafiles ["<<nmodels<<"]:"<<endl;
+        lfile<<"Data ["<<nmodels<<"]:"<<endl;
         for(int i=0;i<nmodels;++i)
         {
             lfile<<"            "<<Model[i]<<endl;
@@ -431,7 +429,7 @@ int Error_param(int rank)
 		{
 			if(Fexist(Fin(Model[i]))==0)
 			{
-				Error(rank,err,"[Error]: check "+paramfile+", file: Data/"+Model[i]+EXT+" does not exist.");
+				Error(rank,err,"[Error]: check "+paramfile+", file: "+Fin(Model[i])+" does not exist.");
 			}
 		}
 	}
