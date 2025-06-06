@@ -4,8 +4,10 @@
 
 
 //reading randoms depending on conditions
-void Read_randoms(vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, string modelname, int specific)
+void Read_randoms(vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, string modelname, int &nrand,
+int specific)
 {
+	Xcn.clear();Ycn.clear();Zcn.clear();
 	if(specific==0) //one for all
 	{
 		if(Random_provided==1 and Random_file!="*")
@@ -38,6 +40,7 @@ void Read_randoms(vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn,
 				Ycn=coords[1];
 				if(VERSION!="angular"){Zcn=coords[2];}
 			}
+			nrand=Xcn.size();
 		}
 	}
 	
@@ -49,8 +52,8 @@ void Read_randoms(vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn,
 			string fin="Randoms/Random_"+modelname+EXT;
 			if(USE_HDF5==0)
 			{
-				Xcn.clear();Ycn.clear();
-				Fread<double>(fin,{&Xcn,&Ycn},{0,1});
+				if(VERSION=="angular") {Fread<double>(fin,{&Xcn,&Ycn},{0,1});}
+				else {Fread<double>(fin,{&Xcn,&Ycn,&Zcn},{0,1,2});}
 			}
 			if(USE_HDF5==1)
 			{
@@ -74,6 +77,7 @@ void Read_randoms(vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn,
 				Ycn=coords[1];
 				if(VERSION!="angular"){Zcn=coords[2];}
 			}
+			nrand=Xcn.size();
 		}
 	}
 	
@@ -109,17 +113,17 @@ int CRR(string ffound,string ffoundhst,vector<double> &Xcn, string model, double
 		{
 			if(USE_HDF5==0)
 			{
-				CR=Fnlines("Randoms/Random_"+model+EXT);//min(CR,(long int)(Lines("Randoms/Random_"+model+".txt")));}
+				CR=min(CR,Fnlines("Randoms/Random_"+model+EXT)); //kappa*nreals* n_spheres_fitting, or no_random if smaller
 			}
 			else
 			{
 				int msg=0;
 				auto dcoords=Read_HDF5_dataset("Randoms/Random_"+model+EXT,POS_DSET,2,msg);
 				vector<vector<double>> coords=get<vector<vector<double>> > (dcoords);
-				CR=max(coords.size(),coords[0].size()); //may be transposed
+				CR=min(CR,static_cast<int>(max(coords.size(),coords[0].size()))); //may be transposed and the same rule
 			}
 		}
-		else{CR=Xcn.size();}//min(CR,(long int)(Xcn.size()));}
+		else{CR=min(CR,static_cast<int>(Xcn.size()));} //kappa*nreals* n_spheres_fitting, or no_random if smaller
 	}
 	
 	return CR;
@@ -288,7 +292,8 @@ int Check_count_existence(string ffound, string ffoundhst, string output, vector
 
 
 
-void CIC_angular(vector<vector<vector<double> > > &pix, string output, string model, int npix_edge, int nnR, vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn) //collecting numbers of objects  ->calculating moments for nnR-th radius
+void CIC_angular(vector<vector<vector<double> > > &pix, string output, string model,
+int npix_edge, int nnR, vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand) //collecting numbers of objects  ->calculating moments for nnR-th radius
 {
     double R,RA_center,DEC_center;//for circle
     double dra=1.0*(ramax-ramin)/npix_edge, dsindec=(sin(decmax*deg2rad)-sin(decmin*deg2rad))/npix_edge;//pix size in ra, sin(pixsize) in dec
@@ -316,7 +321,8 @@ void CIC_angular(vector<vector<vector<double> > > &pix, string output, string mo
     if(exst==1){return;}
 
 	Set_pixborders(pix_border,nnpix,dra,dsindec,npix_edge);
-	Read_randoms(Xcn,Ycn,Zcn,model,1); //reading randoms under condition
+	Read_randoms(Xcn,Ycn,Zcn,model,nrand,1); //reading randoms under condition
+	int locrand; //no of random point form the file
 
     for(int j=0;j<CR;++j) //for every circle
     {
@@ -325,8 +331,9 @@ void CIC_angular(vector<vector<vector<double> > > &pix, string output, string mo
 		
 		if(Random_provided==1)
 		{
-			RA_center=Xcn[j];
-			DEC_center=Ycn[j];		
+			locrand=rand()%nrand; //random select position - avoiding the same selections for different scales
+			RA_center=Xcn[locrand];
+			DEC_center=Ycn[locrand];
 		}
         else{Random_position({ramin,ramax,decmin,decmax,R},RA_center,DEC_center,"sky_border");}
 
@@ -419,7 +426,8 @@ double Dist_periodic(double x1, double y1, double z1, double x2, double y2, doub
 
 
 
-void CIC_BOX(vector<vector<vector<double> > > &pix, string output, string model, int npix_edge, int nnR,vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn) //collecting numbers of objects  ->calculating moments for nnR-th radius
+void CIC_BOX(vector<vector<vector<double> > > &pix, string output, string model,
+int npix_edge, int nnR,vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand) //collecting numbers of objects  ->calculating moments for nnR-th radius
 {
     double R,X_center,Y_center,Z_center;//for sphere
     double dpix=1.0*boxsize/npix_edge;//pix edge size
@@ -444,7 +452,8 @@ void CIC_BOX(vector<vector<vector<double> > > &pix, string output, string model,
     int exst=Check_count_existence(ffound,ffoundhst,output,nc,count,R);
     if(exst==1){return;}
 	
-	Read_randoms(Xcn,Ycn,Zcn,model,1); //reading randoms under condition
+	Read_randoms(Xcn,Ycn,Zcn,model,nrand,1); //reading randoms under condition
+	int locrand; //no of random point form the file
 
     for(int j=0;j<CR;++j) //for every circle
     {
@@ -452,9 +461,10 @@ void CIC_BOX(vector<vector<vector<double> > > &pix, string output, string model,
         found_thiscircle=0;
 		if(Random_provided==1)
 		{
-			X_center=Xcn[j];
-			Y_center=Ycn[j];
-			Z_center=Zcn[j];			
+			locrand=rand()%nrand; //random select position - avoiding the same selections for different scales
+			X_center=Xcn[locrand];
+			Y_center=Ycn[locrand];
+			Z_center=Zcn[locrand];			
 		}
 		else {
 			X_center=Random(0.,boxsize);
@@ -528,7 +538,8 @@ void CIC_BOX(vector<vector<vector<double> > > &pix, string output, string model,
 
 
 
-void CIC_BOX_ellipses(vector<vector<vector<double> > > &pix, string output, string model, int npix_edge, int nnallax,vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn) //collecting numbers of objects  ->calculating moments for nnR-th radius
+void CIC_BOX_ellipses(vector<vector<vector<double> > > &pix, string output, string model,
+int npix_edge, int nnallax,vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand) //collecting numbers of objects  ->calculating moments for nnR-th radius
 {
     double X_center,Y_center,Z_center;//for sphere
     double dpix=1.0*boxsize/npix_edge;//pix edge size
@@ -560,7 +571,8 @@ void CIC_BOX_ellipses(vector<vector<vector<double> > > &pix, string output, stri
     int exst=Check_count_existence(ffound,ffoundhst,output,nc,count,nnallax);
     if(exst==1){return;}
 	
-	Read_randoms(Xcn,Ycn,Zcn,model,1); //reading randoms under condition
+	Read_randoms(Xcn,Ycn,Zcn,model,nrand,1); //reading randoms under condition
+	int locrand; //no of random point form the file
 
     for(int j=0;j<CR;++j) //for every ellipse
     {
@@ -568,9 +580,10 @@ void CIC_BOX_ellipses(vector<vector<vector<double> > > &pix, string output, stri
         found_thiscircle=0;
 		if(Random_provided==1)
 		{
-			X_center=Xcn[j];
-			Y_center=Ycn[j];
-			Z_center=Zcn[j];			
+			locrand=rand()%nrand; //random select position - avoiding the same selections for different scales
+			X_center=Xcn[locrand];
+			Y_center=Ycn[locrand];
+			Z_center=Zcn[locrand];				
 		}
 		else {
 			X_center=Random(0.,boxsize);
@@ -648,7 +661,8 @@ void CIC_BOX_ellipses(vector<vector<vector<double> > > &pix, string output, stri
 
 
 
-void CIC_LC_ellipses(vector<vector<vector<double> > > &pix, string output, string model, int npix_edge, int nnallax,vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn) //collecting numbers of objects  ->calculating moments for nnR-th radius
+void CIC_LC_ellipses(vector<vector<vector<double> > > &pix, string output, string model,
+int npix_edge, int nnallax,vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand) //collecting numbers of objects  ->calculating moments for nnR-th radius
 {
 	double *CENTER=new double[3]; //positions of ellipse centers
     double dpix=2.0*DCMAX/npix_edge;//pix edge size
@@ -680,15 +694,17 @@ void CIC_LC_ellipses(vector<vector<vector<double> > > &pix, string output, strin
     int exst=Check_count_existence(ffound,ffoundhst,output,nc,count,nnallax);
     if(exst==1){return;}
 	
-	Read_randoms(Xcn,Ycn,Zcn,model,1); //reading randoms under condition
+	Read_randoms(Xcn,Ycn,Zcn,model,nrand,1); //reading randoms under condition
+	int locrand; //no of random point form the file
 
     for(int j=0;j<CR;++j) //for every ellipse
     {
 		if(Random_provided==1)
 		{
-			CENTER[0]=Xcn[j];
-			CENTER[1]=Ycn[j];
-			CENTER[2]=Zcn[j];			
+			locrand=rand()%nrand; //random select position - avoiding the same selections for different scales
+			CENTER[0]=Xcn[locrand];
+			CENTER[1]=Ycn[locrand];
+			CENTER[2]=Zcn[locrand];			
 		}
         else{Random_position({DCMIN+axa,DCMAX-axa},CENTER[0],CENTER[1],CENTER[2],"shell");}
 		
