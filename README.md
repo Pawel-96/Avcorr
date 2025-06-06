@@ -414,6 +414,5 @@ Notices of the Royal Astronomical Society, 268:913, June 1994. doi: 10.1093/mnra
 
 <a id="2">[2]</a> 
 P. Drozda, W. A. Hellwing, and M. Bilicki. Anisotropic counts-in-cells in redshift space: A new
-route to cosmological constraints from galaxy surveys, 2025. URL https://arxiv.org/abs/
-2506.01762.
+route to cosmological constraints from galaxy surveys, 2025. URL https://arxiv.org/abs/2506.01762.
 
