@@ -68,7 +68,8 @@ int Npix(vector<double> &Nav_circ, vector<double> &Nav_pix, int N, double R, dou
 
 
 
-int Results_onemodel_oneradius(string model, int nnsize, vector<double> &Nav_circ, vector<double> &Nav_pix, vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn) //calculating moments, reducing, correcting
+int Results_onemodel_oneradius(string model, int nnsize, vector<double> &Nav_circ, vector<double> &Nav_pix,
+vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand) //calculating moments, reducing, correcting
 {
 	int msg=0;
     vector<double> x,y,z; //for angular: x,y=ra,dec
@@ -128,10 +129,10 @@ int Results_onemodel_oneradius(string model, int nnsize, vector<double> &Nav_cir
         
     }
     cout<<"Calculating moments: "<<endl;
-	if(VERSION=="angular"){CIC_angular(pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn);}
-	if(VERSION=="BOX"){CIC_BOX(pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn);}
-	if(VERSION=="BOX_ellipses"){CIC_BOX_ellipses(pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn);}
-	if(VERSION=="LC_ellipses"){CIC_LC_ellipses(pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn);}
+	if(VERSION=="angular"){CIC_angular(pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn,nrand);}
+	if(VERSION=="BOX"){CIC_BOX(pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn,nrand);}
+	if(VERSION=="BOX_ellipses"){CIC_BOX_ellipses(pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn,nrand);}
+	if(VERSION=="LC_ellipses"){CIC_LC_ellipses(pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn,nrand);}
     
 	return msg;
 }
@@ -164,6 +165,7 @@ int main(int argc, char *argv[])
 	}
 	
     int model_no,nnR=0,nnallax=0;
+	int nrand;
 	double progress;
 	string fnav; //file for optimization in pixelizing
     if(VERSION=="angular" or VERSION=="BOX"){iimax=nR*nmodels;}
@@ -181,7 +183,7 @@ int main(int argc, char *argv[])
 	else {fnav="Optimal_pix_BOX.txt";}
 
 	Fread<double>(fnav,{&Nav_circ,&Nav_pix},{0,1}); //reading the data
-	Read_randoms(Xcn,Ycn,Zcn,""); //reading randoms based on option(s)
+	Read_randoms(Xcn,Ycn,Zcn,"",nrand); //reading randoms based on option(s)
 
     for(int i=0;i<iimax;++i) //computation for all moments and radii
     {
@@ -192,8 +194,8 @@ int main(int argc, char *argv[])
 
         if(i%comm_size!=rank){continue;} //only current process
 		cout<<"**********Model********** "<<model_no+1<<"/"<<Model.size()<<endl;
-		if(VERSION=="angular" or VERSION=="BOX"){dset_err=Results_onemodel_oneradius(Model[model_no],nnR,Nav_circ,Nav_pix,Xcn,Ycn,Zcn);}
-		if(VERSION=="BOX_ellipses" or VERSION=="LC_ellipses"){dset_err=Results_onemodel_oneradius(Model[model_no],nnallax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn);}
+		if(VERSION=="angular" or VERSION=="BOX"){dset_err=Results_onemodel_oneradius(Model[model_no],nnR,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand);}
+		if(VERSION=="BOX_ellipses" or VERSION=="LC_ellipses"){dset_err=Results_onemodel_oneradius(Model[model_no],nnallax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand);}
         
 		if(dset_err==1)
 		{
