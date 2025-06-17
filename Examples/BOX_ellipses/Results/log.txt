@@ -1,0 +1,1147 @@
+---------------START: BOX_ellipses --------------- Thu Jun 12 12:53:08 2025
+
+[Parameters]:
+kappa: 0.1
+Cmin: 1
+Cmax: 1000000000
+nreals: 50
+Random_provided: 0
+Data [1]:
+            P18_CENTRAL_zz_0p100_BOX1
+Recalc: 0
+Cleaning: 1
+Poisson errors: 0
+Combine_reals: 0
+Boxsize: 500
+LOS parallel axis scales: 15 in range: [2:70]
+LOS perpendicular axis scales: 15 in range: [2:70]
+12:53:8 Running with 8 threads
+12:53:8 Preparing environment
+12:53:15 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_4.txt
+12:53:16 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_7.txt
+12:53:16 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_6.txt
+12:53:17 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_5.txt
+12:53:17 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_0.txt
+12:53:17 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_3.txt
+12:53:18 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_2.txt
+12:53:18 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_1.txt
+12:54:22 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_7_found.fndhst
+12:54:22 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_7.txt
+12:54:22 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_7.txt
+12:54:25 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_6_found.fndhst
+12:54:25 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_6.txt
+12:54:26 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_6.txt
+12:54:28 *** Overall progress: 0.0088 ***
+12:54:29 *** Overall progress: 0.0088 ***
+12:54:36 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_14.txt
+12:54:37 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_15.txt
+12:54:40 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_5_found.fndhst
+12:54:40 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_5.txt
+12:54:41 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_5.txt
+12:54:46 *** Overall progress: 0.0133 ***
+12:54:53 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_13.txt
+12:55:5 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_4_found.fndhst
+12:55:5 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_4.txt
+12:55:5 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_4.txt
+12:55:11 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_14_found.fndhst
+12:55:11 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_14.txt
+12:55:11 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_14.txt
+12:55:11 *** Overall progress: 0.0222 ***
+12:55:14 *** Overall progress: 0.0222 ***
+12:55:19 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_12.txt
+12:55:20 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_22.txt
+12:55:28 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_13_found.fndhst
+12:55:28 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_13.txt
+12:55:28 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_13.txt
+12:55:34 *** Overall progress: 0.0266 ***
+12:55:41 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_21.txt
+12:55:50 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_3_found.fndhst
+12:55:50 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_3.txt
+12:55:51 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_3.txt
+12:55:56 *** Overall progress: 0.0311 ***
+12:55:57 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_0_found.fndhst
+12:55:57 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_0.txt
+12:56:0 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_0.txt
+12:56:2 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_12_found.fndhst
+12:56:2 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_12.txt
+12:56:2 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_12.txt
+12:56:4 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_11.txt
+12:56:5 *** Overall progress: 0.04 ***
+12:56:6 *** Overall progress: 0.04 ***
+12:56:12 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_8.txt
+12:56:13 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_20.txt
+12:56:20 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_22_found.fndhst
+12:56:20 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_22.txt
+12:56:20 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_22.txt
+12:56:24 *** Overall progress: 0.0444 ***
+12:56:26 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_2_found.fndhst
+12:56:26 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_2.txt
+12:56:27 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_2.txt
+12:56:33 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_30.txt
+12:56:34 *** Overall progress: 0.0488 ***
+12:56:41 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_11_found.fndhst
+12:56:41 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_11.txt
+12:56:41 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_11.txt
+12:56:41 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_10.txt
+12:56:45 *** Overall progress: 0.0533 ***
+12:56:53 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_21_found.fndhst
+12:56:53 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_21.txt
+12:56:53 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_21.txt
+12:56:53 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_19.txt
+12:56:56 *** Overall progress: 0.0577 ***
+12:57:1 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_29.txt
+12:57:10 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_8_found.fndhst
+12:57:10 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_8.txt
+12:57:11 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_8.txt
+12:57:15 *** Overall progress: 0.0622 ***
+12:57:24 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_16.txt
+12:57:28 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_29_found.fndhst
+12:57:28 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_29.txt
+12:57:28 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_29.txt
+12:57:30 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_10_found.fndhst
+12:57:30 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_10.txt
+12:57:30 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_10.txt
+12:57:32 *** Overall progress: 0.0711 ***
+12:57:34 *** Overall progress: 0.0711 ***
+12:57:37 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_37.txt
+12:57:41 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_20_found.fndhst
+12:57:41 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_20.txt
+12:57:41 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_15_found.fndhst
+12:57:41 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_15.txt
+12:57:41 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_20.txt
+12:57:42 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_18.txt
+12:57:45 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_15.txt
+12:57:45 *** Overall progress: 0.08 ***
+12:57:49 *** Overall progress: 0.08 ***
+12:57:52 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_28.txt
+12:57:55 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_23.txt
+12:58:4 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_1_found.fndhst
+12:58:4 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_1.txt
+12:58:7 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_1.txt
+12:58:12 *** Overall progress: 0.0844 ***
+12:58:20 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_28_found.fndhst
+12:58:20 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_28.txt
+12:58:20 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_28.txt
+12:58:21 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_9.txt
+12:58:26 *** Overall progress: 0.0888 ***
+12:58:27 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_37_found.fndhst
+12:58:27 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_37.txt
+12:58:27 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_37.txt
+12:58:31 *** Overall progress: 0.0933 ***
+12:58:33 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_36.txt
+12:58:37 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_23_found.fndhst
+12:58:37 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_23.txt
+12:58:37 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_23.txt
+12:58:40 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_45.txt
+12:58:41 *** Overall progress: 0.0977 ***
+12:58:42 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_19_found.fndhst
+12:58:42 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_19.txt
+12:58:43 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_19.txt
+12:58:45 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_16_found.fndhst
+12:58:45 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_16.txt
+12:58:47 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_16.txt
+12:58:48 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_31.txt
+12:58:48 *** Overall progress: 0.1066 ***
+12:58:53 *** Overall progress: 0.1066 ***
+12:58:55 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_27.txt
+12:59:0 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_9_found.fndhst
+12:59:0 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_9.txt
+12:59:0 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_9.txt
+12:59:0 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_24.txt
+12:59:6 *** Overall progress: 0.1111 ***
+12:59:9 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_30_found.fndhst
+12:59:9 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_30.txt
+12:59:11 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_30.txt
+12:59:15 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_17.txt
+12:59:17 *** Overall progress: 0.1155 ***
+12:59:23 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_38.txt
+12:59:31 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_27_found.fndhst
+12:59:31 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_27.txt
+12:59:31 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_27.txt
+12:59:34 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_24_found.fndhst
+12:59:34 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_24.txt
+12:59:34 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_24.txt
+12:59:36 *** Overall progress: 0.1244 ***
+12:59:38 *** Overall progress: 0.1244 ***
+12:59:39 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_36_found.fndhst
+12:59:39 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_36.txt
+12:59:39 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_36.txt
+12:59:43 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_35.txt
+12:59:45 *** Overall progress: 0.1288 ***
+12:59:45 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_32.txt
+12:59:49 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_18_found.fndhst
+12:59:49 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_18.txt
+12:59:50 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_18.txt
+12:59:52 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_44.txt
+12:59:54 *** Overall progress: 0.1333 ***
+12:59:59 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_38_found.fndhst
+12:59:59 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_38.txt
+12:59:59 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_26.txt
+12:59:59 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_38.txt
+13:0:4 *** Overall progress: 0.1377 ***
+13:0:11 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_46.txt
+13:0:15 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_44_found.fndhst
+13:0:15 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_44.txt
+13:0:15 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_44.txt
+13:0:20 *** Overall progress: 0.1422 ***
+13:0:27 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_52.txt
+13:0:34 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_26_found.fndhst
+13:0:34 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_26.txt
+13:0:34 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_26.txt
+13:0:37 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_31_found.fndhst
+13:0:37 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_31.txt
+13:0:37 *** Overall progress: 0.1511 ***
+13:0:39 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_32_found.fndhst
+13:0:39 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_32.txt
+13:0:39 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_31.txt
+13:0:39 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_32.txt
+13:0:43 *** Overall progress: 0.1555 ***
+13:0:44 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_34.txt
+13:0:45 *** Overall progress: 0.1555 ***
+13:0:47 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_45_found.fndhst
+13:0:47 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_45.txt
+13:0:49 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_45.txt
+13:0:50 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_40.txt
+13:0:52 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_39.txt
+13:0:53 *** Overall progress: 0.16 ***
+13:0:59 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_53.txt
+13:1:4 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_35_found.fndhst
+13:1:4 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_35.txt
+13:1:4 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_35.txt
+13:1:9 *** Overall progress: 0.1644 ***
+13:1:10 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_52_found.fndhst
+13:1:10 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_52.txt
+13:1:11 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_52.txt
+13:1:15 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_43.txt
+13:1:16 *** Overall progress: 0.1688 ***
+13:1:16 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_40_found.fndhst
+13:1:16 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_40.txt
+13:1:16 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_40.txt
+13:1:21 *** Overall progress: 0.1733 ***
+13:1:21 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_53_found.fndhst
+13:1:21 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_53.txt
+13:1:21 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_53.txt
+13:1:24 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_39_found.fndhst
+13:1:24 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_39.txt
+13:1:24 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_39.txt
+13:1:25 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_60.txt
+13:1:25 *** Overall progress: 0.1822 ***
+13:1:28 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_48.txt
+13:1:30 *** Overall progress: 0.1822 ***
+13:1:33 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_61.txt
+13:1:38 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_47.txt
+13:1:38 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_43_found.fndhst
+13:1:38 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_43.txt
+13:1:38 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_43.txt
+13:1:44 *** Overall progress: 0.1866 ***
+13:1:49 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_46_found.fndhst
+13:1:49 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_46.txt
+13:1:50 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_51.txt
+13:1:50 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_46.txt
+13:1:56 *** Overall progress: 0.1911 ***
+13:2:0 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_17_found.fndhst
+13:2:0 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_17.txt
+13:2:1 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_54.txt
+13:2:2 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_17.txt
+13:2:8 *** Overall progress: 0.1955 ***
+13:2:9 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_48_found.fndhst
+13:2:9 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_48.txt
+13:2:10 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_48.txt
+13:2:11 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_34_found.fndhst
+13:2:11 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_34.txt
+13:2:12 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_34.txt
+13:2:13 *** Overall progress: 0.2044 ***
+13:2:15 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_25.txt
+13:2:16 *** Overall progress: 0.2044 ***
+13:2:19 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_56.txt
+13:2:22 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_42.txt
+13:2:29 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_54_found.fndhst
+13:2:29 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_54.txt
+13:2:29 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_54.txt
+13:2:33 *** Overall progress: 0.2088 ***
+13:2:39 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_56_found.fndhst
+13:2:39 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_56.txt
+13:2:39 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_56.txt
+13:2:39 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_62.txt
+13:2:42 *** Overall progress: 0.2133 ***
+13:2:49 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_64.txt
+13:2:51 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_42_found.fndhst
+13:2:51 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_42.txt
+13:2:51 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_42.txt
+13:2:54 *** Overall progress: 0.2177 ***
+13:2:57 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_51_found.fndhst
+13:2:57 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_51.txt
+13:2:57 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_51.txt
+13:2:58 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_25_found.fndhst
+13:2:58 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_25.txt
+13:2:58 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_25.txt
+13:3:1 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_50.txt
+13:3:2 *** Overall progress: 0.2266 ***
+13:3:3 *** Overall progress: 0.2266 ***
+13:3:3 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_47_found.fndhst
+13:3:3 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_47.txt
+13:3:4 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_47.txt
+13:3:9 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_33.txt
+13:3:9 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_59.txt
+13:3:10 *** Overall progress: 0.2311 ***
+13:3:11 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_61_found.fndhst
+13:3:11 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_61.txt
+13:3:12 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_61.txt
+13:3:17 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_55.txt
+13:3:18 *** Overall progress: 0.2355 ***
+13:3:20 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_64_found.fndhst
+13:3:20 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_64.txt
+13:3:20 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_64.txt
+13:3:23 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_60_found.fndhst
+13:3:23 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_60.txt
+13:3:24 *** Overall progress: 0.2444 ***
+13:3:24 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_60.txt
+13:3:25 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_69.txt
+13:3:28 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_59_found.fndhst
+13:3:28 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_59.txt
+13:3:28 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_59.txt
+13:3:28 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_72.txt
+13:3:29 *** Overall progress: 0.2488 ***
+13:3:34 *** Overall progress: 0.2488 ***
+13:3:35 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_68.txt
+13:3:41 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_69_found.fndhst
+13:3:41 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_69.txt
+13:3:41 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_69.txt
+13:3:42 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_67.txt
+13:3:44 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_55_found.fndhst
+13:3:44 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_55.txt
+13:3:44 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_55.txt
+13:3:45 *** Overall progress: 0.2577 ***
+13:3:49 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_72_found.fndhst
+13:3:49 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_72.txt
+13:3:49 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_72.txt
+13:3:50 *** Overall progress: 0.2622 ***
+13:3:51 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_77.txt
+13:3:55 *** Overall progress: 0.2622 ***
+13:3:55 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_62_found.fndhst
+13:3:55 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_62.txt
+13:3:56 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_62.txt
+13:3:57 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_63.txt
+13:4:1 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_80.txt
+13:4:2 *** Overall progress: 0.2666 ***
+13:4:9 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_68_found.fndhst
+13:4:9 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_68.txt
+13:4:9 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_70.txt
+13:4:9 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_68.txt
+13:4:12 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_50_found.fndhst
+13:4:12 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_50.txt
+13:4:12 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_50.txt
+13:4:13 *** Overall progress: 0.2755 ***
+13:4:17 *** Overall progress: 0.2755 ***
+13:4:20 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_76.txt
+13:4:23 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_67_found.fndhst
+13:4:23 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_67.txt
+13:4:23 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_67.txt
+13:4:23 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_58.txt
+13:4:25 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_80_found.fndhst
+13:4:25 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_80.txt
+13:4:25 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_80.txt
+13:4:29 *** Overall progress: 0.2844 ***
+13:4:29 *** Overall progress: 0.2844 ***
+13:4:32 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_70_found.fndhst
+13:4:32 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_70.txt
+13:4:32 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_70.txt
+13:4:34 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_88.txt
+13:4:38 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_75.txt
+13:4:38 *** Overall progress: 0.2888 ***
+13:4:44 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_78.txt
+13:4:44 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_88_found.fndhst
+13:4:44 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_88.txt
+13:4:44 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_88.txt
+13:4:45 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_58_found.fndhst
+13:4:45 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_58.txt
+13:4:45 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_58.txt
+13:4:48 *** Overall progress: 0.2977 ***
+13:4:49 *** Overall progress: 0.2977 ***
+13:4:54 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_96.txt
+13:4:56 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_66.txt
+13:4:58 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_77_found.fndhst
+13:4:58 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_77.txt
+13:4:58 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_77.txt
+13:5:1 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_63_found.fndhst
+13:5:1 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_63.txt
+13:5:1 *** Overall progress: 0.3066 ***
+13:5:2 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_63.txt
+13:5:6 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_85.txt
+13:5:8 *** Overall progress: 0.3066 ***
+13:5:12 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_96_found.fndhst
+13:5:12 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_96.txt
+13:5:13 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_96.txt
+13:5:14 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_33_found.fndhst
+13:5:14 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_33.txt
+13:5:15 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_71.txt
+13:5:15 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_33.txt
+13:5:17 *** Overall progress: 0.3155 ***
+13:5:20 *** Overall progress: 0.3155 ***
+13:5:23 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_104.txt
+13:5:25 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_85_found.fndhst
+13:5:25 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_85.txt
+13:5:25 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_85.txt
+13:5:27 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_41.txt
+13:5:30 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_71_found.fndhst
+13:5:30 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_71.txt
+13:5:30 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_71.txt
+13:5:31 *** Overall progress: 0.3244 ***
+13:5:36 *** Overall progress: 0.3244 ***
+13:5:38 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_104_found.fndhst
+13:5:38 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_104.txt
+13:5:38 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_104.txt
+13:5:39 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_93.txt
+13:5:39 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_76_found.fndhst
+13:5:39 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_76.txt
+13:5:40 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_76.txt
+13:5:42 *** Overall progress: 0.3333 ***
+13:5:43 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_78_found.fndhst
+13:5:43 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_78.txt
+13:5:44 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_79.txt
+13:5:44 *** Overall progress: 0.3377 ***
+13:5:44 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_78.txt
+13:5:49 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_84.txt
+13:5:49 *** Overall progress: 0.3377 ***
+13:5:50 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_112.txt
+13:5:55 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_86.txt
+13:6:0 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_66_found.fndhst
+13:6:0 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_66.txt
+13:6:0 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_66.txt
+13:6:4 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_41_found.fndhst
+13:6:4 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_41.txt
+13:6:4 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_41.txt
+13:6:4 *** Overall progress: 0.3466 ***
+13:6:6 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_112_found.fndhst
+13:6:6 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_112.txt
+13:6:6 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_112.txt
+13:6:8 *** Overall progress: 0.3511 ***
+13:6:8 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_86_found.fndhst
+13:6:8 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_86.txt
+13:6:8 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_86.txt
+13:6:11 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_74.txt
+13:6:13 *** Overall progress: 0.3555 ***
+13:6:13 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_49.txt
+13:6:14 *** Overall progress: 0.3555 ***
+13:6:19 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_94.txt
+13:6:19 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_84_found.fndhst
+13:6:19 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_84.txt
+13:6:19 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_84.txt
+13:6:20 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_120.txt
+13:6:23 *** Overall progress: 0.36 ***
+13:6:28 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_74_found.fndhst
+13:6:28 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_74.txt
+13:6:28 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_74.txt
+13:6:31 *** Overall progress: 0.3644 ***
+13:6:31 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_92.txt
+13:6:31 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_79_found.fndhst
+13:6:31 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_79.txt
+13:6:32 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_79.txt
+13:6:35 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_93_found.fndhst
+13:6:35 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_93.txt
+13:6:35 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_93.txt
+13:6:36 *** Overall progress: 0.3733 ***
+13:6:37 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_82.txt
+13:6:41 *** Overall progress: 0.3733 ***
+13:6:43 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_87.txt
+13:6:47 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_101.txt
+13:6:58 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_87_found.fndhst
+13:6:58 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_87.txt
+13:6:58 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_87.txt
+13:6:59 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_75_found.fndhst
+13:6:59 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_75.txt
+13:7:1 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_75.txt
+13:7:1 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_94_found.fndhst
+13:7:1 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_94.txt
+13:7:1 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_94.txt
+13:7:2 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_101_found.fndhst
+13:7:2 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_101.txt
+13:7:2 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_101.txt
+13:7:3 *** Overall progress: 0.3911 ***
+13:7:5 *** Overall progress: 0.3911 ***
+13:7:7 *** Overall progress: 0.3911 ***
+13:7:7 *** Overall progress: 0.3911 ***
+13:7:10 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_95.txt
+13:7:11 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_102.txt
+13:7:12 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_82_found.fndhst
+13:7:12 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_82.txt
+13:7:12 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_82.txt
+13:7:12 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_109.txt
+13:7:14 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_83.txt
+13:7:16 *** Overall progress: 0.3955 ***
+13:7:23 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_90.txt
+13:7:28 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_102_found.fndhst
+13:7:28 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_102.txt
+13:7:28 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_102.txt
+13:7:31 *** Overall progress: 0.4 ***
+13:7:33 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_92_found.fndhst
+13:7:33 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_92.txt
+13:7:34 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_92.txt
+13:7:37 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_110.txt
+13:7:38 *** Overall progress: 0.4044 ***
+13:7:42 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_49_found.fndhst
+13:7:42 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_49.txt
+13:7:43 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_49.txt
+13:7:44 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_83_found.fndhst
+13:7:44 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_83.txt
+13:7:45 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_83.txt
+13:7:45 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_100.txt
+13:7:47 *** Overall progress: 0.4133 ***
+13:7:51 *** Overall progress: 0.4133 ***
+13:7:51 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_95_found.fndhst
+13:7:51 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_95.txt
+13:7:51 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_95.txt
+13:7:53 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_109_found.fndhst
+13:7:53 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_109.txt
+13:7:53 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_109.txt
+13:7:54 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_57.txt
+13:7:57 *** Overall progress: 0.4222 ***
+13:7:57 *** Overall progress: 0.4222 ***
+13:7:59 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_91.txt
+13:8:1 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_103.txt
+13:8:3 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_117.txt
+13:8:7 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_110_found.fndhst
+13:8:7 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_110.txt
+13:8:7 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_110.txt
+13:8:11 *** Overall progress: 0.4266 ***
+13:8:12 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_100_found.fndhst
+13:8:12 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_100.txt
+13:8:12 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_100.txt
+13:8:16 *** Overall progress: 0.4311 ***
+13:8:17 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_118.txt
+13:8:18 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_103_found.fndhst
+13:8:18 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_103.txt
+13:8:18 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_103.txt
+13:8:19 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_117_found.fndhst
+13:8:19 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_117.txt
+13:8:19 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_117.txt
+13:8:20 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_57_found.fndhst
+13:8:20 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_57.txt
+13:8:20 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_57.txt
+13:8:22 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_108.txt
+13:8:23 *** Overall progress: 0.4444 ***
+13:8:24 *** Overall progress: 0.4444 ***
+13:8:24 *** Overall progress: 0.4444 ***
+13:8:30 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_118_found.fndhst
+13:8:30 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_118.txt
+13:8:30 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_118.txt
+13:8:30 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_111.txt
+13:8:31 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_65.txt
+13:8:32 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_125.txt
+13:8:34 *** Overall progress: 0.4488 ***
+13:8:37 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_120_found.fndhst
+13:8:37 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_120.txt
+13:8:38 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_120.txt
+13:8:40 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_126.txt
+13:8:44 *** Overall progress: 0.4533 ***
+13:8:50 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_128.txt
+13:8:55 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_111_found.fndhst
+13:8:55 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_111.txt
+13:8:55 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_111.txt
+13:8:59 *** Overall progress: 0.4577 ***
+13:9:3 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_126_found.fndhst
+13:9:3 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_126.txt
+13:9:3 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_126.txt
+13:9:3 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_128_found.fndhst
+13:9:3 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_128.txt
+13:9:3 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_128.txt
+13:9:4 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_119.txt
+13:9:7 *** Overall progress: 0.4666 ***
+13:9:8 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_108_found.fndhst
+13:9:8 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_108.txt
+13:9:8 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_108.txt
+13:9:9 *** Overall progress: 0.4711 ***
+13:9:11 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_125_found.fndhst
+13:9:11 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_125.txt
+13:9:11 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_125.txt
+13:9:12 *** Overall progress: 0.4755 ***
+13:9:13 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_134.txt
+13:9:16 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_116.txt
+13:9:17 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_136.txt
+13:9:17 *** Overall progress: 0.4755 ***
+13:9:18 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_119_found.fndhst
+13:9:18 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_119.txt
+13:9:18 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_119.txt
+13:9:22 *** Overall progress: 0.48 ***
+13:9:23 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_134_found.fndhst
+13:9:23 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_134.txt
+13:9:23 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_134.txt
+13:9:24 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_133.txt
+13:9:28 *** Overall progress: 0.4844 ***
+13:9:28 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_127.txt
+13:9:28 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_116_found.fndhst
+13:9:28 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_116.txt
+13:9:28 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_116.txt
+13:9:30 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_90_found.fndhst
+13:9:30 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_90.txt
+13:9:31 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_90.txt
+13:9:32 *** Overall progress: 0.4933 ***
+13:9:33 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_133_found.fndhst
+13:9:33 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_133.txt
+13:9:33 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_133.txt
+13:9:35 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_142.txt
+13:9:37 *** Overall progress: 0.4977 ***
+13:9:37 *** Overall progress: 0.4977 ***
+13:9:38 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_124.txt
+13:9:43 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_65_found.fndhst
+13:9:43 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_65.txt
+13:9:43 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_65.txt
+13:9:44 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_141.txt
+13:9:45 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_98.txt
+13:9:47 *** Overall progress: 0.5022 ***
+13:9:47 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_91_found.fndhst
+13:9:47 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_91.txt
+13:9:48 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_91.txt
+13:9:50 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_127_found.fndhst
+13:9:50 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_127.txt
+13:9:50 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_127.txt
+13:9:52 *** Overall progress: 0.5111 ***
+13:9:53 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_73.txt
+13:9:54 *** Overall progress: 0.5111 ***
+13:9:55 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_142_found.fndhst
+13:9:55 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_142.txt
+13:9:55 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_142.txt
+13:9:58 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_99.txt
+13:9:59 *** Overall progress: 0.5155 ***
+13:10:4 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_135.txt
+13:10:6 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_150.txt
+13:10:11 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_73_found.fndhst
+13:10:11 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_73.txt
+13:10:11 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_73.txt
+13:10:15 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_98_found.fndhst
+13:10:15 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_98.txt
+13:10:15 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_98.txt
+13:10:15 *** Overall progress: 0.5244 ***
+13:10:18 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_124_found.fndhst
+13:10:18 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_124.txt
+13:10:18 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_124.txt
+13:10:18 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_141_found.fndhst
+13:10:18 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_141.txt
+13:10:18 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_141.txt
+13:10:20 *** Overall progress: 0.5333 ***
+13:10:23 *** Overall progress: 0.5333 ***
+13:10:24 *** Overall progress: 0.5333 ***
+13:10:24 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_99_found.fndhst
+13:10:24 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_99.txt
+13:10:24 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_99.txt
+13:10:24 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_81.txt
+13:10:27 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_106.txt
+13:10:29 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_149.txt
+13:10:30 *** Overall progress: 0.5377 ***
+13:10:30 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_132.txt
+13:10:37 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_107.txt
+13:10:40 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_149_found.fndhst
+13:10:40 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_149.txt
+13:10:40 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_149.txt
+13:10:41 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_132_found.fndhst
+13:10:41 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_132.txt
+13:10:41 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_132.txt
+13:10:43 *** Overall progress: 0.5466 ***
+13:10:47 *** Overall progress: 0.5466 ***
+13:10:49 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_157.txt
+13:10:54 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_140.txt
+13:11:6 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_136_found.fndhst
+13:11:6 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_136.txt
+13:11:6 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_81_found.fndhst
+13:11:6 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_81.txt
+13:11:6 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_136.txt
+13:11:6 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_81.txt
+13:11:10 *** Overall progress: 0.5555 ***
+13:11:11 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_157_found.fndhst
+13:11:11 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_157.txt
+13:11:11 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_157.txt
+13:11:12 *** Overall progress: 0.56 ***
+13:11:16 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_89.txt
+13:11:17 *** Overall progress: 0.56 ***
+13:11:19 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_144.txt
+13:11:24 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_165.txt
+13:11:27 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_89_found.fndhst
+13:11:27 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_89.txt
+13:11:27 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_89.txt
+13:11:28 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_140_found.fndhst
+13:11:28 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_140.txt
+13:11:29 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_140.txt
+13:11:31 *** Overall progress: 0.5688 ***
+13:11:35 *** Overall progress: 0.5688 ***
+13:11:36 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_144_found.fndhst
+13:11:36 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_144.txt
+13:11:36 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_144.txt
+13:11:38 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_97.txt
+13:11:41 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_148.txt
+13:11:41 *** Overall progress: 0.5733 ***
+13:11:49 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_152.txt
+13:11:52 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_148_found.fndhst
+13:11:52 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_148.txt
+13:11:52 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_148.txt
+13:11:57 *** Overall progress: 0.5777 ***
+13:12:0 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_135_found.fndhst
+13:12:0 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_135.txt
+13:12:0 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_107_found.fndhst
+13:12:0 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_107.txt
+13:12:1 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_135.txt
+13:12:1 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_107.txt
+13:12:3 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_106_found.fndhst
+13:12:3 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_106.txt
+13:12:4 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_106.txt
+13:12:4 *** Overall progress: 0.5911 ***
+13:12:4 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_156.txt
+13:12:6 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_97_found.fndhst
+13:12:6 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_97.txt
+13:12:6 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_97.txt
+13:12:7 *** Overall progress: 0.5955 ***
+13:12:9 *** Overall progress: 0.5955 ***
+13:12:9 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_143.txt
+13:12:10 *** Overall progress: 0.5955 ***
+13:12:14 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_115.txt
+13:12:14 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_150_found.fndhst
+13:12:14 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_150.txt
+13:12:15 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_150.txt
+13:12:16 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_114.txt
+13:12:17 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_105.txt
+13:12:19 *** Overall progress: 0.6 ***
+13:12:24 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_143_found.fndhst
+13:12:24 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_143.txt
+13:12:24 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_143.txt
+13:12:26 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_158.txt
+13:12:27 *** Overall progress: 0.6044 ***
+13:12:32 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_151.txt
+13:12:33 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_156_found.fndhst
+13:12:33 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_156.txt
+13:12:33 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_156.txt
+13:12:34 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_115_found.fndhst
+13:12:34 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_115.txt
+13:12:34 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_115.txt
+13:12:39 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_114_found.fndhst
+13:12:39 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_114.txt
+13:12:39 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_114.txt
+13:12:39 *** Overall progress: 0.6177 ***
+13:12:40 *** Overall progress: 0.6177 ***
+13:12:44 *** Overall progress: 0.6177 ***
+13:12:45 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_158_found.fndhst
+13:12:45 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_158.txt
+13:12:45 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_158.txt
+13:12:46 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_164.txt
+13:12:47 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_123.txt
+13:12:49 *** Overall progress: 0.6222 ***
+13:12:52 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_122.txt
+13:12:57 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_166.txt
+13:12:57 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_164_found.fndhst
+13:12:57 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_164.txt
+13:12:57 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_164.txt
+13:13:1 *** Overall progress: 0.6266 ***
+13:13:6 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_172.txt
+13:13:17 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_152_found.fndhst
+13:13:17 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_152.txt
+13:13:17 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_152.txt
+13:13:23 *** Overall progress: 0.6311 ***
+13:13:23 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_172_found.fndhst
+13:13:23 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_172.txt
+13:13:23 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_172.txt
+13:13:27 *** Overall progress: 0.6355 ***
+13:13:30 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_160.txt
+13:13:32 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_180.txt
+13:13:46 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_160_found.fndhst
+13:13:46 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_160.txt
+13:13:46 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_160.txt
+13:13:47 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_123_found.fndhst
+13:13:47 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_123.txt
+13:13:47 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_123.txt
+13:13:47 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_165_found.fndhst
+13:13:47 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_165.txt
+13:13:47 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_165.txt
+13:13:51 *** Overall progress: 0.6488 ***
+13:13:52 *** Overall progress: 0.6488 ***
+13:13:52 *** Overall progress: 0.6488 ***
+13:13:57 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_131.txt
+13:13:58 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_173.txt
+13:13:59 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_168.txt
+13:14:5 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_131_found.fndhst
+13:14:5 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_131.txt
+13:14:5 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_131.txt
+13:14:8 *** Overall progress: 0.6533 ***
+13:14:9 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_173_found.fndhst
+13:14:9 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_173.txt
+13:14:9 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_173.txt
+13:14:11 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_151_found.fndhst
+13:14:11 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_151.txt
+13:14:11 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_151.txt
+13:14:12 *** Overall progress: 0.6622 ***
+13:14:13 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_105_found.fndhst
+13:14:13 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_105.txt
+13:14:14 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_122_found.fndhst
+13:14:14 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_122.txt
+13:14:14 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_122.txt
+13:14:14 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_105.txt
+13:14:15 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_139.txt
+13:14:15 *** Overall progress: 0.6711 ***
+13:14:18 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_181.txt
+13:14:19 *** Overall progress: 0.6711 ***
+13:14:20 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_159.txt
+13:14:21 *** Overall progress: 0.6711 ***
+13:14:26 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_130.txt
+13:14:28 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_113.txt
+13:14:35 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_159_found.fndhst
+13:14:35 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_159.txt
+13:14:35 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_159.txt
+13:14:41 *** Overall progress: 0.6755 ***
+13:14:45 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_130_found.fndhst
+13:14:45 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_130.txt
+13:14:45 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_130.txt
+13:14:46 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_167.txt
+13:14:51 *** Overall progress: 0.68 ***
+13:14:55 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_166_found.fndhst
+13:14:55 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_166.txt
+13:14:55 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_166.txt
+13:14:56 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_113_found.fndhst
+13:14:56 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_113.txt
+13:14:56 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_113.txt
+13:14:59 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_138.txt
+13:15:0 *** Overall progress: 0.6888 ***
+13:15:2 *** Overall progress: 0.6888 ***
+13:15:4 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_139_found.fndhst
+13:15:4 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_139.txt
+13:15:4 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_139.txt
+13:15:7 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_121.txt
+13:15:8 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_174.txt
+13:15:10 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_168_found.fndhst
+13:15:10 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_168.txt
+13:15:11 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_168.txt
+13:15:11 *** Overall progress: 0.6977 ***
+13:15:16 *** Overall progress: 0.6977 ***
+13:15:17 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_147.txt
+13:15:22 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_174_found.fndhst
+13:15:22 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_174.txt
+13:15:22 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_174.txt
+13:15:24 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_176.txt
+13:15:26 *** Overall progress: 0.7022 ***
+13:15:33 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_147_found.fndhst
+13:15:33 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_147.txt
+13:15:33 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_147.txt
+13:15:33 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_176_found.fndhst
+13:15:33 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_176.txt
+13:15:33 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_176.txt
+13:15:34 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_182.txt
+13:15:38 *** Overall progress: 0.7111 ***
+13:15:40 *** Overall progress: 0.7111 ***
+13:15:46 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_155.txt
+13:15:47 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_184.txt
+13:16:9 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_138_found.fndhst
+13:16:9 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_138.txt
+13:16:9 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_138.txt
+13:16:15 *** Overall progress: 0.7155 ***
+13:16:16 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_180_found.fndhst
+13:16:16 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_180.txt
+13:16:16 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_180.txt
+13:16:21 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_146.txt
+13:16:21 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_181_found.fndhst
+13:16:21 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_181.txt
+13:16:21 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_181.txt
+13:16:22 *** Overall progress: 0.7244 ***
+13:16:26 *** Overall progress: 0.7244 ***
+13:16:27 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_155_found.fndhst
+13:16:27 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_155.txt
+13:16:27 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_155.txt
+13:16:29 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_188.txt
+13:16:31 *** Overall progress: 0.7288 ***
+13:16:32 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_167_found.fndhst
+13:16:32 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_167.txt
+13:16:32 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_167.txt
+13:16:33 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_146_found.fndhst
+13:16:33 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_146.txt
+13:16:33 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_146.txt
+13:16:34 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_189.txt
+13:16:37 *** Overall progress: 0.7377 ***
+13:16:37 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_163.txt
+13:16:37 *** Overall progress: 0.7377 ***
+13:16:43 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_175.txt
+13:16:44 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_188_found.fndhst
+13:16:44 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_188.txt
+13:16:44 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_188.txt
+13:16:45 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_154.txt
+13:16:49 *** Overall progress: 0.7422 ***
+13:16:49 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_163_found.fndhst
+13:16:49 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_163.txt
+13:16:49 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_163.txt
+13:16:50 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_184_found.fndhst
+13:16:50 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_184.txt
+13:16:50 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_184.txt
+13:16:50 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_189_found.fndhst
+13:16:50 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_189.txt
+13:16:50 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_189.txt
+13:16:54 *** Overall progress: 0.7555 ***
+13:16:54 *** Overall progress: 0.7555 ***
+13:16:55 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_196.txt
+13:16:55 *** Overall progress: 0.7555 ***
+13:16:58 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_175_found.fndhst
+13:16:59 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_175.txt
+13:16:59 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_175.txt
+13:17:0 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_171.txt
+13:17:1 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_192.txt
+13:17:2 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_197.txt
+13:17:2 *** Overall progress: 0.76 ***
+13:17:7 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_182_found.fndhst
+13:17:7 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_182.txt
+13:17:7 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_182.txt
+13:17:8 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_121_found.fndhst
+13:17:8 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_121.txt
+13:17:9 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_183.txt
+13:17:9 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_121.txt
+13:17:12 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_192_found.fndhst
+13:17:12 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_192.txt
+13:17:12 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_192.txt
+13:17:12 *** Overall progress: 0.7733 ***
+13:17:15 *** Overall progress: 0.7733 ***
+13:17:17 *** Overall progress: 0.7733 ***
+13:17:18 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_190.txt
+13:17:21 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_129.txt
+13:17:25 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_200.txt
+13:17:33 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_171_found.fndhst
+13:17:33 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_171.txt
+13:17:33 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_171.txt
+13:17:34 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_190_found.fndhst
+13:17:34 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_190.txt
+13:17:35 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_190.txt
+13:17:37 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_129_found.fndhst
+13:17:37 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_129.txt
+13:17:37 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_129.txt
+13:17:37 *** Overall progress: 0.7866 ***
+13:17:40 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_183_found.fndhst
+13:17:40 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_183.txt
+13:17:40 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_183.txt
+13:17:40 *** Overall progress: 0.7911 ***
+13:17:44 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_197_found.fndhst
+13:17:44 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_197.txt
+13:17:44 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_197.txt
+13:17:44 *** Overall progress: 0.7955 ***
+13:17:44 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_154_found.fndhst
+13:17:44 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_154.txt
+13:17:44 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_154.txt
+13:17:44 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_179.txt
+13:17:44 *** Overall progress: 0.8 ***
+13:17:48 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_198.txt
+13:17:48 *** Overall progress: 0.8 ***
+13:17:49 *** Overall progress: 0.8 ***
+13:17:52 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_137.txt
+13:17:52 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_191.txt
+13:17:54 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_205.txt
+13:17:54 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_179_found.fndhst
+13:17:54 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_179.txt
+13:17:54 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_179.txt
+13:17:55 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_162.txt
+13:18:0 *** Overall progress: 0.8044 ***
+13:18:1 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_191_found.fndhst
+13:18:1 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_191.txt
+13:18:1 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_191.txt
+13:18:6 *** Overall progress: 0.8088 ***
+13:18:7 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_187.txt
+13:18:9 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_162_found.fndhst
+13:18:9 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_162.txt
+13:18:9 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_162.txt
+13:18:9 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_205_found.fndhst
+13:18:9 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_205.txt
+13:18:9 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_205.txt
+13:18:12 *** Overall progress: 0.8177 ***
+13:18:13 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_200_found.fndhst
+13:18:13 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_200.txt
+13:18:13 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_200.txt
+13:18:13 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_199.txt
+13:18:14 *** Overall progress: 0.8222 ***
+13:18:19 *** Overall progress: 0.8222 ***
+13:18:19 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_170.txt
+13:18:20 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_198_found.fndhst
+13:18:20 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_198.txt
+13:18:20 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_198.txt
+13:18:21 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_213.txt
+13:18:26 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_208.txt
+13:18:26 *** Overall progress: 0.8266 ***
+13:18:31 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_187_found.fndhst
+13:18:31 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_187.txt
+13:18:31 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_187.txt
+13:18:32 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_206.txt
+13:18:34 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_208_found.fndhst
+13:18:34 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_208.txt
+13:18:34 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_208.txt
+13:18:36 *** Overall progress: 0.8355 ***
+13:18:38 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_199_found.fndhst
+13:18:38 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_199.txt
+13:18:38 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_199.txt
+13:18:40 *** Overall progress: 0.84 ***
+13:18:41 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_206_found.fndhst
+13:18:41 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_206.txt
+13:18:41 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_206.txt
+13:18:42 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_195.txt
+13:18:44 *** Overall progress: 0.8444 ***
+13:18:45 *** Overall progress: 0.8444 ***
+13:18:48 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_216.txt
+13:18:50 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_207.txt
+13:18:51 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_214.txt
+13:18:54 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_213_found.fndhst
+13:18:54 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_213.txt
+13:18:54 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_213.txt
+13:18:59 *** Overall progress: 0.8488 ***
+13:19:2 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_207_found.fndhst
+13:19:2 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_207.txt
+13:19:2 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_207.txt
+13:19:3 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_170_found.fndhst
+13:19:3 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_170.txt
+13:19:3 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_170.txt
+13:19:6 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_221.txt
+13:19:7 *** Overall progress: 0.8577 ***
+13:19:9 *** Overall progress: 0.8577 ***
+13:19:14 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_215.txt
+13:19:16 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_178.txt
+13:19:16 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_221_found.fndhst
+13:19:16 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_221.txt
+13:19:16 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_221.txt
+13:19:17 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_214_found.fndhst
+13:19:17 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_214.txt
+13:19:17 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_214.txt
+13:19:21 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_196_found.fndhst
+13:19:21 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_196.txt
+13:19:21 *** Overall progress: 0.8711 ***
+13:19:21 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_196.txt
+13:19:21 *** Overall progress: 0.8711 ***
+13:19:24 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_178_found.fndhst
+13:19:24 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_178.txt
+13:19:24 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_178.txt
+13:19:25 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_216_found.fndhst
+13:19:25 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_216.txt
+13:19:25 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_216.txt
+13:19:26 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_222.txt
+13:19:27 *** Overall progress: 0.88 ***
+13:19:28 *** Overall progress: 0.88 ***
+13:19:28 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_137_found.fndhst
+13:19:28 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_137.txt
+13:19:29 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_137.txt
+13:19:29 *** Overall progress: 0.8844 ***
+13:19:33 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_186.txt
+13:19:33 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_215_found.fndhst
+13:19:33 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_215.txt
+13:19:33 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_215.txt
+13:19:34 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_204.txt
+13:19:34 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_224.txt
+13:19:35 *** Overall progress: 0.8888 ***
+13:19:37 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_222_found.fndhst
+13:19:37 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_222.txt
+13:19:37 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_222.txt
+13:19:37 *** Overall progress: 0.8933 ***
+13:19:40 *** Overall progress: 0.8933 ***
+13:19:42 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_223.txt
+13:19:42 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_145.txt
+13:19:42 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_224_found.fndhst
+13:19:42 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_224.txt
+13:19:42 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_224.txt
+13:19:45 *** Overall progress: 0.8977 ***
+13:19:49 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_204_found.fndhst
+13:19:49 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_204.txt
+13:19:49 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_204.txt
+13:19:49 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_223_found.fndhst
+13:19:49 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_223.txt
+13:19:49 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_223.txt
+13:19:52 *** Overall progress: 0.9066 ***
+13:19:54 *** Overall progress: 0.9066 ***
+13:19:57 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_145_found.fndhst
+13:19:57 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_145.txt
+13:19:57 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_145.txt
+13:19:59 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_212.txt
+13:20:0 *** Overall progress: 0.9111 ***
+13:20:2 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_186_found.fndhst
+13:20:2 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_186.txt
+13:20:2 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_186.txt
+13:20:4 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_153.txt
+13:20:5 *** Overall progress: 0.9155 ***
+13:20:10 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_194.txt
+13:20:17 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_194_found.fndhst
+13:20:17 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_194.txt
+13:20:17 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_194.txt
+13:20:20 *** Overall progress: 0.92 ***
+13:20:24 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_202.txt
+13:20:38 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_212_found.fndhst
+13:20:38 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_212.txt
+13:20:38 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_212.txt
+13:20:41 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_202_found.fndhst
+13:20:41 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_202.txt
+13:20:41 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_202.txt
+13:20:43 *** Overall progress: 0.9288 ***
+13:20:44 *** Overall progress: 0.9288 ***
+13:20:48 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_220.txt
+13:20:49 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_210.txt
+13:20:54 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_153_found.fndhst
+13:20:54 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_153.txt
+13:20:55 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_153.txt
+13:20:58 *** Overall progress: 0.9333 ***
+13:21:1 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_220_found.fndhst
+13:21:1 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_220.txt
+13:21:1 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_220.txt
+13:21:2 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_161.txt
+13:21:4 *** Overall progress: 0.9377 ***
+13:21:6 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_195_found.fndhst
+13:21:6 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_195.txt
+13:21:6 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_195.txt
+13:21:9 *** Overall progress: 0.9422 ***
+13:21:10 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_161_found.fndhst
+13:21:10 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_161.txt
+13:21:10 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_161.txt
+13:21:13 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_203.txt
+13:21:13 *** Overall progress: 0.9466 ***
+13:21:18 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_169.txt
+13:21:22 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_203_found.fndhst
+13:21:22 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_203.txt
+13:21:22 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_203.txt
+13:21:24 *** Overall progress: 0.9511 ***
+13:21:28 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_211.txt
+13:21:52 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_169_found.fndhst
+13:21:52 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_169.txt
+13:21:52 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_169.txt
+13:21:55 *** Overall progress: 0.9555 ***
+13:21:59 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_177.txt
+13:22:7 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_177_found.fndhst
+13:22:7 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_177.txt
+13:22:7 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_177.txt
+13:22:10 *** Overall progress: 0.96 ***
+13:22:14 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_185.txt
+13:22:42 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_185_found.fndhst
+13:22:42 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_185.txt
+13:22:42 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_185.txt
+13:22:45 *** Overall progress: 0.9644 ***
+13:22:49 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_193.txt
+13:22:51 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_210_found.fndhst
+13:22:51 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_210.txt
+13:22:51 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_210.txt
+13:22:54 *** Overall progress: 0.9688 ***
+13:22:56 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_193_found.fndhst
+13:22:56 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_193.txt
+13:22:56 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_193.txt
+13:22:57 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_211_found.fndhst
+13:22:57 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_211.txt
+13:22:57 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_211.txt
+13:22:58 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_218.txt
+13:22:59 *** Overall progress: 0.9777 ***
+13:23:0 *** Overall progress: 0.9777 ***
+13:23:3 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_201.txt
+13:23:4 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_219.txt
+13:23:7 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_218_found.fndhst
+13:23:7 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_218.txt
+13:23:8 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_218.txt
+13:23:12 *** Overall progress: 0.9822 ***
+13:23:14 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_219_found.fndhst
+13:23:14 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_219.txt
+13:23:14 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_219.txt
+13:23:17 *** Overall progress: 0.9866 ***
+13:23:24 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_201_found.fndhst
+13:23:24 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_201.txt
+13:23:24 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_201.txt
+13:23:26 *** Overall progress: 0.9911 ***
+13:23:29 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_209.txt
+13:23:34 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_209_found.fndhst
+13:23:34 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_209.txt
+13:23:34 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_209.txt
+13:23:36 *** Overall progress: 0.9955 ***
+13:23:39 Preparing for CiC: Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_217.txt
+13:23:51 CiC done -> saving counts -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_217_found.fndhst
+13:23:51 Sub-cutting -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_217.txt
+13:23:51 Done: -> Results/P18_CENTRAL_zz_0p100_BOX1_moments_nnR_217.txt
+13:23:53 *** Overall progress: 1 ***
+13:23:53 Merging -> Results/P18_CENTRAL_zz_0p100_BOX1_merrout.txt
+----------------END---------------- Thu Jun 12 13:23:53 2025
+ have a good day :)

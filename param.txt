@@ -22,11 +22,11 @@ Real_template _BOX* #----------------------------------how are realisations mark
 
 
 #VERSION: angular
-ramin 80.0 #-------------------------------------------[deg]catalog rightascension lower range 
-ramax 100.0 #------------------------------------------[deg]catalog rightascension lower range 
-decmin -10. #------------------------------------------[deg]catalog declination lower range 
+ramin 80.0 #-------------------------------------------[deg] catalog rightascension lower range
+ramax 100.0 #------------------------------------------[deg] catalog rightascension upper range
+decmin -10. #------------------------------------------[deg] catalog declination lower range
 decmax 10. #-------------------------------------------[deg] catalog declination upper range 
-Areaf 314.159265359 #----------------------------------[deg2] sky survey area (for optimization) 
+Areaf -1 #----------------------------------[deg2] sky survey area (for optimization)
 
 
 #VERSION: angular and BOX

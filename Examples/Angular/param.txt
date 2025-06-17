@@ -1,0 +1,67 @@
+************************JMoments parameter file************************
+
+VERSION angular #---------------------------------what to calculate
+
+USE_HDF5 0 #-------------------------------------------input data: [1] - HDF5, [0] - ASCII
+POS_DSET - #-----------------------dataset with coordinates (only if USE_HDF5=1)
+cols_pos 0 1 #---------------------------------------columns with positions (only if USE_HDF5=0)
+
+#common parameters:
+nreals 50 #--------------------------------------------number of independent randoms sets 
+kappa 0.1 #--------------------------------------------multiplicity factor for number of circles
+Cmin 1 #-----------------------------------------------minimum number of circles drawn
+Cmax 1e9 #---------------------------------------------maximum number of circles drawn
+Datafiles * #------------------------------------------files with data
+Random_provided 0 #------------------------------------random file provided? 0-drawing random, 1-reading
+Random_file - #----------------------------------------random file name (works only if Random_provided=1) 
+Recalc 0 #---------------------------------------------if =1 and counts exist, recalculates moments
+Clean 1 #----------------------------------------------if=1, cleaning at the end
+ErrPoisson 0 #-----------------------------------------compute Poisson errors [0/1]
+Combine_reals 1 #--------------------------------------[0/1] are Data/* files models with different reals?
+Real_template _BOX* #----------------------------------how are realisations marked in names, e.g. _BOX*_
+
+
+#VERSION: angular
+ramin 0. #-------------------------------------------[deg] catalog rightascension lower range 
+ramax 60. #------------------------------------------[deg] catalog rightascension upper range 
+decmin -30. #------------------------------------------[deg] catalog declination lower range 
+decmax 30. #-------------------------------------------[deg] catalog declination upper range 
+Areaf -1 #----------------------------------[deg2] sky survey area (for optimization) 
+
+
+#VERSION: angular and BOX
+Rmin 0.1 #----------------------------------------------smallest scale considered
+Rmax 5. #-------------------------------------------- biggest scale considered
+nR 25 #------------------------------------------------number of scales considered
+
+
+#VERSION: BOX and BOX_ellipses
+Boxsize 500. #------------------------------------box size in the same units as random spheres/ellipses
+
+
+#VERSION: BOX_ellipses and LC_ellipses
+axamin 2. #--------------------------------------------smallest semi-major axis
+axamax 70. #------------------------------------------biggest semi-major axis
+axbmin 2. #--------------------------------------------smallest semi-minor axis
+axbmax 70. #------------------------------------------biggest semi-minor axis
+naxa 15 #----------------------------------------------number of sem-major axes
+naxb 15 #----------------------------------------------number of semi-minor axes
+
+
+#VERSION: LC_ellipses:
+DCMIN 624 #--------------------------------------------minimum distance analyzed
+DCMAX 1204. #------------------------------------------maximum distance analyzed
+
+
+
+********************Comments********************
+values must be separated by [space] or [tab].
+If log file shows wrong data, check separators here.
+Potential random file contains positions of the circles/spheres/ellipsoids centers,
+depending on VERSION
+
+If Model = *, code reads entire data catalog 
+[VERSION: angular] if Areaf=-1, it is calculated from [ramin,ramax];[decmin,decmax] spherical rectangle 
+
+
+

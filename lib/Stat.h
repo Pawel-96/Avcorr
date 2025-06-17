@@ -127,11 +127,11 @@ void Random_position(initializer_list<T> params, T &ra, T &dec, string option)
 			else
 			{
 				//declination of point on ra=ramin line which is closests to center of drawn circle
-				dec_raminclose=atan(tan(0.5*M_PI-dec*deg2rad)*cos((pars[0]-ra)*deg2rad))*rad2deg;
+				dec_raminclose=atan(tan(dec*deg2rad)*cos((pars[0]-ra)*deg2rad))*rad2deg;
 				//declination of point on ra=ramax line which is closests to center of drawn circle
-				dec_ramaxclose=atan(tan(0.5*M_PI-dec*deg2rad)*cos((pars[1]-ra)*deg2rad))*rad2deg;
+				dec_ramaxclose=atan(tan(dec*deg2rad)*cos((pars[1]-ra)*deg2rad))*rad2deg;
 			}
-			if(Dist(ra,dec,pars[0],dec_raminclose,"spherical")>pars[4] and Dist(ra,dec,pars[1],dec_ramaxclose)>pars[4]){break;} //(for DEC is ok)
+			if(Dist(ra,dec,pars[0],dec_raminclose,"astro")>pars[4] and Dist(ra,dec,pars[1],dec_ramaxclose,"astro")>pars[4]){break;} //(for DEC is ok)
 		}
 	return;
 	}

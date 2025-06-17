@@ -374,6 +374,18 @@ realizations automatically.
 
 
 
+## Example runs and plots
+
+The directory Examples/ contains example results for different configurations
+along with data and parameter file(s) necessary for recreating them.
+
+Each example also contains python plotting scripts for visualization.  
+For more details, check Examples/\[example]/ReadMe.txt file.
+Examples have been computed on data from COLAVERSE simulation prepared
+by Prof. Wojciech Hellwing and described in [[2]](#2).
+
+
+
 
 ## Troubleshooting and future improvements
 The code predicts potential errors in parameter file (mismatching number of columns, nonphysical
@@ -396,7 +408,6 @@ only at the beginning of files and are not separated by non - \#- starting lines
 - faster MPI - threads that finish their part need to do remaining jobs assigned to slower
 ones  
 - periodicity in VERSION=angular  
-- add examples and plotting scripts  
 - generalize optimal pixelization into analytical expressions  
 
 

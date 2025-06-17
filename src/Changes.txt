@@ -55,3 +55,5 @@ Changes implemented:
 05.05.2025: parameter file errors now are showing only for rank=0 (avoid duplications)
 05.06.2025: generalized inputs: datafiles do not have neccessarily be in Data/
 06.06.2025: improving random positions reading
+16.06.2025: corrected CRR() values and ""->"astro" issue in Random_position("sky_border") at Stat.cpp
+17.06.2025: finalized adding examples

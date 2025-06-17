@@ -1,0 +1,1147 @@
+---------------START: LC_ellipses --------------- Mon Jun 16 16:34:59 2025
+
+[Parameters]:
+kappa: 0.1
+Cmin: 1
+Cmax: 1000000000
+nreals: 50
+Random_provided: 1
+Random_file: *
+Data [1]:
+            Lightcone_P18_CENTRAL_BOX1_3Dcut
+Recalc: 0
+Cleaning: 1
+Poisson errors: 0
+Combine_reals: 0
+LOS parallel axis scales: 15 in range: [2:70]
+LOS perpendicular axis scales: 15 in range: [2:70]
+16:34:59 Running with 15 threads
+16:34:59 Preparing environment
+16:35:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_13.txt
+16:35:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_12.txt
+16:35:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_14.txt
+16:35:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_8.txt
+16:35:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_9.txt
+16:35:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_5.txt
+16:35:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_10.txt
+16:35:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_11.txt
+16:35:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_6.txt
+16:35:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_4.txt
+16:35:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_1.txt
+16:35:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_7.txt
+16:35:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_3.txt
+16:35:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_2.txt
+16:35:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_0.txt
+16:36:35 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_0_found.fndhst
+16:36:35 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_0.txt
+16:36:35 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_0.txt
+16:36:36 *** Overall progress: 0.0044 ***
+16:36:36 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_15.txt
+16:38:7 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_15_found.fndhst
+16:38:7 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_15.txt
+16:38:7 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_15.txt
+16:38:7 *** Overall progress: 0.0088 ***
+16:38:8 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_30.txt
+16:38:15 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_8_found.fndhst
+16:38:15 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_8.txt
+16:38:15 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_9_found.fndhst
+16:38:15 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_9.txt
+16:38:15 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_8.txt
+16:38:15 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_9.txt
+16:38:15 *** Overall progress: 0.0177 ***
+16:38:15 *** Overall progress: 0.0177 ***
+16:38:16 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_23.txt
+16:38:16 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_24.txt
+16:38:16 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_10_found.fndhst
+16:38:16 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_10.txt
+16:38:16 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_10.txt
+16:38:16 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_6_found.fndhst
+16:38:16 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_6.txt
+16:38:17 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_4_found.fndhst
+16:38:17 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_4.txt
+16:38:17 *** Overall progress: 0.0311 ***
+16:38:17 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_6.txt
+16:38:17 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_4.txt
+16:38:17 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_7_found.fndhst
+16:38:17 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_7.txt
+16:38:17 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_5_found.fndhst
+16:38:17 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_5.txt
+16:38:17 *** Overall progress: 0.04 ***
+16:38:17 *** Overall progress: 0.04 ***
+16:38:17 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_25.txt
+16:38:17 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_7.txt
+16:38:17 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_5.txt
+16:38:18 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_21.txt
+16:38:18 *** Overall progress: 0.04 ***
+16:38:18 *** Overall progress: 0.04 ***
+16:38:18 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_19.txt
+16:38:18 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_22.txt
+16:38:18 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_20.txt
+16:38:19 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_1_found.fndhst
+16:38:19 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_1.txt
+16:38:19 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_2_found.fndhst
+16:38:19 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_2.txt
+16:38:19 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_3_found.fndhst
+16:38:19 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_3.txt
+16:38:19 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_1.txt
+16:38:19 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_2.txt
+16:38:19 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_3.txt
+16:38:20 *** Overall progress: 0.0533 ***
+16:38:20 *** Overall progress: 0.0533 ***
+16:38:20 *** Overall progress: 0.0533 ***
+16:38:20 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_16.txt
+16:38:20 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_18.txt
+16:38:20 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_17.txt
+16:39:42 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_30_found.fndhst
+16:39:42 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_30.txt
+16:39:43 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_30.txt
+16:39:43 *** Overall progress: 0.0577 ***
+16:39:43 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_45.txt
+16:39:49 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_16_found.fndhst
+16:39:49 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_16.txt
+16:39:49 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_16.txt
+16:39:50 *** Overall progress: 0.0622 ***
+16:39:50 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_31.txt
+16:41:17 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_45_found.fndhst
+16:41:17 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_45.txt
+16:41:17 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_45.txt
+16:41:17 *** Overall progress: 0.0666 ***
+16:41:18 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_60.txt
+16:41:19 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_31_found.fndhst
+16:41:19 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_31.txt
+16:41:20 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_31.txt
+16:41:20 *** Overall progress: 0.0711 ***
+16:41:21 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_46.txt
+16:41:24 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_24_found.fndhst
+16:41:24 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_24.txt
+16:41:24 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_24.txt
+16:41:24 *** Overall progress: 0.0755 ***
+16:41:25 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_39.txt
+16:41:25 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_23_found.fndhst
+16:41:25 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_23.txt
+16:41:26 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_23.txt
+16:41:26 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_25_found.fndhst
+16:41:26 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_25.txt
+16:41:26 *** Overall progress: 0.0844 ***
+16:41:26 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_25.txt
+16:41:27 *** Overall progress: 0.0844 ***
+16:41:27 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_38.txt
+16:41:27 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_40.txt
+16:41:28 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_21_found.fndhst
+16:41:28 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_21.txt
+16:41:28 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_19_found.fndhst
+16:41:28 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_19.txt
+16:41:28 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_21.txt
+16:41:28 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_19.txt
+16:41:28 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_20_found.fndhst
+16:41:28 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_20.txt
+16:41:28 *** Overall progress: 0.0977 ***
+16:41:29 *** Overall progress: 0.0977 ***
+16:41:29 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_20.txt
+16:41:29 *** Overall progress: 0.0977 ***
+16:41:29 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_22_found.fndhst
+16:41:29 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_22.txt
+16:41:29 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_36.txt
+16:41:29 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_34.txt
+16:41:29 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_22.txt
+16:41:29 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_35.txt
+16:41:30 *** Overall progress: 0.1022 ***
+16:41:30 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_37.txt
+16:41:35 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_18_found.fndhst
+16:41:35 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_18.txt
+16:41:36 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_18.txt
+16:41:36 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_17_found.fndhst
+16:41:36 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_17.txt
+16:41:36 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_17.txt
+16:41:36 *** Overall progress: 0.1111 ***
+16:41:36 *** Overall progress: 0.1111 ***
+16:41:36 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_33.txt
+16:41:37 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_32.txt
+16:42:49 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_60_found.fndhst
+16:42:49 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_60.txt
+16:42:50 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_60.txt
+16:42:50 *** Overall progress: 0.1155 ***
+16:42:51 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_75.txt
+16:42:51 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_46_found.fndhst
+16:42:51 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_46.txt
+16:42:51 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_46.txt
+16:42:52 *** Overall progress: 0.12 ***
+16:42:52 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_61.txt
+16:43:8 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_32_found.fndhst
+16:43:8 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_32.txt
+16:43:8 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_32.txt
+16:43:9 *** Overall progress: 0.1244 ***
+16:43:9 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_47.txt
+16:44:22 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_75_found.fndhst
+16:44:22 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_75.txt
+16:44:23 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_75.txt
+16:44:23 *** Overall progress: 0.1288 ***
+16:44:23 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_61_found.fndhst
+16:44:23 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_61.txt
+16:44:23 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_90.txt
+16:44:24 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_61.txt
+16:44:24 *** Overall progress: 0.1333 ***
+16:44:24 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_76.txt
+16:44:34 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_39_found.fndhst
+16:44:34 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_39.txt
+16:44:34 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_39.txt
+16:44:35 *** Overall progress: 0.1377 ***
+16:44:35 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_54.txt
+16:44:38 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_38_found.fndhst
+16:44:38 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_38.txt
+16:44:38 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_40_found.fndhst
+16:44:38 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_40.txt
+16:44:38 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_38.txt
+16:44:38 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_40.txt
+16:44:38 *** Overall progress: 0.1466 ***
+16:44:38 *** Overall progress: 0.1466 ***
+16:44:39 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_53.txt
+16:44:39 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_55.txt
+16:44:39 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_47_found.fndhst
+16:44:39 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_47.txt
+16:44:40 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_47.txt
+16:44:40 *** Overall progress: 0.1511 ***
+16:44:41 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_62.txt
+16:44:41 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_36_found.fndhst
+16:44:41 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_36.txt
+16:44:41 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_36.txt
+16:44:42 *** Overall progress: 0.1555 ***
+16:44:42 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_37_found.fndhst
+16:44:42 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_37.txt
+16:44:42 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_51.txt
+16:44:43 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_37.txt
+16:44:43 *** Overall progress: 0.16 ***
+16:44:44 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_34_found.fndhst
+16:44:44 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_34.txt
+16:44:44 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_52.txt
+16:44:44 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_35_found.fndhst
+16:44:44 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_35.txt
+16:44:44 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_34.txt
+16:44:44 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_35.txt
+16:44:44 *** Overall progress: 0.1688 ***
+16:44:44 *** Overall progress: 0.1688 ***
+16:44:45 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_49.txt
+16:44:45 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_50.txt
+16:44:55 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_33_found.fndhst
+16:44:55 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_33.txt
+16:44:55 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_33.txt
+16:44:56 *** Overall progress: 0.1733 ***
+16:44:56 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_48.txt
+16:45:55 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_76_found.fndhst
+16:45:55 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_76.txt
+16:45:55 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_76.txt
+16:45:55 *** Overall progress: 0.1777 ***
+16:45:56 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_91.txt
+16:45:56 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_90_found.fndhst
+16:45:56 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_90.txt
+16:45:56 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_90.txt
+16:45:57 *** Overall progress: 0.1822 ***
+16:45:57 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_105.txt
+16:46:13 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_62_found.fndhst
+16:46:13 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_62.txt
+16:46:13 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_62.txt
+16:46:13 *** Overall progress: 0.1866 ***
+16:46:14 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_77.txt
+16:46:27 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_48_found.fndhst
+16:46:27 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_48.txt
+16:46:28 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_48.txt
+16:46:28 *** Overall progress: 0.1911 ***
+16:46:28 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_63.txt
+16:47:28 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_91_found.fndhst
+16:47:28 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_91.txt
+16:47:29 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_91.txt
+16:47:29 *** Overall progress: 0.1955 ***
+16:47:29 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_105_found.fndhst
+16:47:29 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_105.txt
+16:47:30 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_106.txt
+16:47:30 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_105.txt
+16:47:30 *** Overall progress: 0.2 ***
+16:47:31 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_120.txt
+16:47:46 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_54_found.fndhst
+16:47:46 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_54.txt
+16:47:46 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_54.txt
+16:47:46 *** Overall progress: 0.2044 ***
+16:47:47 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_77_found.fndhst
+16:47:47 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_77.txt
+16:47:47 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_77.txt
+16:47:47 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_69.txt
+16:47:47 *** Overall progress: 0.2088 ***
+16:47:48 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_92.txt
+16:47:49 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_53_found.fndhst
+16:47:49 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_53.txt
+16:47:49 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_53.txt
+16:47:49 *** Overall progress: 0.2133 ***
+16:47:50 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_68.txt
+16:47:54 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_49_found.fndhst
+16:47:54 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_49.txt
+16:47:54 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_49.txt
+16:47:54 *** Overall progress: 0.2177 ***
+16:47:55 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_51_found.fndhst
+16:47:55 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_51.txt
+16:47:55 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_64.txt
+16:47:55 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_51.txt
+16:47:55 *** Overall progress: 0.2222 ***
+16:47:56 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_66.txt
+16:47:59 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_50_found.fndhst
+16:47:59 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_50.txt
+16:48:0 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_50.txt
+16:48:0 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_52_found.fndhst
+16:48:0 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_52.txt
+16:48:0 *** Overall progress: 0.2311 ***
+16:48:0 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_52.txt
+16:48:0 *** Overall progress: 0.2311 ***
+16:48:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_65.txt
+16:48:1 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_63_found.fndhst
+16:48:1 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_63.txt
+16:48:1 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_67.txt
+16:48:1 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_63.txt
+16:48:1 *** Overall progress: 0.2355 ***
+16:48:2 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_78.txt
+16:48:8 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_55_found.fndhst
+16:48:8 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_55.txt
+16:48:8 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_55.txt
+16:48:9 *** Overall progress: 0.24 ***
+16:48:9 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_70.txt
+16:49:2 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_106_found.fndhst
+16:49:2 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_106.txt
+16:49:2 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_120_found.fndhst
+16:49:2 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_120.txt
+16:49:2 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_106.txt
+16:49:2 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_120.txt
+16:49:2 *** Overall progress: 0.2488 ***
+16:49:2 *** Overall progress: 0.2488 ***
+16:49:3 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_121.txt
+16:49:3 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_135.txt
+16:49:21 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_92_found.fndhst
+16:49:21 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_92.txt
+16:49:21 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_92.txt
+16:49:21 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_64_found.fndhst
+16:49:21 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_64.txt
+16:49:22 *** Overall progress: 0.2577 ***
+16:49:22 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_64.txt
+16:49:22 *** Overall progress: 0.2577 ***
+16:49:22 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_107.txt
+16:49:23 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_79.txt
+16:49:34 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_78_found.fndhst
+16:49:34 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_78.txt
+16:49:34 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_78.txt
+16:49:35 *** Overall progress: 0.2622 ***
+16:49:35 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_93.txt
+16:50:7 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_11_found.fndhst
+16:50:7 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_11.txt
+16:50:7 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_11.txt
+16:50:7 *** Overall progress: 0.2666 ***
+16:50:8 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_26.txt
+16:50:35 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_121_found.fndhst
+16:50:35 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_121.txt
+16:50:36 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_121.txt
+16:50:36 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_135_found.fndhst
+16:50:36 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_135.txt
+16:50:36 *** Overall progress: 0.2755 ***
+16:50:36 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_135.txt
+16:50:37 *** Overall progress: 0.2755 ***
+16:50:37 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_136.txt
+16:50:37 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_150.txt
+16:50:49 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_79_found.fndhst
+16:50:49 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_79.txt
+16:50:50 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_79.txt
+16:50:50 *** Overall progress: 0.28 ***
+16:50:50 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_94.txt
+16:50:55 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_107_found.fndhst
+16:50:55 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_107.txt
+16:50:55 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_107.txt
+16:50:55 *** Overall progress: 0.2844 ***
+16:50:56 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_122.txt
+16:50:58 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_69_found.fndhst
+16:50:58 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_69.txt
+16:50:58 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_69.txt
+16:50:58 *** Overall progress: 0.2888 ***
+16:50:59 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_84.txt
+16:51:1 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_12_found.fndhst
+16:51:1 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_12.txt
+16:51:2 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_12.txt
+16:51:2 *** Overall progress: 0.2933 ***
+16:51:3 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_68_found.fndhst
+16:51:3 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_68.txt
+16:51:3 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_27.txt
+16:51:3 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_68.txt
+16:51:3 *** Overall progress: 0.2977 ***
+16:51:4 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_83.txt
+16:51:7 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_93_found.fndhst
+16:51:7 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_93.txt
+16:51:8 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_93.txt
+16:51:8 *** Overall progress: 0.3022 ***
+16:51:8 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_108.txt
+16:51:12 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_67_found.fndhst
+16:51:12 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_67.txt
+16:51:13 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_67.txt
+16:51:13 *** Overall progress: 0.3066 ***
+16:51:13 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_66_found.fndhst
+16:51:13 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_66.txt
+16:51:13 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_66.txt
+16:51:14 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_82.txt
+16:51:14 *** Overall progress: 0.3111 ***
+16:51:14 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_81.txt
+16:51:18 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_65_found.fndhst
+16:51:18 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_65.txt
+16:51:19 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_65.txt
+16:51:19 *** Overall progress: 0.3155 ***
+16:51:20 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_80.txt
+16:51:38 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_70_found.fndhst
+16:51:38 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_70.txt
+16:51:39 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_70.txt
+16:51:39 *** Overall progress: 0.32 ***
+16:51:40 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_85.txt
+16:52:9 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_136_found.fndhst
+16:52:9 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_136.txt
+16:52:9 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_136.txt
+16:52:9 *** Overall progress: 0.3244 ***
+16:52:10 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_151.txt
+16:52:11 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_150_found.fndhst
+16:52:11 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_150.txt
+16:52:11 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_150.txt
+16:52:11 *** Overall progress: 0.3288 ***
+16:52:12 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_165.txt
+16:52:18 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_94_found.fndhst
+16:52:18 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_94.txt
+16:52:18 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_94.txt
+16:52:19 *** Overall progress: 0.3333 ***
+16:52:19 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_109.txt
+16:52:28 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_122_found.fndhst
+16:52:28 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_122.txt
+16:52:29 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_122.txt
+16:52:29 *** Overall progress: 0.3377 ***
+16:52:30 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_137.txt
+16:52:42 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_108_found.fndhst
+16:52:42 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_108.txt
+16:52:42 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_108.txt
+16:52:42 *** Overall progress: 0.3422 ***
+16:52:43 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_123.txt
+16:52:50 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_80_found.fndhst
+16:52:50 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_80.txt
+16:52:50 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_80.txt
+16:52:50 *** Overall progress: 0.3466 ***
+16:52:51 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_95.txt
+16:53:43 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_151_found.fndhst
+16:53:43 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_151.txt
+16:53:43 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_151.txt
+16:53:43 *** Overall progress: 0.3511 ***
+16:53:44 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_166.txt
+16:53:47 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_109_found.fndhst
+16:53:47 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_109.txt
+16:53:48 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_109.txt
+16:53:48 *** Overall progress: 0.3555 ***
+16:53:49 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_124.txt
+16:54:3 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_137_found.fndhst
+16:54:3 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_137.txt
+16:54:3 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_137.txt
+16:54:3 *** Overall progress: 0.36 ***
+16:54:4 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_152.txt
+16:54:14 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_123_found.fndhst
+16:54:14 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_123.txt
+16:54:14 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_123.txt
+16:54:14 *** Overall progress: 0.3644 ***
+16:54:15 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_138.txt
+16:54:16 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_83_found.fndhst
+16:54:16 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_83.txt
+16:54:16 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_83.txt
+16:54:16 *** Overall progress: 0.3688 ***
+16:54:17 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_98.txt
+16:54:23 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_95_found.fndhst
+16:54:23 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_95.txt
+16:54:23 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_95.txt
+16:54:23 *** Overall progress: 0.3733 ***
+16:54:24 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_110.txt
+16:54:24 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_82_found.fndhst
+16:54:24 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_82.txt
+16:54:24 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_82.txt
+16:54:24 *** Overall progress: 0.3777 ***
+16:54:25 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_97.txt
+16:54:27 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_84_found.fndhst
+16:54:27 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_84.txt
+16:54:27 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_84.txt
+16:54:28 *** Overall progress: 0.3822 ***
+16:54:28 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_99.txt
+16:54:34 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_81_found.fndhst
+16:54:34 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_81.txt
+16:54:34 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_81.txt
+16:54:35 *** Overall progress: 0.3866 ***
+16:54:35 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_96.txt
+16:55:11 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_85_found.fndhst
+16:55:11 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_85.txt
+16:55:12 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_85.txt
+16:55:12 *** Overall progress: 0.3911 ***
+16:55:13 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_100.txt
+16:55:17 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_124_found.fndhst
+16:55:17 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_124.txt
+16:55:18 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_124.txt
+16:55:18 *** Overall progress: 0.3955 ***
+16:55:18 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_139.txt
+16:55:24 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_13_found.fndhst
+16:55:24 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_13.txt
+16:55:24 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_13.txt
+16:55:24 *** Overall progress: 0.4 ***
+16:55:25 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_28.txt
+16:55:38 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_152_found.fndhst
+16:55:38 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_152.txt
+16:55:38 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_152.txt
+16:55:39 *** Overall progress: 0.4044 ***
+16:55:39 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_167.txt
+16:55:43 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_138_found.fndhst
+16:55:43 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_138.txt
+16:55:44 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_138.txt
+16:55:44 *** Overall progress: 0.4088 ***
+16:55:45 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_153.txt
+16:55:56 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_110_found.fndhst
+16:55:56 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_110.txt
+16:55:56 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_110.txt
+16:55:56 *** Overall progress: 0.4133 ***
+16:55:57 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_125.txt
+16:56:8 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_96_found.fndhst
+16:56:8 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_96.txt
+16:56:8 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_96.txt
+16:56:8 *** Overall progress: 0.4177 ***
+16:56:9 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_111.txt
+16:56:48 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_139_found.fndhst
+16:56:48 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_139.txt
+16:56:48 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_139.txt
+16:56:48 *** Overall progress: 0.4222 ***
+16:56:49 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_154.txt
+16:57:13 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_153_found.fndhst
+16:57:13 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_153.txt
+16:57:13 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_153.txt
+16:57:14 *** Overall progress: 0.4266 ***
+16:57:14 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_168.txt
+16:57:28 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_125_found.fndhst
+16:57:28 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_125.txt
+16:57:28 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_125.txt
+16:57:29 *** Overall progress: 0.4311 ***
+16:57:29 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_140.txt
+16:57:30 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_98_found.fndhst
+16:57:30 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_98.txt
+16:57:30 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_98.txt
+16:57:30 *** Overall progress: 0.4355 ***
+16:57:31 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_113.txt
+16:57:37 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_97_found.fndhst
+16:57:37 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_97.txt
+16:57:37 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_97.txt
+16:57:37 *** Overall progress: 0.44 ***
+16:57:38 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_112.txt
+16:57:42 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_111_found.fndhst
+16:57:42 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_111.txt
+16:57:42 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_111.txt
+16:57:42 *** Overall progress: 0.4444 ***
+16:57:43 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_126.txt
+16:57:57 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_99_found.fndhst
+16:57:57 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_99.txt
+16:57:58 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_99.txt
+16:57:58 *** Overall progress: 0.4488 ***
+16:57:59 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_114.txt
+16:58:19 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_154_found.fndhst
+16:58:19 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_154.txt
+16:58:19 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_154.txt
+16:58:20 *** Overall progress: 0.4533 ***
+16:58:20 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_169.txt
+16:59:2 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_140_found.fndhst
+16:59:2 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_140.txt
+16:59:3 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_140.txt
+16:59:3 *** Overall progress: 0.4577 ***
+16:59:4 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_155.txt
+16:59:7 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_112_found.fndhst
+16:59:7 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_112.txt
+16:59:7 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_112.txt
+16:59:8 *** Overall progress: 0.4622 ***
+16:59:8 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_127.txt
+16:59:17 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_126_found.fndhst
+16:59:17 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_126.txt
+16:59:18 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_126.txt
+16:59:18 *** Overall progress: 0.4666 ***
+16:59:19 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_141.txt
+16:59:21 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_165_found.fndhst
+16:59:21 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_165.txt
+16:59:22 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_165.txt
+16:59:22 *** Overall progress: 0.4711 ***
+16:59:23 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_180.txt
+16:59:42 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_100_found.fndhst
+16:59:42 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_100.txt
+16:59:42 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_100.txt
+16:59:42 *** Overall progress: 0.4755 ***
+16:59:43 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_115.txt
+17:0:37 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_155_found.fndhst
+17:0:37 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_155.txt
+17:0:37 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_155.txt
+17:0:37 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_127_found.fndhst
+17:0:37 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_127.txt
+17:0:38 *** Overall progress: 0.4844 ***
+17:0:38 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_127.txt
+17:0:38 *** Overall progress: 0.4844 ***
+17:0:38 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_170.txt
+17:0:39 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_142.txt
+17:0:52 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_113_found.fndhst
+17:0:52 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_113.txt
+17:0:52 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_113.txt
+17:0:52 *** Overall progress: 0.4888 ***
+17:0:53 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_141_found.fndhst
+17:0:53 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_141.txt
+17:0:53 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_128.txt
+17:0:53 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_141.txt
+17:0:53 *** Overall progress: 0.4933 ***
+17:0:54 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_156.txt
+17:0:56 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_166_found.fndhst
+17:0:56 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_166.txt
+17:0:56 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_166.txt
+17:0:56 *** Overall progress: 0.4977 ***
+17:0:57 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_181.txt
+17:1:29 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_114_found.fndhst
+17:1:29 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_114.txt
+17:1:29 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_114.txt
+17:1:29 *** Overall progress: 0.5022 ***
+17:1:30 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_129.txt
+17:2:15 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_142_found.fndhst
+17:2:15 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_142.txt
+17:2:15 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_142.txt
+17:2:16 *** Overall progress: 0.5066 ***
+17:2:16 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_157.txt
+17:2:25 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_128_found.fndhst
+17:2:25 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_128.txt
+17:2:25 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_128.txt
+17:2:25 *** Overall progress: 0.5111 ***
+17:2:26 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_143.txt
+17:2:28 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_156_found.fndhst
+17:2:28 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_156.txt
+17:2:29 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_156.txt
+17:2:29 *** Overall progress: 0.5155 ***
+17:2:30 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_171.txt
+17:2:54 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_167_found.fndhst
+17:2:54 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_167.txt
+17:2:54 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_167.txt
+17:2:55 *** Overall progress: 0.52 ***
+17:2:55 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_182.txt
+17:3:12 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_115_found.fndhst
+17:3:12 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_115.txt
+17:3:12 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_115.txt
+17:3:13 *** Overall progress: 0.5244 ***
+17:3:13 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_130.txt
+17:3:52 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_157_found.fndhst
+17:3:52 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_157.txt
+17:3:53 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_157.txt
+17:3:53 *** Overall progress: 0.5288 ***
+17:3:54 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_172.txt
+17:3:58 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_143_found.fndhst
+17:3:58 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_143.txt
+17:3:58 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_143.txt
+17:3:58 *** Overall progress: 0.5333 ***
+17:3:59 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_158.txt
+17:4:3 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_168_found.fndhst
+17:4:3 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_168.txt
+17:4:4 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_168.txt
+17:4:4 *** Overall progress: 0.5377 ***
+17:4:5 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_183.txt
+17:5:20 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_169_found.fndhst
+17:5:20 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_169.txt
+17:5:20 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_169.txt
+17:5:21 *** Overall progress: 0.5422 ***
+17:5:21 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_184.txt
+17:5:54 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_158_found.fndhst
+17:5:54 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_158.txt
+17:5:54 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_158.txt
+17:5:54 *** Overall progress: 0.5466 ***
+17:5:55 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_173.txt
+17:5:59 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_26_found.fndhst
+17:5:59 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_26.txt
+17:5:59 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_26.txt
+17:5:59 *** Overall progress: 0.5511 ***
+17:6:0 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_129_found.fndhst
+17:6:0 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_129.txt
+17:6:0 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_41.txt
+17:6:0 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_129.txt
+17:6:1 *** Overall progress: 0.5555 ***
+17:6:1 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_144.txt
+17:6:31 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_180_found.fndhst
+17:6:31 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_180.txt
+17:6:32 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_180.txt
+17:6:32 *** Overall progress: 0.56 ***
+17:6:33 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_195.txt
+17:6:33 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_130_found.fndhst
+17:6:33 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_130.txt
+17:6:33 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_130.txt
+17:6:34 *** Overall progress: 0.5644 ***
+17:6:34 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_145.txt
+17:6:36 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_27_found.fndhst
+17:6:36 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_27.txt
+17:6:36 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_27.txt
+17:6:36 *** Overall progress: 0.5688 ***
+17:6:37 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_42.txt
+17:7:39 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_144_found.fndhst
+17:7:39 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_144.txt
+17:7:40 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_144.txt
+17:7:40 *** Overall progress: 0.5733 ***
+17:7:40 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_159.txt
+17:7:52 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_170_found.fndhst
+17:7:52 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_170.txt
+17:7:53 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_170.txt
+17:7:53 *** Overall progress: 0.5777 ***
+17:7:54 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_185.txt
+17:8:6 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_181_found.fndhst
+17:8:6 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_181.txt
+17:8:7 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_181.txt
+17:8:7 *** Overall progress: 0.5822 ***
+17:8:7 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_196.txt
+17:9:9 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_145_found.fndhst
+17:9:9 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_145.txt
+17:9:9 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_145.txt
+17:9:9 *** Overall progress: 0.5866 ***
+17:9:10 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_160.txt
+17:9:17 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_159_found.fndhst
+17:9:17 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_159.txt
+17:9:18 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_159.txt
+17:9:18 *** Overall progress: 0.5911 ***
+17:9:18 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_174.txt
+17:10:9 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_182_found.fndhst
+17:10:9 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_182.txt
+17:10:9 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_182.txt
+17:10:10 *** Overall progress: 0.5955 ***
+17:10:10 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_197.txt
+17:10:18 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_160_found.fndhst
+17:10:18 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_160.txt
+17:10:18 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_160.txt
+17:10:19 *** Overall progress: 0.6 ***
+17:10:19 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_175.txt
+17:10:23 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_171_found.fndhst
+17:10:23 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_171.txt
+17:10:23 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_171.txt
+17:10:24 *** Overall progress: 0.6044 ***
+17:10:24 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_186.txt
+17:10:55 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_183_found.fndhst
+17:10:55 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_183.txt
+17:10:55 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_183.txt
+17:10:56 *** Overall progress: 0.6088 ***
+17:10:56 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_198.txt
+17:11:5 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_28_found.fndhst
+17:11:5 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_28.txt
+17:11:5 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_28.txt
+17:11:6 *** Overall progress: 0.6133 ***
+17:11:6 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_43.txt
+17:11:18 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_172_found.fndhst
+17:11:18 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_172.txt
+17:11:18 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_172.txt
+17:11:18 *** Overall progress: 0.6177 ***
+17:11:19 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_187.txt
+17:11:33 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_175_found.fndhst
+17:11:33 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_175.txt
+17:11:34 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_175.txt
+17:11:34 *** Overall progress: 0.6222 ***
+17:11:34 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_190.txt
+17:12:20 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_184_found.fndhst
+17:12:20 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_184.txt
+17:12:20 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_184.txt
+17:12:21 *** Overall progress: 0.6266 ***
+17:12:21 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_199.txt
+17:13:5 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_173_found.fndhst
+17:13:5 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_173.txt
+17:13:6 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_173.txt
+17:13:6 *** Overall progress: 0.6311 ***
+17:13:7 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_188.txt
+17:13:47 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_195_found.fndhst
+17:13:47 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_195.txt
+17:13:47 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_195.txt
+17:13:47 *** Overall progress: 0.6355 ***
+17:13:48 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_210.txt
+17:15:2 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_174_found.fndhst
+17:15:2 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_174.txt
+17:15:2 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_174.txt
+17:15:2 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_196_found.fndhst
+17:15:2 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_196.txt
+17:15:3 *** Overall progress: 0.6444 ***
+17:15:3 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_196.txt
+17:15:3 *** Overall progress: 0.6444 ***
+17:15:3 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_189.txt
+17:15:4 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_211.txt
+17:15:5 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_185_found.fndhst
+17:15:5 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_185.txt
+17:15:6 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_185.txt
+17:15:6 *** Overall progress: 0.6488 ***
+17:15:7 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_200.txt
+17:16:47 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_190_found.fndhst
+17:16:47 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_190.txt
+17:16:47 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_190.txt
+17:16:47 *** Overall progress: 0.6533 ***
+17:16:48 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_205.txt
+17:17:22 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_197_found.fndhst
+17:17:22 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_197.txt
+17:17:23 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_197.txt
+17:17:23 *** Overall progress: 0.6577 ***
+17:17:23 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_212.txt
+17:17:47 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_198_found.fndhst
+17:17:47 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_198.txt
+17:17:48 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_198.txt
+17:17:48 *** Overall progress: 0.6622 ***
+17:17:48 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_213.txt
+17:17:52 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_186_found.fndhst
+17:17:52 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_186.txt
+17:17:52 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_186.txt
+17:17:53 *** Overall progress: 0.6666 ***
+17:17:53 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_201.txt
+17:18:14 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_14_found.fndhst
+17:18:14 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_14.txt
+17:18:14 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_14.txt
+17:18:15 *** Overall progress: 0.6711 ***
+17:18:15 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_29.txt
+17:19:17 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_199_found.fndhst
+17:19:17 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_199.txt
+17:19:17 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_199.txt
+17:19:18 *** Overall progress: 0.6755 ***
+17:19:18 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_214.txt
+17:20:10 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_188_found.fndhst
+17:20:10 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_188.txt
+17:20:10 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_188.txt
+17:20:11 *** Overall progress: 0.68 ***
+17:20:11 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_203.txt
+17:20:34 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_189_found.fndhst
+17:20:34 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_189.txt
+17:20:34 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_189.txt
+17:20:34 *** Overall progress: 0.6844 ***
+17:20:35 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_204.txt
+17:20:37 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_187_found.fndhst
+17:20:37 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_187.txt
+17:20:38 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_187.txt
+17:20:38 *** Overall progress: 0.6888 ***
+17:20:39 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_202.txt
+17:22:20 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_205_found.fndhst
+17:22:20 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_205.txt
+17:22:20 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_205.txt
+17:22:20 *** Overall progress: 0.6933 ***
+17:22:21 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_220.txt
+17:22:34 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_41_found.fndhst
+17:22:34 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_41.txt
+17:22:34 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_41.txt
+17:22:34 *** Overall progress: 0.6977 ***
+17:22:35 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_56.txt
+17:23:0 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_200_found.fndhst
+17:23:0 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_200.txt
+17:23:0 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_200.txt
+17:23:0 *** Overall progress: 0.7022 ***
+17:23:1 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_215.txt
+17:25:20 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_201_found.fndhst
+17:25:20 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_201.txt
+17:25:21 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_201.txt
+17:25:21 *** Overall progress: 0.7066 ***
+17:25:22 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_216.txt
+17:25:37 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_203_found.fndhst
+17:25:37 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_203.txt
+17:25:37 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_203.txt
+17:25:37 *** Overall progress: 0.7111 ***
+17:25:38 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_218.txt
+17:26:32 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_204_found.fndhst
+17:26:32 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_204.txt
+17:26:32 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_204.txt
+17:26:32 *** Overall progress: 0.7155 ***
+17:26:33 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_219.txt
+17:26:47 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_43_found.fndhst
+17:26:47 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_43.txt
+17:26:47 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_43.txt
+17:26:48 *** Overall progress: 0.72 ***
+17:26:48 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_58.txt
+17:26:54 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_42_found.fndhst
+17:26:54 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_42.txt
+17:26:54 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_42.txt
+17:26:54 *** Overall progress: 0.7244 ***
+17:26:55 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_57.txt
+17:27:43 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_220_found.fndhst
+17:27:43 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_220.txt
+17:27:43 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_220.txt
+17:27:43 *** Overall progress: 0.7288 ***
+17:28:4 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_202_found.fndhst
+17:28:4 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_202.txt
+17:28:4 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_202.txt
+17:28:4 *** Overall progress: 0.7333 ***
+17:28:5 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_217.txt
+17:30:45 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_218_found.fndhst
+17:30:45 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_218.txt
+17:30:45 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_218.txt
+17:30:46 *** Overall progress: 0.7377 ***
+17:31:46 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_219_found.fndhst
+17:31:46 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_219.txt
+17:31:46 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_219.txt
+17:31:47 *** Overall progress: 0.7422 ***
+17:33:26 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_210_found.fndhst
+17:33:26 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_210.txt
+17:33:26 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_210.txt
+17:33:27 *** Overall progress: 0.7466 ***
+17:33:57 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_211_found.fndhst
+17:33:57 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_211.txt
+17:33:57 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_211.txt
+17:33:57 *** Overall progress: 0.7511 ***
+17:34:37 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_216_found.fndhst
+17:34:37 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_216.txt
+17:34:37 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_216.txt
+17:34:37 *** Overall progress: 0.7555 ***
+17:36:6 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_212_found.fndhst
+17:36:6 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_212.txt
+17:36:6 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_212.txt
+17:36:7 *** Overall progress: 0.76 ***
+17:36:26 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_213_found.fndhst
+17:36:26 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_213.txt
+17:36:27 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_213.txt
+17:36:27 *** Overall progress: 0.7644 ***
+17:37:37 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_56_found.fndhst
+17:37:37 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_56.txt
+17:37:37 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_56.txt
+17:37:38 *** Overall progress: 0.7688 ***
+17:37:38 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_71.txt
+17:38:5 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_214_found.fndhst
+17:38:5 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_214.txt
+17:38:5 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_214.txt
+17:38:5 *** Overall progress: 0.7733 ***
+17:38:35 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_58_found.fndhst
+17:38:35 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_58.txt
+17:38:35 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_58.txt
+17:38:35 *** Overall progress: 0.7777 ***
+17:38:36 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_73.txt
+17:41:25 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_71_found.fndhst
+17:41:25 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_71.txt
+17:41:25 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_71.txt
+17:41:26 *** Overall progress: 0.7822 ***
+17:41:26 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_86.txt
+17:41:50 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_57_found.fndhst
+17:41:50 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_57.txt
+17:41:51 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_57.txt
+17:41:51 *** Overall progress: 0.7866 ***
+17:41:51 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_72.txt
+17:43:20 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_215_found.fndhst
+17:43:20 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_215.txt
+17:43:20 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_215.txt
+17:43:20 *** Overall progress: 0.7911 ***
+17:46:33 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_217_found.fndhst
+17:46:33 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_217.txt
+17:46:33 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_217.txt
+17:46:34 *** Overall progress: 0.7955 ***
+17:49:11 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_29_found.fndhst
+17:49:11 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_29.txt
+17:49:11 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_29.txt
+17:49:12 *** Overall progress: 0.8 ***
+17:49:12 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_44.txt
+17:49:23 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_73_found.fndhst
+17:49:23 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_73.txt
+17:49:24 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_73.txt
+17:49:24 *** Overall progress: 0.8044 ***
+17:49:24 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_88.txt
+17:55:7 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_86_found.fndhst
+17:55:7 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_86.txt
+17:55:7 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_86.txt
+17:55:7 *** Overall progress: 0.8088 ***
+17:55:8 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_101.txt
+17:56:15 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_72_found.fndhst
+17:56:15 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_72.txt
+17:56:15 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_72.txt
+17:56:15 *** Overall progress: 0.8133 ***
+17:56:16 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_87.txt
+18:0:4 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_44_found.fndhst
+18:0:4 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_44.txt
+18:0:4 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_44.txt
+18:0:4 *** Overall progress: 0.8177 ***
+18:0:5 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_59.txt
+18:1:11 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_88_found.fndhst
+18:1:11 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_88.txt
+18:1:11 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_88.txt
+18:1:12 *** Overall progress: 0.8222 ***
+18:1:12 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_103.txt
+18:7:23 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_87_found.fndhst
+18:7:23 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_87.txt
+18:7:23 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_87.txt
+18:7:24 *** Overall progress: 0.8266 ***
+18:7:24 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_102.txt
+18:8:40 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_101_found.fndhst
+18:8:40 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_101.txt
+18:8:40 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_101.txt
+18:8:40 *** Overall progress: 0.8311 ***
+18:8:41 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_116.txt
+18:11:55 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_103_found.fndhst
+18:11:55 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_103.txt
+18:11:55 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_103.txt
+18:11:56 *** Overall progress: 0.8355 ***
+18:11:56 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_118.txt
+18:12:11 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_59_found.fndhst
+18:12:11 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_59.txt
+18:12:12 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_59.txt
+18:12:12 *** Overall progress: 0.84 ***
+18:12:12 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_74.txt
+18:18:10 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_102_found.fndhst
+18:18:10 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_102.txt
+18:18:10 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_102.txt
+18:18:10 *** Overall progress: 0.8444 ***
+18:18:11 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_117.txt
+18:18:58 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_116_found.fndhst
+18:18:58 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_116.txt
+18:18:58 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_116.txt
+18:18:58 *** Overall progress: 0.8488 ***
+18:18:59 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_131.txt
+18:21:8 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_131_found.fndhst
+18:21:8 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_131.txt
+18:21:8 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_131.txt
+18:21:8 *** Overall progress: 0.8533 ***
+18:21:9 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_146.txt
+18:23:10 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_74_found.fndhst
+18:23:10 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_74.txt
+18:23:10 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_74.txt
+18:23:11 *** Overall progress: 0.8577 ***
+18:23:11 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_89.txt
+18:23:25 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_118_found.fndhst
+18:23:25 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_118.txt
+18:23:25 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_118.txt
+18:23:25 *** Overall progress: 0.8622 ***
+18:23:25 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_133.txt
+18:23:31 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_146_found.fndhst
+18:23:31 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_146.txt
+18:23:31 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_146.txt
+18:23:31 *** Overall progress: 0.8666 ***
+18:23:32 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_161.txt
+18:25:41 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_161_found.fndhst
+18:25:41 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_161.txt
+18:25:41 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_161.txt
+18:25:41 *** Overall progress: 0.8711 ***
+18:25:42 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_176.txt
+18:26:42 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_176_found.fndhst
+18:26:42 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_176.txt
+18:26:42 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_176.txt
+18:26:43 *** Overall progress: 0.8755 ***
+18:26:43 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_191.txt
+18:27:42 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_191_found.fndhst
+18:27:42 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_191.txt
+18:27:42 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_191.txt
+18:27:42 *** Overall progress: 0.88 ***
+18:27:43 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_206.txt
+18:29:58 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_117_found.fndhst
+18:29:58 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_117.txt
+18:29:58 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_117.txt
+18:29:59 *** Overall progress: 0.8844 ***
+18:29:59 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_132.txt
+18:31:49 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_206_found.fndhst
+18:31:49 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_206.txt
+18:31:49 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_206.txt
+18:31:49 *** Overall progress: 0.8888 ***
+18:31:50 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_221.txt
+18:34:33 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_133_found.fndhst
+18:34:33 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_133.txt
+18:34:33 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_133.txt
+18:34:33 *** Overall progress: 0.8933 ***
+18:34:34 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_148.txt
+18:34:55 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_89_found.fndhst
+18:34:55 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_89.txt
+18:34:55 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_89.txt
+18:34:55 *** Overall progress: 0.8977 ***
+18:34:56 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_104.txt
+18:36:22 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_221_found.fndhst
+18:36:22 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_221.txt
+18:36:23 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_221.txt
+18:36:23 *** Overall progress: 0.9022 ***
+18:40:27 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_132_found.fndhst
+18:40:27 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_132.txt
+18:40:27 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_132.txt
+18:40:27 *** Overall progress: 0.9066 ***
+18:40:28 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_147.txt
+18:42:51 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_147_found.fndhst
+18:42:51 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_147.txt
+18:42:52 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_147.txt
+18:42:52 *** Overall progress: 0.9111 ***
+18:42:52 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_162.txt
+18:44:20 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_148_found.fndhst
+18:44:20 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_148.txt
+18:44:20 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_148.txt
+18:44:20 *** Overall progress: 0.9155 ***
+18:44:21 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_163.txt
+18:45:13 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_162_found.fndhst
+18:45:13 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_162.txt
+18:45:13 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_162.txt
+18:45:13 *** Overall progress: 0.92 ***
+18:45:13 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_177.txt
+18:45:43 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_104_found.fndhst
+18:45:43 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_104.txt
+18:45:43 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_104.txt
+18:45:44 *** Overall progress: 0.9244 ***
+18:45:44 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_119.txt
+18:46:43 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_163_found.fndhst
+18:46:43 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_163.txt
+18:46:43 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_163.txt
+18:46:43 *** Overall progress: 0.9288 ***
+18:46:43 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_178.txt
+18:47:21 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_177_found.fndhst
+18:47:21 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_177.txt
+18:47:21 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_177.txt
+18:47:21 *** Overall progress: 0.9333 ***
+18:47:21 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_192.txt
+18:48:25 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_192_found.fndhst
+18:48:25 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_192.txt
+18:48:25 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_192.txt
+18:48:25 *** Overall progress: 0.9377 ***
+18:48:26 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_207.txt
+18:48:52 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_178_found.fndhst
+18:48:52 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_178.txt
+18:48:52 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_178.txt
+18:48:52 *** Overall progress: 0.9422 ***
+18:48:53 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_193.txt
+18:49:22 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_207_found.fndhst
+18:49:22 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_207.txt
+18:49:22 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_207.txt
+18:49:22 *** Overall progress: 0.9466 ***
+18:49:22 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_222.txt
+18:51:1 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_193_found.fndhst
+18:51:1 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_193.txt
+18:51:1 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_193.txt
+18:51:1 *** Overall progress: 0.9511 ***
+18:51:2 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_208.txt
+18:51:46 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_208_found.fndhst
+18:51:46 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_208.txt
+18:51:46 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_208.txt
+18:51:46 *** Overall progress: 0.9555 ***
+18:51:46 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_223.txt
+18:53:33 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_222_found.fndhst
+18:53:33 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_222.txt
+18:53:33 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_222.txt
+18:53:34 *** Overall progress: 0.96 ***
+18:54:20 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_223_found.fndhst
+18:54:20 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_223.txt
+18:54:20 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_223.txt
+18:54:20 *** Overall progress: 0.9644 ***
+18:55:36 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_119_found.fndhst
+18:55:36 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_119.txt
+18:55:36 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_119.txt
+18:55:36 *** Overall progress: 0.9688 ***
+18:55:37 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_134.txt
+19:5:44 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_134_found.fndhst
+19:5:44 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_134.txt
+19:5:44 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_134.txt
+19:5:44 *** Overall progress: 0.9733 ***
+19:5:45 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_149.txt
+19:14:36 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_149_found.fndhst
+19:14:36 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_149.txt
+19:14:36 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_149.txt
+19:14:36 *** Overall progress: 0.9777 ***
+19:14:37 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_164.txt
+19:23:15 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_164_found.fndhst
+19:23:15 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_164.txt
+19:23:15 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_164.txt
+19:23:15 *** Overall progress: 0.9822 ***
+19:23:16 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_179.txt
+19:30:6 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_179_found.fndhst
+19:30:6 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_179.txt
+19:30:6 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_179.txt
+19:30:6 *** Overall progress: 0.9866 ***
+19:30:6 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_194.txt
+19:35:29 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_194_found.fndhst
+19:35:29 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_194.txt
+19:35:29 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_194.txt
+19:35:30 *** Overall progress: 0.9911 ***
+19:35:30 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_209.txt
+19:39:45 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_209_found.fndhst
+19:39:45 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_209.txt
+19:39:45 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_209.txt
+19:39:45 *** Overall progress: 0.9955 ***
+19:39:46 Preparing for CiC: Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_224.txt
+19:41:14 CiC done -> saving counts -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_224_found.fndhst
+19:41:14 Sub-cutting -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_224.txt
+19:41:14 Done: -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_moments_nnR_224.txt
+19:41:14 *** Overall progress: 1 ***
+19:41:14 Merging -> Results/Lightcone_P18_CENTRAL_BOX1_3Dcut_merrout.txt
+----------------END---------------- Mon Jun 16 19:41:14 2025
+ have a good day :)
