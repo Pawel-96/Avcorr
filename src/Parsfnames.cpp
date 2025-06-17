@@ -328,7 +328,7 @@ int Error_param(int rank)
 					ncols=Fncols(fr);
 					if((VERSION=="angular" and ncols!=2) or (VERSION!="angular" and ncols!=3))
 					{
-						Error(rank,err,"[Error]: file: "+fr+" has wrong number of columns, ");
+						Error(rank,err,"[Error]: file: "+fr+" has wrong number of columns: "+conv(ncols));
 					}
 				}
 			}
