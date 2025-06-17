@@ -176,6 +176,7 @@ int main(int argc, char *argv[])
 	if(rank==0)
 	{
 		Writelog("","intro"); //writing main information about the run
+		Writelog("Running with "+conv(comm_size)+" threads");
 		Writelog("Preparing environment");		
 	}
     srand(time(NULL)+rank);

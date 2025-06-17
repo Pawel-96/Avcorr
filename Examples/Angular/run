@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#running the code and result plots
+
+
+if ! test -f ./Avcorr.exe; then
+  echo "Executable doesn't exist - copy the compiled Avcorr.exe from ../../"
+  exit 1
+fi
+
+#running the code:
+mpiexec -np $1 ./Avcorr.exe
+
+
+#plotting Xi_2:
+python3 Plot_w.py Results/Lightcone_P18_CENTRAL_BOXN_60x60_z_0p2_0p3_merrout.txt 2
+
+#plotting S_3:
+python3 Plot_S.py Results/Lightcone_P18_CENTRAL_BOXN_60x60_z_0p2_0p3_merrout_Sn.txt 3

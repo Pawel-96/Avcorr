@@ -323,7 +323,7 @@ int Error_param(int rank)
 				{
 					Error(rank,err,"[Error]: check "+paramfile+", file: "+fr+" does not exist.");
 				}
-				else
+				else if(USE_HDF5==0)
 				{
 					ncols=Fncols(fr);
 					if((VERSION=="angular" and ncols!=2) or (VERSION!="angular" and ncols!=3))
