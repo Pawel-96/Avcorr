@@ -27,7 +27,6 @@
 
 
 
-
 //optimal pixelization
 int Npix(vector<double> &Nav_circ, vector<double> &Nav_pix, int N, double R, double axa, double axb)
 {
@@ -143,35 +142,57 @@ vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand) //cal
 
 
 
+//running ii-th work (out of iimax)
+void Run(int ii, int iimax, vector<double> &Nav_circ, vector<double> &Nav_pix, vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int nrand)
+{
+	int nnR=0,nnallax=0,dset_err=0;
+	int model_no=ii/(iimax/nmodels); //number of model
+	if(VERSION=="angular" or VERSION=="BOX"){nnR=ii%nR;} //number of circle radius
+	if(VERSION=="BOX_ellipses" or VERSION=="LC_ellipses"){nnallax=ii%n_allax;} //current argument grid point
+        
+
+	cout<<"**********Model********** "<<model_no+1<<"/"<<Model.size()<<endl;
+	if(VERSION=="angular" or VERSION=="BOX"){dset_err=Results_onemodel_oneradius(Model[model_no],nnR,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand);}
+	if(VERSION=="BOX_ellipses" or VERSION=="LC_ellipses"){dset_err=Results_onemodel_oneradius(Model[model_no],nnallax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand);}
+        
+	if(dset_err==1)
+	{
+		Error(0,dset_err,"Data reading error(s) occurred, stopping:/"); //rank=0 set just to print
+		Writelog("Proceeding with another work, but this will raise error at postprocessing");
+		return;
+	}
+	
+	double progress=Progress(iimax);
+	cout<<"<----Overall progress: "<<progress<<"----->"<<endl;
+	Writelog("*** Overall progress: "+conv(progress)+" ***");
+
+	return ;
+}
+
+
+
+
+
+
+
 int main(int argc, char *argv[])
 {
-	int rank, comm_size,iimax=0;
+	int rank, comm_size;//,iimax=0;
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &comm_size);
 	
 	int err=Error_param(rank); //error in parameters
-	int dset_err=0;
 	if(err==1)
 	{
-		if(rank==0)
-		{
-			string msg="Errors occurred, stopping:/";
-			cerr<<msg<<endl;
-			Writelog(msg);
-		}
-		
+		Error(rank,err,"Errors occurred, stopping:/");
 		return 0;
 	}
 	
-    int model_no,nnR=0,nnallax=0;
 	int nrand;
-	double progress;
-	string fnav; //file for optimization in pixelizing
-    if(VERSION=="angular" or VERSION=="BOX"){iimax=nR*nmodels;}
-	if(VERSION=="BOX_ellipses" or VERSION=="LC_ellipses"){iimax=n_allax*nmodels;}
+	string fnav=VERSION=="angular"?"Optimal_pix_angular.txt":"Optimal_pix_BOX.txt"; //file for optimization in pixelizing
+	int iimax=VERSION=="angular" || VERSION=="BOX"? nR*nmodels : n_allax*nmodels;
     vector<double> Nav_circ,Nav_pix,Xcn,Ycn,Zcn; //X/Y/Zcn - for angular: xcn,ycn=racn,deccn, for BOX/3D: x,y,z centers
-	
 	
 	if(rank==0)
 	{
@@ -180,43 +201,78 @@ int main(int argc, char *argv[])
 		Writelog("Preparing environment");		
 	}
     srand(time(NULL)+rank);
-	if(VERSION=="angular") {fnav="Optimal_pix_angular.txt";} //for pixelization optimization
-	else {fnav="Optimal_pix_BOX.txt";}
 
 	Fread<double>(fnav,{&Nav_circ,&Nav_pix},{0,1}); //reading the data
 	Read_randoms(Xcn,Ycn,Zcn,"",nrand); //reading randoms based on option(s)
-
-    for(int i=0;i<iimax;++i) //computation for all moments and radii
-    {
-        model_no=i/(iimax/nmodels); //number of model
-		if(VERSION=="angular" or VERSION=="BOX"){nnR=i%nR;} //number of circle radius
-		if(VERSION=="BOX_ellipses" or VERSION=="LC_ellipses"){nnallax=i%n_allax;} //current argument grid point
-        
-
-        if(i%comm_size!=rank){continue;} //only current process
-		cout<<"**********Model********** "<<model_no+1<<"/"<<Model.size()<<endl;
-		if(VERSION=="angular" or VERSION=="BOX"){dset_err=Results_onemodel_oneradius(Model[model_no],nnR,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand);}
-		if(VERSION=="BOX_ellipses" or VERSION=="LC_ellipses"){dset_err=Results_onemodel_oneradius(Model[model_no],nnallax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand);}
-        
-		if(dset_err==1)
+	
+	//----------------------------------------------------------------MPI routine-------------------------------------------------
+	int msg_recv=0,msg_send; //messages for proces communication
+	int STOP=-1,TAG=1;
+	
+	if(comm_size<3) //small number of threads, simple work division
+	{
+		for(int i=0;i<iimax;++i) //computation for all moments and radii
 		{
-			string msg="Data reading error(s) occurred, stopping:/";
-			cerr<<msg<<endl;
-			Writelog(msg);
-			return 0;
+			if(i%comm_size!=rank){continue;} //every comm_size-th assigned to this rank
+			Run(i,iimax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand);
+			//in case of data reading error, just getting to next work, but error is raised and code considers that in postprocessing
+		}
+	}
+	else //optimized work division
+	{
+		if(rank==0) //master thread, assigning job to other ones
+		{
+			for(int i=1;i<comm_size;++i) //firstly assigning the work to all workers
+			{
+				msg_send=i; //work ID to be done
+				MPI_Send(&msg_send, 1, MPI_INT, i, TAG, MPI_COMM_WORLD); //informing i-th worker worker which work to do
+			}
+			int first_notstarted=comm_size; //lowest no. of not-yet started work
+			
+			int sender;
+			while(first_notstarted<iimax) //repeating until everything is done
+			{
+				//receiving information that one worker (any_source) finished assigned job
+				MPI_Recv(&msg_recv, 1, MPI_INT, MPI_ANY_SOURCE, TAG, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+				sender = msg_recv; //which worker sent that
+				msg_send=first_notstarted; //message informing which work to do now
+				
+				//sending which work this worker should do now (first unstarted)
+				MPI_Send(&msg_send, 1, MPI_INT, sender, TAG, MPI_COMM_WORLD) ;
+				first_notstarted+=1; //now first unstarted job is the next one
+			}
+			
+			//everything is done, sending message to stop:
+			for(int i=1;i<comm_size;++i)
+			{
+				MPI_Send(&STOP, 1, MPI_INT, i, TAG, MPI_COMM_WORLD);
+			}
 		}
 		
-		progress=Progress(iimax);
-		cout<<"<----Overall progress: "<<progress<<"----->"<<endl;
-		Writelog("*** Overall progress: "+conv(progress)+" ***");
-		
-    }
+		if(rank!=0) //worker
+		{
+			msg_send=rank;
+			while(true) //repeating until everything is done (received work ID exceed limit)
+			{
+				 //receiving information from master (rank=0) about which work to do (msg_recv)
+				MPI_Recv(&msg_recv, 1, MPI_INT, 0, TAG, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+				if (msg_recv==STOP) {break;}  //everything is done
+				
+				Run(msg_recv,iimax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand); //doing assigned work
+				//in case of data reading error, just getting to next work, but error is raised and code considers that in postprocessing
+				
+				MPI_Send(&msg_send, 1, MPI_INT, 0, TAG, MPI_COMM_WORLD); //informing master thread that work is done (sending rank)
+			}
+		}
+		MPI_Barrier(MPI_COMM_WORLD);
+	}
 
-    MPI_Finalize();
+    MPI_Finalize(); //ending MPI routine
 
-    if(rank==0)
+    if(rank==0) //combining results, done only in one thread
     {
-		Merge();
+		err=Merge();
+		if(err==1){return 0;} //some outputs does not exist (error raised before, in data reading)
 		if(VERSION=="BOX_ellipses" or VERSION=="LC_ellipses"){Args2grid();} //converting 1D arguments back to 2D grid in results
 		
 		if(combine_reals==1) //combining realisation into one results

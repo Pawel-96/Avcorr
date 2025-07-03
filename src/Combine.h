@@ -6,7 +6,7 @@
 #include "Parsfnames.h"
 
 
-void Merge();
+int Merge();
 
 //converting 1D arguments back to 2D grid in results (one file)
 void Args2grid_onefile(string fname);
