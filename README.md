@@ -405,8 +405,6 @@ only at the beginning of files and are not separated by non - \#- starting lines
 
 **Future improvements to add:**  
 
-- faster MPI - threads that finish their part need to do remaining jobs assigned to slower
-ones  
 - periodicity in VERSION=angular  
 - generalize optimal pixelization into analytical expressions  
 

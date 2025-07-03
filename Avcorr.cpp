@@ -224,10 +224,10 @@ int main(int argc, char *argv[])
 		{
 			for(int i=1;i<comm_size;++i) //firstly assigning the work to all workers
 			{
-				msg_send=i; //work ID to be done
+				msg_send=i-1; //work ID to be done (master just assigns)
 				MPI_Send(&msg_send, 1, MPI_INT, i, TAG, MPI_COMM_WORLD); //informing i-th worker worker which work to do
 			}
-			int first_notstarted=comm_size; //lowest no. of not-yet started work
+			int first_notstarted=comm_size-1; //lowest no. of not-yet started work
 			
 			int sender;
 			while(first_notstarted<iimax) //repeating until everything is done
