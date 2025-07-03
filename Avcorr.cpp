@@ -174,38 +174,9 @@ void Run(int ii, int iimax, vector<double> &Nav_circ, vector<double> &Nav_pix, v
 
 
 
-
-int main(int argc, char *argv[])
+//communication between master assigning jobs and workers running main function: Run()
+void MPI_routine(int rank, int comm_size, int iimax, vector<double> &Nav_circ, vector<double> &Nav_pix, vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int nrand)
 {
-	int rank, comm_size;//,iimax=0;
-    MPI_Init(&argc, &argv);
-    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-    MPI_Comm_size(MPI_COMM_WORLD, &comm_size);
-	
-	int err=Error_param(rank); //error in parameters
-	if(err==1)
-	{
-		Error(rank,err,"Errors occurred, stopping:/");
-		return 0;
-	}
-	
-	int nrand;
-	string fnav=VERSION=="angular"?"Optimal_pix_angular.txt":"Optimal_pix_BOX.txt"; //file for optimization in pixelizing
-	int iimax=VERSION=="angular" || VERSION=="BOX"? nR*nmodels : n_allax*nmodels;
-    vector<double> Nav_circ,Nav_pix,Xcn,Ycn,Zcn; //X/Y/Zcn - for angular: xcn,ycn=racn,deccn, for BOX/3D: x,y,z centers
-	
-	if(rank==0)
-	{
-		Writelog("","intro"); //writing main information about the run
-		Writelog("Running with "+conv(comm_size)+" threads");
-		Writelog("Preparing environment");		
-	}
-    srand(time(NULL)+rank);
-
-	Fread<double>(fnav,{&Nav_circ,&Nav_pix},{0,1}); //reading the data
-	Read_randoms(Xcn,Ycn,Zcn,"",nrand); //reading randoms based on option(s)
-	
-	//----------------------------------------------------------------MPI routine-------------------------------------------------
 	int msg_recv=0,msg_send; //messages for proces communication
 	int STOP=-1,TAG=1;
 	
@@ -266,8 +237,47 @@ int main(int argc, char *argv[])
 		}
 		MPI_Barrier(MPI_COMM_WORLD);
 	}
+	
+	return;
+}
 
-    MPI_Finalize(); //ending MPI routine
+
+
+
+
+int main(int argc, char *argv[])
+{
+	int rank, comm_size;//,iimax=0;
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &comm_size);
+	
+	int err=Error_param(rank); //error in parameters
+	if(err==1)
+	{
+		Error(rank,err,"Errors occurred, stopping:/");
+		return 0;
+	}
+	
+	int nrand;
+	string fnav=VERSION=="angular"?"Optimal_pix_angular.txt":"Optimal_pix_BOX.txt"; //file for optimization in pixelizing
+	int iimax=VERSION=="angular" || VERSION=="BOX"? nR*nmodels : n_allax*nmodels;
+    vector<double> Nav_circ,Nav_pix,Xcn,Ycn,Zcn; //X/Y/Zcn - for angular: xcn,ycn=racn,deccn, for BOX/3D: x,y,z centers
+	
+	if(rank==0)
+	{
+		Writelog("","intro"); //writing main information about the run
+		Writelog("Running with "+conv(comm_size)+" threads");
+		Writelog("Preparing environment");		
+	}
+    srand(time(NULL)+rank);
+
+	Fread<double>(fnav,{&Nav_circ,&Nav_pix},{0,1}); //reading the data
+	Read_randoms(Xcn,Ycn,Zcn,"",nrand); //reading randoms based on option(s)
+	
+	MPI_routine(rank,comm_size,iimax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand); //entire routine for master & working threads
+	
+    MPI_Finalize(); //ending MPI
 
     if(rank==0) //combining results, done only in one thread
     {
