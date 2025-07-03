@@ -2,7 +2,7 @@
 
 
 
-void Merge()
+int Merge()
 {
 	string f,foutXi,foutS,line; //files with Xi _Jand S_J
 	int NR; //number of radii
@@ -24,6 +24,8 @@ void Merge()
 		for(int j=0;j<NR;++j) //every radius/scale
 		{
 			f=Mout_onerad(Model[i],j); //file with j-th radii result (XI_J)
+			if(Fexist(f)==0){return 1;} //no output (previously reported error in data reading)
+			
 			ifstream ffxi(f.c_str());
 			getline(ffxi,line);
 			ffxi.close();
@@ -31,6 +33,8 @@ void Merge()
 			if(Clean==1){remove(f.c_str());} //cleaning
 			
 			f=Replace_string(Mout_onerad(Model[i],j),".txt","_Sn.txt"); //file with j-th radii result (S_J)
+			if(Fexist(f)==0){return 1;} //no output (previously reported error in data reading)
+			
 			ifstream ffs(f.c_str());
 			getline(ffs,line);
 			ffs.close();
@@ -42,7 +46,7 @@ void Merge()
 		fS.close();
 	}
 
-	return;
+	return 0;
 }
 
 
@@ -53,6 +57,8 @@ void Merge()
 //converting 1D arguments back to 2D grid in results (one file)
 void Args2grid_onefile(string fname)
 {
+	if(Fexist(fname)==0){return;} //no output (previously reported error in data reading)
+	
 	string **data=Empty<string>(ncols_outfile,n_allax); //to avoid nan problems
 	string ftemp=Random_str(15);
     double axa,axb;
