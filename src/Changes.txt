@@ -58,3 +58,4 @@ Changes implemented:
 16.06.2025: corrected CRR() values and ""->"astro" issue in Random_position("sky_border") at Stat.cpp
 17.06.2025: finalized adding examples
 03.07.2025: added correct MPI routine with master rank assigning jobs to workers
+29.07.2025: corrected condition for randoms in Read_randoms() - solved clearing vectors issue, improved randoms error message

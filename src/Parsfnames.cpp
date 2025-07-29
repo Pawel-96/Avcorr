@@ -307,7 +307,7 @@ int Error_param(int rank)
 			Error(rank,err,"[Error]: check "+paramfile+" or Randoms/ directory: some randoms may be missing");
 		}
 		
-		if(Random_file!="*" and Fexist(Random_file)==0)
+		if(Random_file!="*" and Fexist("Randoms/"+Random_file)==0)
 		{
 			Error(rank,err,"[Error]: check "+paramfile+" or Randoms/ directory: Randoms/"+Random_file+" does not exist");
 		}

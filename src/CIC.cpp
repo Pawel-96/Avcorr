@@ -7,11 +7,11 @@
 void Read_randoms(vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, string modelname, int &nrand,
 int specific)
 {
-	Xcn.clear();Ycn.clear();Zcn.clear();
 	if(specific==0) //one for all
 	{
 		if(Random_provided==1 and Random_file!="*")
 		{
+			Xcn.clear();Ycn.clear();Zcn.clear();
 			string fin="Randoms/"+Random_file;
 			if(USE_HDF5==0)
 			{
@@ -49,6 +49,7 @@ int specific)
 	{
 		if(Random_provided==1 and Random_file=="*")
 		{
+			Xcn.clear();Ycn.clear();Zcn.clear();
 			string fin="Randoms/Random_"+modelname+EXT;
 			if(USE_HDF5==0)
 			{
@@ -323,6 +324,7 @@ int npix_edge, int nnR, vector<double> &Xcn, vector<double> &Ycn, vector<double>
 	Set_pixborders(pix_border,nnpix,dra,dsindec,npix_edge);
 	Read_randoms(Xcn,Ycn,Zcn,model,nrand,1); //reading randoms under condition
 	int locrand; //no of random point form the file
+
 
     for(int j=0;j<CR;++j) //for every circle
     {
