@@ -27,47 +27,11 @@
 
 
 
-//optimal pixelization
-int Npix(vector<double> &Nav_circ, vector<double> &Nav_pix, int N, double R, double axa, double axb)
-{
-    double this_nav_circ=0.; //for optimization
-	int loc_opt,npix=0;
-	if(VERSION=="angular")
-	{
-		this_nav_circ=N*2.*M_PI*(1.-cos(R*deg2rad))/(Areaf/str2deg2); //average number of objects in circle
-		if(this_nav_circ<Nav_circ[0]){npix=sqrt(1.*N*Area_spherical(ramin,ramax,decmin,decmax)*str2deg2/(Nav_pix[0]*Areaf));}
-        if(this_nav_circ>Nav_circ[Nav_circ.size()-1]){npix=sqrt(1.*N*Area_spherical(ramin,ramax,decmin,decmax)*str2deg2/(Nav_pix[Nav_circ.size()-1]*Areaf));}
-        if(this_nav_circ>=Nav_circ[0] and this_nav_circ<=Nav_circ[Nav_circ.size()-1])
-        {
-            loc_opt=1.*Nav_circ.size()*(log10(this_nav_circ)-log10(Nav_circ[0])) / (log10(Nav_circ[Nav_circ.size()-1])-log10(Nav_circ[0])); //NAV_CIRC IS IN LOGSPACE
-            npix=pow(1.*N*Area_spherical(ramin,ramax,decmin,decmax)*str2deg2/(Nav_pix[loc_opt]*Areaf),0.5);
-        }
-		
-	}
-	else
-	{
-		if(VERSION=="BOX"){this_nav_circ=N*(4.0/3.0)*M_PI*pow(R,3)/pow(1.0*boxsize,3);}
-		if(VERSION=="BOX_ellipses"){this_nav_circ=N* 4./3. *M_PI*pow(axb,2)*axa/pow(1.0*boxsize,3);}
-		if(VERSION=="LC_ellipses"){this_nav_circ=N*pow(axb,2)*axa/(pow(1.*DCMAX,3)-pow(1.*DCMIN,3));}
-		
-		if(this_nav_circ<Nav_circ[0]){npix=pow(1.*N/Nav_pix[0],1.0/3.0);}
-        if(this_nav_circ>Nav_circ[Nav_circ.size()-1]){npix=pow(1.*N/Nav_pix[Nav_circ.size()-1],1.0/3.0);}
-        if(this_nav_circ>=Nav_circ[0] and this_nav_circ<=Nav_circ[Nav_circ.size()-1])
-        {
-            loc_opt=1.*Nav_circ.size()*(log10(this_nav_circ)-log10(Nav_circ[0])) / (log10(Nav_circ[Nav_circ.size()-1])-log10(Nav_circ[0])); //NAV_CIRC IS IN LOGSPACE
-            npix=pow(1.*N/Nav_pix[loc_opt],1.0/3.0);
-        }
-	}
-	
-	npix=max(npix,NPIX_min);
-	return npix;
-}
 
 
 
 
-
-int Results_onemodel_oneradius(string model, int nnsize, vector<double> &Nav_circ, vector<double> &Nav_pix,
+int Results_onemodel_oneradius(int rank, int comm_size, string model, int nnsize, vector<double> &Nav_circ, vector<double> &Nav_pix,
 vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand) //calculating moments, reducing, correcting
 {
 	int msg=0;
@@ -128,10 +92,10 @@ vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand) //cal
         
     }
     cout<<"Calculating moments: "<<endl;
-	if(VERSION=="angular"){CIC_angular(pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn,nrand);}
-	if(VERSION=="BOX"){CIC_BOX(pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn,nrand);}
-	if(VERSION=="BOX_ellipses"){CIC_BOX_ellipses(pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn,nrand);}
-	if(VERSION=="LC_ellipses"){CIC_LC_ellipses(pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn,nrand);}
+	if(VERSION=="angular"){CIC_angular(rank,comm_size,pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn,nrand,Nav_circ,Nav_pix);}
+	if(VERSION=="BOX"){CIC_BOX(rank,comm_size,pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn,nrand,Nav_circ,Nav_pix);}
+	if(VERSION=="BOX_ellipses"){CIC_BOX_ellipses(rank,comm_size,pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn,nrand,Nav_circ,Nav_pix);}
+	if(VERSION=="LC_ellipses"){CIC_LC_ellipses(rank,comm_size,pix,moments_output,model,npix,nnsize,Xcn,Ycn,Zcn,nrand,Nav_circ,Nav_pix);}
     
 	return msg;
 }
@@ -143,7 +107,7 @@ vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand) //cal
 
 
 //running ii-th work (out of iimax)
-void Run(int ii, int iimax, vector<double> &Nav_circ, vector<double> &Nav_pix, vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int nrand)
+void Run(int rank, int comm_size, int ii, int iimax, vector<double> &Nav_circ, vector<double> &Nav_pix, vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int nrand)
 {
 	int nnR=0,nnallax=0,dset_err=0;
 	int model_no=ii/(iimax/nmodels); //number of model
@@ -152,8 +116,8 @@ void Run(int ii, int iimax, vector<double> &Nav_circ, vector<double> &Nav_pix, v
         
 
 	cout<<"**********Model********** "<<model_no+1<<"/"<<Model.size()<<endl;
-	if(VERSION=="angular" or VERSION=="BOX"){dset_err=Results_onemodel_oneradius(Model[model_no],nnR,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand);}
-	if(VERSION=="BOX_ellipses" or VERSION=="LC_ellipses"){dset_err=Results_onemodel_oneradius(Model[model_no],nnallax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand);}
+	if(VERSION=="angular" or VERSION=="BOX"){dset_err=Results_onemodel_oneradius(rank,comm_size,Model[model_no],nnR,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand);}
+	if(VERSION=="BOX_ellipses" or VERSION=="LC_ellipses"){dset_err=Results_onemodel_oneradius(rank,comm_size,Model[model_no],nnallax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand);}
         
 	if(dset_err==1)
 	{
@@ -185,7 +149,7 @@ void MPI_routine(int rank, int comm_size, int iimax, vector<double> &Nav_circ, v
 		for(int i=0;i<iimax;++i) //computation for all moments and radii
 		{
 			if(i%comm_size!=rank){continue;} //every comm_size-th assigned to this rank
-			Run(i,iimax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand);
+			Run(rank,comm_size,i,iimax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand);
 			//in case of data reading error, just getting to next work, but error is raised and code considers that in postprocessing
 		}
 	}
@@ -229,7 +193,7 @@ void MPI_routine(int rank, int comm_size, int iimax, vector<double> &Nav_circ, v
 				MPI_Recv(&msg_recv, 1, MPI_INT, 0, TAG, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 				if (msg_recv==STOP) {break;}  //everything is done
 				
-				Run(msg_recv,iimax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand); //doing assigned work
+				Run(rank,comm_size,msg_recv,iimax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand); //doing assigned work
 				//in case of data reading error, just getting to next work, but error is raised and code considers that in postprocessing
 				
 				MPI_Send(&msg_send, 1, MPI_INT, 0, TAG, MPI_COMM_WORLD); //informing master thread that work is done (sending rank)
@@ -273,7 +237,7 @@ int main(int argc, char *argv[])
     srand(time(NULL)+rank);
 
 	Fread<double>(fnav,{&Nav_circ,&Nav_pix},{0,1}); //reading the data
-	Read_randoms(Xcn,Ycn,Zcn,"",nrand); //reading randoms based on option(s)
+	Read_randoms(rank,comm_size,Xcn,Ycn,Zcn,"",nrand,-1,Nav_circ,Nav_pix); //reading randoms based on option(s) and creating processed if Random_proc=1
 	
 	MPI_routine(rank,comm_size,iimax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand); //entire routine for master & working threads
 	

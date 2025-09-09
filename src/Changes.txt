@@ -59,3 +59,5 @@ Changes implemented:
 17.06.2025: finalized adding examples
 03.07.2025: added correct MPI routine with master rank assigning jobs to workers
 29.07.2025: corrected condition for randoms in Read_randoms() - solved clearing vectors issue, improved randoms error message
+05.09.2025: added options for randoms processing: scale-dependent cut if N< <N> - Random_sigmac*sigma
+09.09.2025: corrected issue with incorrect Random_fullr sampling

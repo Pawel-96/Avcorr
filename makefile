@@ -8,7 +8,7 @@ H5link=`pkg-config --libs hdf5`
 TARGET = Avcorr.exe
 
 #code files:
-SRC = Avcorr.cpp src/CIC.cpp src/Combine.cpp src/Moments.cpp src/Parsfnames.cpp
+SRC = Avcorr.cpp src/CIC.cpp src/Combine.cpp src/Moments.cpp src/Parsfnames.cpp src/Randoms.cpp
 LIB = lib/Arrvec.cpp lib/Files.cpp lib/Mathfunc.cpp lib/Stat.cpp lib/Strsimsys.cpp
 H5FILE = lib/Files_HDF5.cpp
 

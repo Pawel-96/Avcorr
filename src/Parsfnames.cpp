@@ -34,6 +34,11 @@ const int nmodels=Model.size();
 
 const int Random_provided=conv_check(Get_parameter(paramfile,"Random_provided",err_common)[0],err_conv);  //random file provided? [0/1]
 const string Random_file=Get_parameter(paramfile,"Random_file",err_common)[0]; //random file name
+const int Random_proc=conv_check(Get_parameter(paramfile,"Random_proc",err_common)[0],err_conv); //[0/1] processing randoms for irregular footprint
+const vector<double> Random_fullr=conv_check(Get_parameter(paramfile,"Random_fullr",err_common),err_conv); //range of full continuous data (only if Random_proc=1)
+const double Random_sigmac=conv_check(Get_parameter(paramfile,"Random_sigmac",err_common)[0],err_conv); //[stdev] density cutoff boundary condition (only if Random_proc=1)
+
+
 
 //********************parameters - angular:********************
 const double ramin=conv_check(Get_parameter(paramfile,"ramin",err_ver)[0],err_conv); 		//[deg]catalog rightascension lower range
@@ -296,6 +301,12 @@ int Error_param(int rank)
 	}
 	
 	
+	if(Random_proc==1 and Random_provided==0)
+	{
+		Error(rank,err,"[Error]: check "+paramfile+", Random_proc cannot be 1 if Random_provided=0");
+	}
+	
+	
 	if(Random_provided==1)
 	{
 		vector<string> frandoms;
@@ -311,6 +322,27 @@ int Error_param(int rank)
 		{
 			Error(rank,err,"[Error]: check "+paramfile+" or Randoms/ directory: Randoms/"+Random_file+" does not exist");
 		}
+		
+		if(Random_proc==1)
+		{
+			if(Random_file=="*")
+			{
+				Error(rank,err,"[Error]: check "+paramfile+", Random_file cannot be \"*\" for Random_proc=1, use specific Random filename");
+			}
+			
+			if(VERSION=="angular" and Random_fullr.size()!=4)
+			{
+				Error(rank,err,"[Error]: check "+paramfile+", if VERSION=angular and Random_proc=1, Random_fullr need to have 4 entries: ramin,ramax,decmin,decmax");
+			}
+			
+			if(VERSION!="angular") //to update-------------------------------------------------------
+			{
+				Error(rank,err,"[Error]: Random_proc=1 currently available only for VERSION=angular");
+			}
+			
+		}
+		
+
 		
 		if(Random_file=="*")
 		{

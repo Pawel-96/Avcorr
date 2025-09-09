@@ -16,6 +16,9 @@ double conv(string q); //string->double
 //string->double, but checking if q can be converted
 double conv_check(string q, int &err);
 
+//converting vector of string-> double with checking
+vector<double> conv_check(const vector<string> &q, int &err);
+
 string conv(double q); //double->string
 
 string trim(string &str);
