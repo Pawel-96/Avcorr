@@ -44,6 +44,10 @@ extern const int nmodels;
 
 extern const int Random_provided;  //random file provided? [0/1]
 extern const string Random_file; //random file name
+extern const int Random_proc; //[0/1] processing randoms for irregular footprint
+extern const vector<double> Random_fullr; //range of full continuous data (only if Random_proc=1)
+extern const double Random_sigmac; //[stdev] density cutoff boundary condition (only if Random_proc=1)
+
 
 //********************parameters - angular:********************
 extern const double ramin; 		//[deg]catalog rightascension lower range

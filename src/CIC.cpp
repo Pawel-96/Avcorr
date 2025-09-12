@@ -4,14 +4,24 @@
 
 
 //reading randoms depending on conditions
-void Read_randoms(vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, string modelname, int &nrand,
-int specific)
+void Read_randoms(int rank, int comm_size, vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, string modelname, int &nrand, int nnR,
+vector<double> &Nav_circ, vector<double> &Nav_pix, int specific)
 {
-	if(specific==0) //one for all
+	//specific=-1: reading common random if (random_provided==1 and random_file!=*)
+	//specific=0: creating processed randoms if random_proc=1, otherwise: reading common random if (random_provided==1 and random_file!=*)
+	
+	
+	if(specific==0 or specific==-1) //one for all
 	{
 		if(Random_provided==1 and Random_file!="*")
 		{
 			Xcn.clear();Ycn.clear();Zcn.clear();
+			if(Random_proc==1 and specific==0) //processing randoms from irregular sky footprint
+			{
+				Create_processed_randoms(rank,comm_size,Xcn,Ycn,Zcn,Nav_circ,Nav_pix);
+				return;
+			}
+			
 			string fin="Randoms/"+Random_file;
 			if(USE_HDF5==0)
 			{
@@ -41,6 +51,8 @@ int specific)
 				if(VERSION!="angular"){Zcn=coords[2];}
 			}
 			nrand=Xcn.size();
+			
+			return;
 		}
 	}
 	
@@ -82,8 +94,77 @@ int specific)
 		}
 	}
 	
+	if(specific==2) //reading randoms within Random_fullr (ASCII)
+	{
+		Xcn.clear();Ycn.clear();Zcn.clear();
+		string frand_temp="Randoms/continuous_temp_"+conv(nnR)+".txt";
+		if(VERSION=="angular"){Fread<double>(frand_temp,{&Xcn,&Ycn},{0,1});}
+		if(VERSION=="LC_ellipses"){Fread<double>(frand_temp,{&Xcn,&Ycn,&Zcn},{0,1,2});}
+		nrand=Xcn.size();
+		
+		return;
+	}
+	
+	if(specific==3) //reading processed randoms (irregular footprint) (ASCII)
+	{
+		Xcn.clear();Ycn.clear();Zcn.clear();
+		string frand="Randoms/Random_proc_"+conv(nnR)+".txt";
+		if(VERSION=="angular") {Fread<double>(frand,{&Xcn,&Ycn},{0,1});}
+		if(VERSION=="LC_ellipses"){Fread<double>(frand,{&Xcn,&Ycn,&Zcn},{0,1,2});}
+		nrand=Xcn.size();
+		
+		return;
+	}
+	
 	return;
 }
+
+
+
+
+
+
+
+
+//optimal pixelization
+int Npix(vector<double> &Nav_circ, vector<double> &Nav_pix, int N, double R, double axa, double axb)
+{
+    double this_nav_circ=0.; //for optimization
+	int loc_opt,npix=0;
+	if(VERSION=="angular")
+	{
+		this_nav_circ=N*2.*M_PI*(1.-cos(R*deg2rad))/(Areaf/str2deg2); //average number of objects in circle
+		if(this_nav_circ<Nav_circ[0]){npix=sqrt(1.*N*Area_spherical(ramin,ramax,decmin,decmax)*str2deg2/(Nav_pix[0]*Areaf));}
+        if(this_nav_circ>Nav_circ[Nav_circ.size()-1]){npix=sqrt(1.*N*Area_spherical(ramin,ramax,decmin,decmax)*str2deg2/(Nav_pix[Nav_circ.size()-1]*Areaf));}
+        if(this_nav_circ>=Nav_circ[0] and this_nav_circ<=Nav_circ[Nav_circ.size()-1])
+        {
+            loc_opt=1.*Nav_circ.size()*(log10(this_nav_circ)-log10(Nav_circ[0])) / (log10(Nav_circ[Nav_circ.size()-1])-log10(Nav_circ[0])); //NAV_CIRC IS IN LOGSPACE
+            npix=pow(1.*N*Area_spherical(ramin,ramax,decmin,decmax)*str2deg2/(Nav_pix[loc_opt]*Areaf),0.5);
+        }
+		
+	}
+	else
+	{
+		if(VERSION=="BOX"){this_nav_circ=N*(4.0/3.0)*M_PI*pow(R,3)/pow(1.0*boxsize,3);}
+		if(VERSION=="BOX_ellipses"){this_nav_circ=N* 4./3. *M_PI*pow(axb,2)*axa/pow(1.0*boxsize,3);}
+		if(VERSION=="LC_ellipses"){this_nav_circ=N*pow(axb,2)*axa/(pow(1.*DCMAX,3)-pow(1.*DCMIN,3));}
+		
+		if(this_nav_circ<Nav_circ[0]){npix=pow(1.*N/Nav_pix[0],1.0/3.0);}
+        if(this_nav_circ>Nav_circ[Nav_circ.size()-1]){npix=pow(1.*N/Nav_pix[Nav_circ.size()-1],1.0/3.0);}
+        if(this_nav_circ>=Nav_circ[0] and this_nav_circ<=Nav_circ[Nav_circ.size()-1])
+        {
+            loc_opt=1.*Nav_circ.size()*(log10(this_nav_circ)-log10(Nav_circ[0])) / (log10(Nav_circ[Nav_circ.size()-1])-log10(Nav_circ[0])); //NAV_CIRC IS IN LOGSPACE
+            npix=pow(1.*N/Nav_pix[loc_opt],1.0/3.0);
+        }
+	}
+	
+	npix=max(npix,NPIX_min);
+	return npix;
+}
+
+
+
+
 
 
 
@@ -99,6 +180,12 @@ int CRR(string ffound,string ffoundhst,vector<double> &Xcn, string model, double
 	if(VERSION=="LC_ellipses"){C=kappa*(pow(val4,3)-pow(val3,3))/(val1*pow(val2,2));}
 	
 	CR=min(max(C*nreals,Cmin),Cmax);
+	
+	if(Random_proc==1) //processed randoms from irregular footprint
+	{
+		CR=Xcn.size();
+		return CR;
+	}
 	
 	if(Fexist(ffound)==1){CR=min(CR,Fnlines(ffound));} //3 tree steps: random_provided [0/1],random_file=="*"[y/n],ffound exists?[y/n]
 	if(Fexist(ffoundhst)==1)
@@ -292,9 +379,8 @@ int Check_count_existence(string ffound, string ffoundhst, string output, vector
 
 
 
-
-void CIC_angular(vector<vector<vector<double> > > &pix, string output, string model,
-int npix_edge, int nnR, vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand) //collecting numbers of objects  ->calculating moments for nnR-th radius
+void CIC_angular(int rank, int comm_size, vector<vector<vector<double> > > &pix, string output, string model,
+int npix_edge, int nnR, vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand, vector<double> &Nav_circ, vector<double> &Nav_pix) //collecting numbers of objects  ->calculating moments for nnR-th radius
 {
     double R,RA_center,DEC_center;//for circle
     double dra=1.0*(ramax-ramin)/npix_edge, dsindec=(sin(decmax*deg2rad)-sin(decmin*deg2rad))/npix_edge;//pix size in ra, sin(pixsize) in dec
@@ -306,8 +392,7 @@ int npix_edge, int nnR, vector<double> &Xcn, vector<double> &Ycn, vector<double>
 
 	string ffound=Replace_string(output,".txt","_found.fnd"); //file with counts
 	string ffoundhst=Replace_string(ffound,".fnd",".fndhst"); //count in compact format
-	int CR=CRR(ffound,ffoundhst,Xcn,model,R,0.,0.,0.);
-	cout<<"Circles: "<<CR<<endl;
+	
 
     vector<int> nc, count; //storing counts histogram
 	int countmin=-1,countmax=-1; //minimal count (for adding to histogram)
@@ -322,7 +407,13 @@ int npix_edge, int nnR, vector<double> &Xcn, vector<double> &Ycn, vector<double>
     if(exst==1){return;}
 
 	Set_pixborders(pix_border,nnpix,dra,dsindec,npix_edge);
-	Read_randoms(Xcn,Ycn,Zcn,model,nrand,1); //reading randoms under condition
+	
+	if(Random_proc==0){Read_randoms(rank,comm_size,Xcn,Ycn,Zcn,model,nrand,-1,Nav_circ,Nav_pix,1);} //reading randoms under condition
+	else{Read_randoms(rank,comm_size,Xcn,Ycn,Zcn,model,nrand,nnR,Nav_circ,Nav_pix,3);} //reading processed randoms for given scale
+	int CR=CRR(ffound,ffoundhst,Xcn,model,R,0.,0.,0.);
+	cout<<"Circles: "<<CR<<endl;
+	 
+	 
 	int locrand; //no of random point form the file
 
 
@@ -355,10 +446,10 @@ int npix_edge, int nnR, vector<double> &Xcn, vector<double> &Ycn, vector<double>
 			nnpix_taken=pixdec_taken*npix_edge+pixra_taken;
 			galpix=pix[nnpix_taken].size();
 
-            dist_tocenter[0]=Dist(RA_center,DEC_center,pix_border[0][nnpix_taken],pix_border[2][nnpix_taken],"spherical");
-            dist_tocenter[1]=Dist(RA_center,DEC_center,pix_border[0][nnpix_taken],pix_border[3][nnpix_taken],"spherical");
-            dist_tocenter[2]=Dist(RA_center,DEC_center,pix_border[1][nnpix_taken],pix_border[2][nnpix_taken],"spherical");
-            dist_tocenter[3]=Dist(RA_center,DEC_center,pix_border[1][nnpix_taken],pix_border[3][nnpix_taken],"spherical");
+            dist_tocenter[0]=Dist(RA_center,DEC_center,pix_border[0][nnpix_taken],pix_border[2][nnpix_taken],"astro");
+            dist_tocenter[1]=Dist(RA_center,DEC_center,pix_border[0][nnpix_taken],pix_border[3][nnpix_taken],"astro");
+            dist_tocenter[2]=Dist(RA_center,DEC_center,pix_border[1][nnpix_taken],pix_border[2][nnpix_taken],"astro");
+            dist_tocenter[3]=Dist(RA_center,DEC_center,pix_border[1][nnpix_taken],pix_border[3][nnpix_taken],"astro");
 
             Dmax=max(dist_tocenter[0],max(dist_tocenter[1],max(dist_tocenter[2],dist_tocenter[3])));
 
@@ -367,7 +458,7 @@ int npix_edge, int nnR, vector<double> &Xcn, vector<double> &Ycn, vector<double>
             {
                 for(int m=0;m<galpix;++m) //objects inside this pixel (pixel crossing this circle partially)
                 {
-                    if(Dist(RA_center,DEC_center,pix[nnpix_taken][m][0],pix[nnpix_taken][m][1],"spherical")<=R){++found_thiscircle;}
+                    if(Dist(RA_center,DEC_center,pix[nnpix_taken][m][0],pix[nnpix_taken][m][1],"astro")<=R){++found_thiscircle;}
                 }
             }
 
@@ -428,8 +519,8 @@ double Dist_periodic(double x1, double y1, double z1, double x2, double y2, doub
 
 
 
-void CIC_BOX(vector<vector<vector<double> > > &pix, string output, string model,
-int npix_edge, int nnR,vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand) //collecting numbers of objects  ->calculating moments for nnR-th radius
+void CIC_BOX(int rank, int comm_size, vector<vector<vector<double> > > &pix, string output, string model,
+int npix_edge, int nnR,vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand, vector<double> &Nav_circ, vector<double> &Nav_pix) //collecting numbers of objects  ->calculating moments for nnR-th radius
 {
     double R,X_center,Y_center,Z_center;//for sphere
     double dpix=1.0*boxsize/npix_edge;//pix edge size
@@ -439,9 +530,7 @@ int npix_edge, int nnR,vector<double> &Xcn, vector<double> &Ycn, vector<double> 
 
 	string ffound=Replace_string(output,".txt","_found.fnd"); //file with found[] array
 	string ffoundhst=Replace_string(ffound,".fnd",".fndhst"); //count in compact format
-	int CR=CRR(ffound,ffoundhst,Xcn,model,R,0.,0.,0.);
-	cout<<"Spheres: "<<CR<<endl;
-
+	
     vector<int> nc, count; //storing counts histogram
 	int countmin=-1,countmax=-1; //minimal count (for adding to histogram)
     int galpix,found_thiscircle; //objects found inside this pixel, circle
@@ -454,7 +543,11 @@ int npix_edge, int nnR,vector<double> &Xcn, vector<double> &Ycn, vector<double> 
     int exst=Check_count_existence(ffound,ffoundhst,output,nc,count,R);
     if(exst==1){return;}
 	
-	Read_randoms(Xcn,Ycn,Zcn,model,nrand,1); //reading randoms under condition
+	if(Random_proc==0){Read_randoms(rank,comm_size,Xcn,Ycn,Zcn,model,nrand,-1,Nav_circ,Nav_pix,1);} //reading randoms under condition
+	else{Read_randoms(rank,comm_size,Xcn,Ycn,Zcn,model,nrand,nnR,Nav_circ,Nav_pix,3);} //reading processed randoms for given scale
+	int CR=CRR(ffound,ffoundhst,Xcn,model,R,0.,0.,0.);
+	cout<<"Spheres: "<<CR<<endl;
+	
 	int locrand; //no of random point form the file
 
     for(int j=0;j<CR;++j) //for every circle
@@ -540,8 +633,8 @@ int npix_edge, int nnR,vector<double> &Xcn, vector<double> &Ycn, vector<double> 
 
 
 
-void CIC_BOX_ellipses(vector<vector<vector<double> > > &pix, string output, string model,
-int npix_edge, int nnallax,vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand) //collecting numbers of objects  ->calculating moments for nnR-th radius
+void CIC_BOX_ellipses(int rank, int comm_size, vector<vector<vector<double> > > &pix, string output, string model,
+int npix_edge, int nnallax,vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand, vector<double> &Nav_circ, vector<double> &Nav_pix) //collecting numbers of objects  ->calculating moments for nnR-th radius
 {
     double X_center,Y_center,Z_center;//for sphere
     double dpix=1.0*boxsize/npix_edge;//pix edge size
@@ -558,8 +651,7 @@ int npix_edge, int nnallax,vector<double> &Xcn, vector<double> &Ycn, vector<doub
 	
     string ffound=Replace_string(output,".txt","_found.fnd"); //file with found[] array
 	string ffoundhst=Replace_string(ffound,".fnd",".fndhst"); //count in compact format
-	int CR=CRR(ffound,ffoundhst,Xcn,model,axa,axb,0.,0.);
-	cout<<"Ellipses: "<<CR<<endl;
+	
 
     vector<int> nc, count; //storing counts histogram
 	int countmin=-1,countmax=-1; //minimal count (for adding to histogram)
@@ -573,7 +665,11 @@ int npix_edge, int nnallax,vector<double> &Xcn, vector<double> &Ycn, vector<doub
     int exst=Check_count_existence(ffound,ffoundhst,output,nc,count,nnallax);
     if(exst==1){return;}
 	
-	Read_randoms(Xcn,Ycn,Zcn,model,nrand,1); //reading randoms under condition
+	if(Random_proc==0){Read_randoms(rank,comm_size,Xcn,Ycn,Zcn,model,nrand,-1,Nav_circ,Nav_pix,1);} //reading randoms under condition
+	else{Read_randoms(rank,comm_size,Xcn,Ycn,Zcn,model,nrand,nnallax,Nav_circ,Nav_pix,3);} //reading processed randoms for given scale
+	int CR=CRR(ffound,ffoundhst,Xcn,model,axa,axb,0.,0.);
+	cout<<"Ellipses: "<<CR<<endl;
+	
 	int locrand; //no of random point form the file
 
     for(int j=0;j<CR;++j) //for every ellipse
@@ -663,8 +759,8 @@ int npix_edge, int nnallax,vector<double> &Xcn, vector<double> &Ycn, vector<doub
 
 
 
-void CIC_LC_ellipses(vector<vector<vector<double> > > &pix, string output, string model,
-int npix_edge, int nnallax,vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand) //collecting numbers of objects  ->calculating moments for nnR-th radius
+void CIC_LC_ellipses(int rank, int comm_size, vector<vector<vector<double> > > &pix, string output, string model,
+int npix_edge, int nnallax,vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand, vector<double> &Nav_circ, vector<double> &Nav_pix) //collecting numbers of objects  ->calculating moments for nnR-th radius
 {
 	double *CENTER=new double[3]; //positions of ellipse centers
     double dpix=2.0*DCMAX/npix_edge;//pix edge size
@@ -682,8 +778,7 @@ int npix_edge, int nnallax,vector<double> &Xcn, vector<double> &Ycn, vector<doub
 		
     string ffound=Replace_string(output,".txt","_found.fnd"); //file with found[] array
 	string ffoundhst=Replace_string(ffound,".fnd",".fndhst"); //count in compact format
-	int CR=CRR(ffound,ffoundhst,Xcn,model,axa,axb,DCMIN,DCMAX);
-	cout<<"Ellipses: "<<CR<<endl;
+	
 
     vector<int> nc, count; //storing counts histogram
 	int countmin=-1,countmax=-1; //minimal count (for adding to histogram)
@@ -696,7 +791,11 @@ int npix_edge, int nnallax,vector<double> &Xcn, vector<double> &Ycn, vector<doub
     int exst=Check_count_existence(ffound,ffoundhst,output,nc,count,nnallax);
     if(exst==1){return;}
 	
-	Read_randoms(Xcn,Ycn,Zcn,model,nrand,1); //reading randoms under condition
+	if(Random_proc==0){Read_randoms(rank,comm_size,Xcn,Ycn,Zcn,model,nrand,-1,Nav_circ,Nav_pix,1);} //reading randoms under condition
+	else{Read_randoms(rank,comm_size,Xcn,Ycn,Zcn,model,nrand,nnallax,Nav_circ,Nav_pix,3);} //reading processed randoms for given scale
+	int CR=CRR(ffound,ffoundhst,Xcn,model,axa,axb,DCMIN,DCMAX);
+	cout<<"Ellipses: "<<CR<<endl;
+	
 	int locrand; //no of random point form the file
 
     for(int j=0;j<CR;++j) //for every ellipse

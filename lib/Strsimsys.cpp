@@ -65,6 +65,24 @@ double conv_check(string q, int &err)
 
 
 
+//converting vector of string-> double with checking
+vector<double> conv_check(const vector<string> &q, int &err)
+{
+	int nq=q.size();
+	vector<double> vals(nq);
+	
+	for(int i=0;i<nq;++i)
+	{
+		vals[i]=conv_check(q[i],err);
+	}
+	
+	return vals;
+}
+
+
+
+
+
 
 string conv(double q) //double->string
 {

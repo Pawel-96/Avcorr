@@ -213,11 +213,24 @@ Random files (must be located in Randoms/ directory)
 used in the code are necessary only if Random_provided=1 in parameter file.
 The format is exactly the same as data files for corresponding VERSION
 (version is set in parameter file).
-Randoms define positions of circles/spheres/ellipses for making counts.
-Therefore it is crucial not to use randoms with positions exceeding
+If USE_HDF5=1, random data needs
+to be within POS_DSET dataset, otherwise (USE_HDF5=$) random file(s)
+have to contain columns with positions only.
+Randoms define positions of circles/spheres/ellipses for making counts
+and are useful for data with irregular shape.
+It is crucial not to use randoms with positions exceeding
 the catalog ranges.
-Check description of Random_provided parameter in parameter file.
+Check description of parameters corresponding with randoms:
+Random_provided, Random_file, Random_proc, Random_fullr and Random_sigmac.
 
+The code includes an option for processing randoms for irregular footprint 
+(see Random_proc parameter description). Given full randoms, for every scale
+considered separately it prepares reduced randoms considering only positions
+where random density does not deviate down from average by more than
+Random_sigmac standard deviations.
+This procedure prevents counts from extending partially
+footprint due to the finite size of the counting cells.  
+**[Attention]:** reducing randoms for now available only for VERSION=angular
 
 
 
@@ -264,26 +277,6 @@ Check the section about error calculations.
   \[attention\]: all files needs to have the same extension and be located in the same directory
   \[attention\]: if \* was used firstly, only files corresponding with that entry will be considered, e.g. for Datafiles=path/\* file2.dat, code will read only files in path/
 
-- **Random\_provided** - random file(s) provided? 0 - drawing random,
-1 - reading random file (s) [check Random\_file description].  
-Drawing randoms:  
-&emsp; - for VERSION=angular: random points within [RA,DEC] rectangle, not closer than current circle size to catalog borders  
-&emsp; - for VERSION=BOX: random points in [0,boxsize]^3 cube, where R - current sphere size  
-&emsp; - for VERSION=BOX_ellipses: random points in [0,boxsize] ranges, where ax=axa for axis X and ax=axb for axes Y and Z,
-		check parameters for BOX_ellipses and LC_ellipses  
-&emsp; - for VERSION=LC_ellipses: random points between spheres of radii DCMIN+axa and DCMAX-axa.  
-[Attention:] for LC_ellipses random drawer ignores any angular cuts, it just draws them for all directions. If your catalog has angular cuts, use own randoms. 
-
-    
-- **Random_file** - random file name (if specific file name imposed here, every
-datafile will be assigned to the same random file);
-if Random_file=\*, code reads multiple randoms: for each datafile,
-random filename is assumed to be: Randoms/Randoms_[datafile] will be assigned to each [datafile].  
-For example, if Random\_file=\* and Data/ contains catalogs: A.txt and B.txt, then Randoms/ directory has to contain
-Randoms_A.txt and Randoms_B.txt files.
-Random file(s) format for ASCII datafiles (USE_HDF5=0) is assumed to have only 
-columns with coordinates, while for HDF5 datafiles (USE_HDF5=0) the positions
-are assumed to be within POS_DSET dataset.
 
 - **Recalc** - [0/1] if code is restarted and counts already exist, recalculating the moments [1], or not [0] to save the time
 
@@ -310,6 +303,46 @@ Files:  AAbox1_data, AAbox2_data, AAbox3_data, BBbox1_data, BBbox2_data, BBbox3_
 AAboxN_data_merrout.txt (3 realisations included) and BBboxN_data_merrout.txt (4 realisations included), just Real_template must be the same.  
 If Random_file=\*, the Randoms/ directory must still contain randoms for each file in 
 Data/ separately, even if these are the same model but different realisations
+
+
+- **Random_provided** - random file(s) provided? 0 - drawing random,
+1 - reading random file (s) [check Random\_file description].  
+Drawing randoms:  
+&emsp; - for VERSION=angular: random points within [RA,DEC] rectangle, not closer than current circle size to catalog borders  
+&emsp; - for VERSION=BOX: random points in [0,boxsize]^3 cube, where R - current sphere size  
+&emsp; - for VERSION=BOX_ellipses: random points in [0,boxsize] ranges, where ax=axa for axis X and ax=axb for axes Y and Z,
+		check parameters for BOX_ellipses and LC_ellipses  
+&emsp; - for VERSION=LC_ellipses: random points between spheres of radii DCMIN+axa and DCMAX-axa.  
+[Attention:] for LC_ellipses random drawer ignores any angular cuts, it just draws them for all directions. If your catalog has angular cuts, use own randoms. 
+
+    
+- **Random_file** - random file name (if specific file name imposed here, every
+datafile will be assigned to the same random file);
+if Random_file=\*, code reads multiple randoms: for each datafile,
+random filename is assumed to be: Randoms/Randoms_[datafile] will be assigned to each [datafile].  
+For example, if Random\_file=\* and Data/ contains catalogs: A.txt and B.txt, then Randoms/ directory has to contain
+Randoms_A.txt and Randoms_B.txt files.
+Random file(s) format for ASCII datafiles (USE_HDF5=0) is assumed to have only 
+columns with coordinates, while for HDF5 datafiles (USE_HDF5=1) the positions
+are assumed to be within POS_DSET dataset.
+
+
+- **Random_proc** - [0/1] processing randoms? 0 - using Random\_file
+as positions for counts, 1 - creating reduced randoms separately for every scale
+to account for cells size effect (useful for irregular footprints, see
+Randoms section). **[Attention]**: reducing randoms
+for now available only for VERSION=angular
+
+- **Random_fullr** - ranges where the data (or randoms) is continuous
+(no holes, just rectangular shape), for counting average randoms density and
+standard deviation used in random reducing method
+(applies only if Random_proc=1). For $VERSION=angular$, it has format:
+ramin ramax decmin decmax
+defining RA,DEC ranges.
+
+- **Random_sigmac** - defines cut tolerance in random reducing:
+how many standard deviations counts at given point can maximally differ from
+random average, to consider this point as safe for CiC.
 
 	
 <u>Parameters for VERSION=**angular** only:</u>
