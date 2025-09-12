@@ -25,4 +25,8 @@ void CIC_angular_rnd(vector<vector<vector<double> > > &pix, string output,
 int npix_edge, int nnR, vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand, int mode, double &av, double &sigma);
 
 
+//CiC for LC_ellipses, but version especially for random processing
+void CIC_LC_ellipses_rnd(vector<vector<vector<double> > > &pix, string output,
+int npix_edge, int nnallax, vector<double> &Xcn, vector<double> &Ycn, vector<double> &Zcn, int &nrand, int mode, double &av, double &sigma);
+
 #endif

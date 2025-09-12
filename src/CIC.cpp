@@ -98,7 +98,8 @@ vector<double> &Nav_circ, vector<double> &Nav_pix, int specific)
 	{
 		Xcn.clear();Ycn.clear();Zcn.clear();
 		string frand_temp="Randoms/continuous_temp_"+conv(nnR)+".txt";
-		if(VERSION=="angular") {Fread<double>(frand_temp,{&Xcn,&Ycn},{0,1});}
+		if(VERSION=="angular"){Fread<double>(frand_temp,{&Xcn,&Ycn},{0,1});}
+		if(VERSION=="LC_ellipses"){Fread<double>(frand_temp,{&Xcn,&Ycn,&Zcn},{0,1,2});}
 		nrand=Xcn.size();
 		
 		return;
@@ -109,6 +110,7 @@ vector<double> &Nav_circ, vector<double> &Nav_pix, int specific)
 		Xcn.clear();Ycn.clear();Zcn.clear();
 		string frand="Randoms/Random_proc_"+conv(nnR)+".txt";
 		if(VERSION=="angular") {Fread<double>(frand,{&Xcn,&Ycn},{0,1});}
+		if(VERSION=="LC_ellipses"){Fread<double>(frand,{&Xcn,&Ycn,&Zcn},{0,1,2});}
 		nrand=Xcn.size();
 		
 		return;
@@ -444,10 +446,10 @@ int npix_edge, int nnR, vector<double> &Xcn, vector<double> &Ycn, vector<double>
 			nnpix_taken=pixdec_taken*npix_edge+pixra_taken;
 			galpix=pix[nnpix_taken].size();
 
-            dist_tocenter[0]=Dist(RA_center,DEC_center,pix_border[0][nnpix_taken],pix_border[2][nnpix_taken],"spherical");
-            dist_tocenter[1]=Dist(RA_center,DEC_center,pix_border[0][nnpix_taken],pix_border[3][nnpix_taken],"spherical");
-            dist_tocenter[2]=Dist(RA_center,DEC_center,pix_border[1][nnpix_taken],pix_border[2][nnpix_taken],"spherical");
-            dist_tocenter[3]=Dist(RA_center,DEC_center,pix_border[1][nnpix_taken],pix_border[3][nnpix_taken],"spherical");
+            dist_tocenter[0]=Dist(RA_center,DEC_center,pix_border[0][nnpix_taken],pix_border[2][nnpix_taken],"astro");
+            dist_tocenter[1]=Dist(RA_center,DEC_center,pix_border[0][nnpix_taken],pix_border[3][nnpix_taken],"astro");
+            dist_tocenter[2]=Dist(RA_center,DEC_center,pix_border[1][nnpix_taken],pix_border[2][nnpix_taken],"astro");
+            dist_tocenter[3]=Dist(RA_center,DEC_center,pix_border[1][nnpix_taken],pix_border[3][nnpix_taken],"astro");
 
             Dmax=max(dist_tocenter[0],max(dist_tocenter[1],max(dist_tocenter[2],dist_tocenter[3])));
 
@@ -456,7 +458,7 @@ int npix_edge, int nnR, vector<double> &Xcn, vector<double> &Ycn, vector<double>
             {
                 for(int m=0;m<galpix;++m) //objects inside this pixel (pixel crossing this circle partially)
                 {
-                    if(Dist(RA_center,DEC_center,pix[nnpix_taken][m][0],pix[nnpix_taken][m][1],"spherical")<=R){++found_thiscircle;}
+                    if(Dist(RA_center,DEC_center,pix[nnpix_taken][m][0],pix[nnpix_taken][m][1],"astro")<=R){++found_thiscircle;}
                 }
             }
 

@@ -335,9 +335,14 @@ int Error_param(int rank)
 				Error(rank,err,"[Error]: check "+paramfile+", if VERSION=angular and Random_proc=1, Random_fullr need to have 4 entries: ramin,ramax,decmin,decmax");
 			}
 			
-			if(VERSION!="angular") //to update-------------------------------------------------------
+			if(VERSION=="LC_ellipses" and Random_fullr.size()!=6)
 			{
-				Error(rank,err,"[Error]: Random_proc=1 currently available only for VERSION=angular");
+				Error(rank,err,"[Error]: check "+paramfile+", if VERSION=angular and Random_proc=1, Random_fullr need to have 6 entries: Rmin,Rmax,ramin,ramax,decmin,decmax");
+			}
+			
+			if(VERSION!="angular" and VERSION!="LC_ellipses")
+			{
+				Error(rank,err,"[Error]: Random_proc=1 available only for VERSION=angular or VERSION=LC_ellipses");
 			}
 			
 		}

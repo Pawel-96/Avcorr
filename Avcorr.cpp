@@ -239,6 +239,7 @@ int main(int argc, char *argv[])
 	Fread<double>(fnav,{&Nav_circ,&Nav_pix},{0,1}); //reading the data
 	Read_randoms(rank,comm_size,Xcn,Ycn,Zcn,"",nrand,-1,Nav_circ,Nav_pix); //reading randoms based on option(s) and creating processed if Random_proc=1
 	
+	MPI_Barrier(MPI_COMM_WORLD);
 	MPI_routine(rank,comm_size,iimax,Nav_circ,Nav_pix,Xcn,Ycn,Zcn,nrand); //entire routine for master & working threads
 	
     MPI_Finalize(); //ending MPI
